@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Somewhere in Kashmir — discover Srinagar, Gulmarg, Pahalgam, Sonamarg and Kashmir's hidden gems.">
+    <meta name="theme-color" content="#173d32">
+
+    <title>Somewhere in Kashmir | Discover Your Escape</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
+
+    <script src="script.js" defer></script>
+
+    <style>
+        :root {
+            --forest: #173d32;
+            --forest-dark: #102b24;
+            --ivory: #f5f0e6;
+            --gold: #d5ae73;
+            --muted-ivory: #d5ded6;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: "DM Sans", sans-serif;
+        }
+
+        .site-header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 20;
+        }
+
+        .menu-toggle {
+            cursor: pointer;
+        }
+
+        .hero {
+            min-height: 760px;
+            min-height: 100svh;
+            background-image: url("https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=2200&q=90");
+            background-position: center;
+            background-size: cover;
+        }
+
+        .hero-actions {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 22px;
+            margin-top: 30px;
+        }
+
+        .hero-actions .underlined-link {
+            color: #fff;
+            border-color: var(--gold);
+        }
+
+        .section-container {
+            width: 83%;
+            max-width: 1500px;
+            margin: 0 auto;
+        }
+
+        .intro {
+            padding: 90px 0;
+        }
+
+        /* DESTINATIONS */
+
+        .destinations {
+            padding: 65px 0 100px;
+            background: var(--forest) !important;
+            color: var(--ivory);
+        }
+
+        .destinations .section-heading {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            gap: 30px;
+            margin: 0 0 50px;
+        }
+
+        .destinations .section-heading > div {
+            min-width: 0;
+        }
+
+        .destinations .section-heading .eyebrow {
+            margin: 0 0 35px;
+            color: var(--gold) !important;
+            font-family: "DM Sans", sans-serif;
+            font-size: clamp(12px, 1.8vw, 18px);
+            font-weight: 700;
+            letter-spacing: 5px;
+            line-height: 1.7;
+        }
+
+        .destinations .section-heading h2 {
+            margin: 0;
+            color: var(--ivory) !important;
+            -webkit-text-fill-color: var(--ivory);
+            font-family: "Playfair Display", Georgia, serif;
+            font-size: clamp(2.6rem, 5vw, 4.8rem);
+            font-weight: 400;
+            line-height: 1.15;
+            letter-spacing: -1.5px;
+        }
+
+        .destinations .section-heading h2 em {
+            color: var(--gold) !important;
+            -webkit-text-fill-color: var(--gold);
+            font-weight: 400;
+            font-style: italic;
+        }
+
+        .destinations .section-heading p {
+            margin: 24px 0 0;
+            color: #f0f0eb !important;
+            font-size: 15px;
+            line-height: 1.8;
+        }
+
+        .destinations .section-index {
+            flex-shrink: 0;
+            padding-bottom: 8px;
+            color: var(--gold) !important;
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 2px;
+            white-space: nowrap;
+        }
+
+        .destinations .destination-preview {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 28px;
+        }
+
+        .destinations .destination-card {
+            position: relative;
+            display: block;
+            height: 455px;
+            min-width: 0;
+            overflow: hidden;
+            background: #102b24;
+            color: white;
+            text-decoration: none;
+            isolation: isolate;
+        }
+
+        .destinations .destination-card::after {
+            content: "";
+            position: absolute;
+            z-index: 0;
+            inset: 0;
+            background: linear-gradient(
+                to top,
+                rgba(8, 27, 21, 0.96) 0%,
+                rgba(8, 27, 21, 0.68) 24%,
+                rgba(8, 27, 21, 0.18) 65%,
+                rgba(8, 27, 21, 0.03) 100%
+            );
+            pointer-events: none;
+        }
+
+        .destinations .destination-card img {
+            position: absolute;
+            z-index: -1;
+            inset: 0;
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            transition: transform 0.7s ease;
+        }
+
+        .destinations .destination-card:hover img {
+            transform: scale(1.055);
+        }
+
+        .destinations .destination-card:focus-visible {
+            outline: 2px solid var(--gold);
+            outline-offset: 4px;
+        }
+
+        .destinations .card-caption {
+            position: absolute;
+            z-index: 1;
+            right: 28px;
+            bottom: 32px;
+            left: 28px;
+        }
+
+        .destinations .card-caption > span:first-child {
+            color: #e4cda5;
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 1.8px;
+        }
+
+        .destinations .card-caption h3 {
+            margin: 18px 0 12px;
+            color: #fff;
+            font-family: "Playfair Display", Georgia, serif;
+            font-size: clamp(2rem, 3vw, 2.8rem);
+            font-weight: 400;
+            line-height: 1.2;
+        }
+
+        .destinations .card-caption p {
+            margin: 0;
+            color: #f0f0eb;
+            font-size: 13px;
+            line-height: 1.8;
+        }
+
+        .destinations .card-caption .card-link {
+            display: none;
+        }
+
+        /* HIDDEN GEMS */
+
+        .hidden-gems-feature {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: stretch;
+            background: var(--forest);
+            color: #fff;
+        }
+
+        .hidden-gems-feature-image {
+            min-height: 470px;
+            overflow: hidden;
+        }
+
+        .hidden-gems-feature-image img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            min-height: 470px;
+            object-fit: cover;
+        }
+
+        .hidden-gems-feature-content {
+            padding: 75px 10%;
+            align-self: center;
+        }
+
+        .hidden-gems-feature-content .eyebrow,
+        .home-cta .eyebrow {
+            color: var(--gold);
+        }
+
+        .hidden-gems-feature-content h2,
+        .home-cta h2 {
+            margin: 18px 0;
+            color: #fff;
+            font-family: "Playfair Display", Georgia, serif;
+            font-size: clamp(2.3rem, 4vw, 3.7rem);
+            font-weight: 400;
+            line-height: 1.2;
+        }
+
+        .hidden-gems-feature-content h2 em,
+        .home-cta h2 em {
+            color: #e4cda5;
+        }
+
+        .hidden-gems-feature-content > p:not(.eyebrow),
+        .home-cta-content > p:not(.eyebrow) {
+            margin: 16px 0;
+            color: #d9e2da;
+            font-size: 14px;
+            line-height: 1.9;
+        }
+
+        .hidden-gems-feature-content .btn-primary,
+        .home-cta .btn-primary {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 14px 22px;
+            background: #e4cda5;
+            color: var(--forest);
+        }
+
+        /* ITINERARY CTA */
+
+        .home-cta {
+            padding: 100px 7%;
+            text-align: center;
+            background:
+                linear-gradient(
+                    rgba(12, 34, 26, 0.88),
+                    rgba(12, 34, 26, 0.92)
+                ),
+                url("https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1800&q=85")
+                center / cover;
+        }
+
+        .home-cta-content {
+            max-width: 760px;
+            margin: auto;
+        }
+
+        .home-cta-content > p:not(.eyebrow) {
+            max-width: 600px;
+            margin: 20px auto;
+        }
+
+        /* FOOTER */
+
+        .site-footer {
+            padding: 45px 7%;
+            text-align: center;
+            color: #dce3dc;
+            background: var(--forest-dark);
+        }
+
+        .site-footer > p {
+            margin: 12px 0;
+            font-size: 12px;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 22px;
+            margin: 25px 0;
+            font-size: 12px;
+        }
+
+        .footer-links a:hover {
+            color: var(--gold);
+        }
+
+        .footer-credit {
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,.15);
+        }
+
+        /* TABLET */
+
+        @media (max-width: 1000px) {
+            .section-container {
+                width: 88%;
+            }
+
+            .destinations .section-heading .eyebrow {
+                letter-spacing: 4px;
+            }
+
+            .destinations .section-heading h2 {
+                font-size: clamp(2.5rem, 5.5vw, 3.8rem);
+            }
+
+            .destinations .destination-preview {
+                gap: 20px;
+            }
+
+            .destinations .destination-card {
+                height: 400px;
+            }
+
+            .destinations .card-caption {
+                right: 20px;
+                bottom: 24px;
+                left: 20px;
+            }
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 700px) {
+            .section-container {
+                width: 90%;
+            }
+
+            .destinations {
+                padding: 55px 0 70px;
+            }
+
+            .destinations .section-heading {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 20px;
+                margin-bottom: 30px;
+            }
+
+            .destinations .section-heading .eyebrow {
+                margin-bottom: 22px;
+                font-size: 11px;
+                letter-spacing: 3px;
+            }
+
+            .destinations .section-heading h2 {
+                font-size: clamp(2.35rem, 9vw, 3.2rem);
+                letter-spacing: -0.8px;
+                line-height: 1.2;
+            }
+
+            .destinations .section-heading p {
+                margin-top: 18px;
+                font-size: 13px;
+            }
+
+            .destinations .section-index {
+                padding-bottom: 0;
+                font-size: 10px;
+            }
+
+            .destinations .destination-preview {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .destinations .destination-card {
+                height: 390px;
+            }
+
+            .destinations .card-caption {
+                right: 20px;
+                bottom: 24px;
+                left: 20px;
+            }
+
+            .destinations .card-caption h3 {
+                font-size: 2.2rem;
+            }
+
+            .destinations .card-caption p {
+                font-size: 12px;
+            }
+
+            .hidden-gems-feature {
+                grid-template-columns: 1fr;
+            }
+
+            .hidden-gems-feature-image,
+            .hidden-gems-feature-image img {
+                min-height: 280px;
+                height: 280px;
+            }
+
+            .hidden-gems-feature-content {
+                padding: 45px 7%;
+            }
+
+            .home-cta {
+                padding: 65px 7%;
+            }
+
+            .footer-links {
+                gap: 14px;
+            }
+
+            .site-header {
+                flex-wrap: wrap;
+            }
+
+            .menu-toggle {
+                display: block;
+                color: white;
+                background: transparent;
+                border: 1px solid rgba(255,255,255,.5);
+                padding: 7px 10px;
+            }
+
+            .navigation {
+                display: none;
+                width: 100%;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 18px;
+                padding: 20px;
+                background: var(--forest);
+            }
+
+            .navigation.is-open {
+                display: flex;
+            }
+        }
+
+        @media (max-width: 380px) {
+            .destinations .section-heading .eyebrow {
+                letter-spacing: 2px;
+            }
+
+            .destinations .section-heading h2 {
+                font-size: 2.15rem;
+            }
+
+            .destinations .destination-card {
+                height: 340px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            .destinations .destination-card img {
+                transition: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+
+    <header class="site-header">
+        <a href="index.html" class="logo">
+            Somewhere <span>in Kashmir.</span>
+        </a>
+
+        <button
+            class="menu-toggle"
+            type="button"
+            aria-label="Toggle navigation"
+            aria-expanded="false">
+            ☰
+        </button>
+
+        <nav class="navigation" aria-label="Main navigation">
+            <a href="index.html">Home</a>
+            <a href="story.html">Our Story</a>
+            <a href="#destinations">Destinations</a>
+            <a href="hidden-gems.html">Hidden Gems</a>
+            <a href="itinerary.html" class="nav-cta">Plan Your Trip ↗</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- HERO -->
+
+        <section class="hero">
+            <div class="hero-overlay"></div>
+
+            <div class="hero-content">
+                <p class="eyebrow">
+                    <span class="eyebrow-line"></span>
+                    A JOURNEY THROUGH PARADISE
+                </p>
+
+                <h1>
+                    Kashmir, a place<br>
+                    where the world<br>
+                    <em>slows down.</em>
+                </h1>
+
+                <p class="hero-description">
+                    Snow-capped mountains, still lakes, pine-covered
+                    valleys and stories hidden along winding roads.
+                    Discover Kashmir beyond the ordinary.
+                </p>
+
+                <div class="hero-actions">
+                    <a href="#destinations" class="btn-primary">
+                        Explore Kashmir ↗
+                    </a>
+
+                    <a href="story.html" class="underlined-link">
+                        Discover our story <span>→</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- INTRODUCTION -->
+
+        <section class="intro" id="about">
+            <div class="section-container">
+                <p class="eyebrow">MORE THAN A DESTINATION</p>
+
+                <div class="intro-grid">
+                    <div>
+                        <h2>
+                            Some places you visit.<br>
+                            Others you <em>feel.</em>
+                        </h2>
+                    </div>
+
+                    <div class="intro-copy">
+                        <p>
+                            Kashmir is a landscape of contrasts — quiet
+                            mornings on the lake, mountain roads that
+                            disappear into clouds, gardens rich with
+                            history and valleys that seem untouched by time.
+                        </p>
+
+                        <p>
+                            Somewhere in Kashmir is your guide to discovering
+                            its celebrated destinations and its quieter,
+                            lesser-known corners.
+                        </p>
+
+                        <a href="story.html" class="underlined-link">
+                            Read our story <span>→</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- DESTINATIONS -->
+
+        <section class="destinations" id="destinations">
+            <div class="section-container">
+
+                <div class="section-heading">
+                    <div>
+                        <p class="eyebrow">
+                            WHERE EVERY VALLEY TELLS A STORY
+                        </p>
+
+                        <h2>
+                            Find your kind of <em>escape.</em>
+                        </h2>
+
+                        <p>
+                            Each destination has its own rhythm.
+                            Choose one to explore its best places.
+                        </p>
+                    </div>
+
+                    <span class="section-index">
+                        01 — 04 / DESTINATIONS
+                    </span>
+                </div>
+
+                <div class="destination-preview">
+
+                    <!-- SRINAGAR -->
+
+                    <a href="srinagar.html"
+                       class="destination-card"
+                       aria-label="Explore Srinagar">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1595815771614-ade9d652a65d?auto=format&fit=crop&w=1100&q=85"
+                            alt="Mountain scenery representing Kashmir"
+                            loading="lazy">
+
+                        <div class="card-caption">
+                            <span>01 / THE LAKESIDE ESCAPE</span>
+                            <h3>Srinagar</h3>
+                            <p>Lakes, gardens &amp; timeless charm</p>
+                        </div>
+                    </a>
+
+                    <!-- GULMARG: UPDATED MOUNTAIN IMAGE -->
+
+                    <a href="gulmarg.html"
+                       class="destination-card"
+                       aria-label="Explore Gulmarg">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1100&q=85"
+                            alt="Snow-covered Himalayan mountain peaks and alpine scenery"
+                            loading="lazy">
+
+                        <div class="card-caption">
+                            <span>02 / ABOVE THE CLOUDS</span>
+                            <h3>Gulmarg</h3>
+                            <p>Mountain views &amp; alpine adventures</p>
+                        </div>
+                    </a>
+
+                    <!-- PAHALGAM -->
+
+                    <a href="pahalgam.html"
+                       class="destination-card"
+                       aria-label="Explore Pahalgam">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1100&q=85"
+                            alt="Mountain lake surrounded by green alpine scenery"
+                            loading="lazy">
+
+                        <div class="card-caption">
+                            <span>03 / THE QUIET VALLEY</span>
+                            <h3>Pahalgam</h3>
+                            <p>River walks, pine forests &amp; valleys</p>
+                        </div>
+                    </a>
+
+                    <!-- SONAMARG -->
+
+                    <a href="sonamarg.html"
+                       class="destination-card"
+                       aria-label="Explore Sonamarg">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1100&q=85"
+                            alt="Dramatic high mountain peaks and an alpine landscape"
+                            loading="lazy">
+
+                        <div class="card-caption">
+                            <span>04 / GLACIERS &amp; ALPINE BEAUTY</span>
+                            <h3>Sonamarg</h3>
+                            <p>Glaciers, alpine meadows &amp; mountain trails</p>
+                        </div>
+                    </a>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- HIDDEN GEMS -->
+
+        <section class="hidden-gems-feature">
+            <div class="hidden-gems-feature-image">
+                <img
+                    src="https://commons.wikimedia.org/wiki/Special:FilePath/Doodhpathri_southwest_Jammu_Kashmir_India.jpg"
+                    alt="Meadow landscape in the Doodhpathri region of Kashmir"
+                    loading="lazy">
+            </div>
+
+            <div class="hidden-gems-feature-content">
+                <p class="eyebrow">FOR THE CURIOUS TRAVELLER</p>
+
+                <h2>
+                    The Kashmir<br>
+                    <em>not everyone sees.</em>
+                </h2>
+
+                <p>
+                    Beyond the famous lakes and busy hill stations
+                    are forest villages, quiet meadows and remote
+                    valleys waiting to be explored.
+                </p>
+
+                <p>
+                    Discover Doodhpathri, Chatpal, Lolab Valley,
+                    Gurez and other peaceful escapes for a different
+                    kind of Kashmir experience.
+                </p>
+
+                <a href="hidden-gems.html" class="btn-primary">
+                    Discover Hidden Gems ↗
+                </a>
+            </div>
+        </section>
+
+        <!-- ITINERARY CTA -->
+
+        <section class="home-cta">
+            <div class="home-cta-content">
+                <p class="eyebrow">YOUR JOURNEY STARTS HERE</p>
+
+                <h2>
+                    Your Kashmir story<br>
+                    is waiting to <em>unfold.</em>
+                </h2>
+
+                <p>
+                    From choosing your destinations to planning
+                    your days, create a journey that feels like yours.
+                </p>
+
+                <a href="itinerary.html" class="btn-primary">
+                    Plan Your Itinerary ↗
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+
+    <footer class="site-footer">
+        <a href="index.html" class="logo">
+            Somewhere <span>in Kashmir.</span>
+        </a>
+
+        <p>
+            A little closer to the mountains.
+            A little further from the ordinary.
+        </p>
+
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="story.html">Our Story</a>
+            <a href="#destinations">Destinations</a>
+            <a href="hidden-gems.html">Hidden Gems</a>
+            <a href="itinerary.html">Itinerary</a>
+        </div>
+
+        <p class="footer-credit">
+            © 2026 Somewhere in Kashmir. Made for curious travellers.
+        </p>
+    </footer>
+
+    <!-- MOBILE MENU -->
+
+    <script>
+        const menuButton = document.querySelector(".menu-toggle");
+        const navigation = document.querySelector(".navigation");
+
+        if (menuButton && navigation) {
+            menuButton.addEventListener("click", () => {
+                const isOpen =
+                    navigation.classList.toggle("is-open");
+
+                menuButton.setAttribute(
+                    "aria-expanded",
+                    String(isOpen)
+                );
+
+                menuButton.setAttribute(
+                    "aria-label",
+                    isOpen ? "Close navigation" : "Toggle navigation"
+                );
+            });
+
+            navigation.querySelectorAll("a").forEach(link => {
+                link.addEventListener("click", () => {
+                    navigation.classList.remove("is-open");
+
+                    menuButton.setAttribute(
+                        "aria-expanded",
+                        "false"
+                    );
+
+                    menuButton.setAttribute(
+                        "aria-label",
+                        "Toggle navigation"
+                    );
+                });
+            });
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,805 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Plan your Kashmir trip with Somewhere in Kashmir.">
+
+    <meta name="theme-color" content="#173d32">
+
+    <title>Plan Your Kashmir Trip | Somewhere in Kashmir</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+
+    <style>
+        :root {
+            --forest: #173d32;
+            --forest-dark: #102b24;
+            --cream: #f5f0e6;
+            --ivory: #f7f3e9;
+            --gold: #d5ae73;
+            --card-border: #ded5c5;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        /* ======================================
+           PLANNER FORM LAYOUT
+        ====================================== */
+
+        .planner-layout {
+            display: grid;
+            grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+            align-items: start;
+            gap: 45px;
+            padding: 55px 7%;
+            overflow: visible;
+        }
+
+        .planner-form {
+            width: 100%;
+            min-width: 0;
+            height: auto;
+            min-height: 0;
+            padding: 35px;
+            overflow: visible;
+            background: var(--forest);
+            color: var(--ivory);
+        }
+
+        .planner-form h2 {
+            margin: 14px 0;
+            color: var(--ivory);
+            font-family: "Playfair Display", Georgia, serif;
+            font-size: clamp(2rem, 3.5vw, 3rem);
+            font-weight: 400;
+            line-height: 1.25;
+        }
+
+        .planner-form .eyebrow,
+        .planner-side-copy .eyebrow,
+        .planner-bottom .eyebrow,
+        .results-heading .eyebrow {
+            color: var(--gold);
+            letter-spacing: 2px;
+        }
+
+        .planner-description {
+            margin: 15px 0 28px;
+            color: #e0e7e0;
+            font-size: 14px;
+            line-height: 1.9;
+        }
+
+        /* DAYS SELECTOR */
+
+        .planner-form > label[for="trip-days"] {
+            display: block;
+            margin: 0 0 12px;
+            color: var(--ivory);
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 1.6;
+        }
+
+        .planner-form #trip-days {
+            display: block;
+            width: 100%;
+            max-width: 440px;
+            min-height: 56px;
+            margin: 0 0 32px;
+            padding: 14px 16px;
+            border: 1px solid #d4d0c5;
+            border-radius: 5px;
+            background: var(--cream);
+            color: var(--forest);
+            font: inherit;
+            font-size: 16px;
+        }
+
+        /* INTEREST CHECKBOX PANEL */
+
+        .planner-form fieldset.interest-options {
+            display: block !important;
+            position: relative !important;
+            float: none !important;
+            width: 100% !important;
+            min-width: 0 !important;
+            height: auto !important;
+            min-height: 0 !important;
+            margin: 32px 0 28px !important;
+            padding: 24px 28px 28px !important;
+            overflow: visible !important;
+            border: 1px solid var(--card-border) !important;
+            border-radius: 5px !important;
+            background: var(--cream) !important;
+            color: var(--forest) !important;
+        }
+
+        .planner-form fieldset.interest-options legend {
+            display: none !important;
+        }
+
+        .interest-heading {
+            display: block;
+            position: static;
+            width: 100%;
+            margin: 0 0 18px;
+            padding: 0;
+            color: var(--forest);
+            font-family: "DM Sans", sans-serif;
+            font-size: 17px;
+            font-weight: 700;
+            line-height: 1.6;
+        }
+
+        .planner-form fieldset.interest-options label {
+            display: flex;
+            align-items: flex-start;
+            gap: 13px;
+            width: 100%;
+            min-width: 0;
+            margin: 0;
+            padding: 8px 0;
+            color: var(--forest);
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 1.65;
+            cursor: pointer;
+        }
+
+        .planner-form fieldset.interest-options label + label {
+            margin-top: 7px;
+        }
+
+        .planner-form fieldset.interest-options input[type="checkbox"] {
+            flex: 0 0 19px;
+            width: 19px;
+            height: 19px;
+            margin: 4px 0 0;
+            accent-color: var(--forest);
+            cursor: pointer;
+        }
+
+        .planner-form fieldset.interest-options label:focus-within {
+            outline: 2px solid var(--gold);
+            outline-offset: 3px;
+        }
+
+        /* CREATE BUTTON */
+
+        .planner-button {
+            display: inline-block;
+            max-width: 100%;
+            min-height: 54px;
+            margin: 4px 0 22px;
+            padding: 15px 25px;
+            border: 0;
+            border-radius: 4px;
+            background: var(--gold);
+            color: var(--forest-dark);
+            font: inherit;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .planner-button:hover {
+            filter: brightness(1.06);
+        }
+
+        .planner-button:focus-visible {
+            outline: 3px solid var(--ivory);
+            outline-offset: 3px;
+        }
+
+        .planner-note {
+            margin: 10px 0 0;
+            color: #d5ded6;
+            font-size: 12px;
+            line-height: 1.8;
+        }
+
+        /* SIDE IMAGE */
+
+        .planner-side {
+            width: 100%;
+            min-width: 0;
+            overflow: hidden;
+            background: var(--forest);
+            color: var(--ivory);
+        }
+
+        .planner-side > img {
+            display: block;
+            width: 100%;
+            height: 360px;
+            object-fit: cover;
+        }
+
+        .planner-side-copy {
+            padding: 30px;
+        }
+
+        .planner-side-copy h3 {
+            margin: 15px 0;
+            color: var(--ivory);
+            font-family: "Playfair Display", Georgia, serif;
+            font-size: clamp(1.7rem, 3vw, 2.4rem);
+            font-weight: 400;
+            line-height: 1.3;
+        }
+
+        .planner-side-copy > p:not(.eyebrow) {
+            color: #d9e2da;
+            font-size: 14px;
+            line-height: 1.9;
+        }
+
+        /* ======================================
+           GENERATED ITINERARY
+           GREEN BACKGROUND + CREAM DAY CARDS
+        ====================================== */
+
+        #itinerary-results {
+            display: block;
+            width: 100%;
+            padding: 75px 6%;
+            background: var(--forest) !important;
+            color: var(--ivory) !important;
+        }
+
+        #itinerary-results[hidden] {
+            display: none !important;
+        }
+
+        .results-heading {
+            max-width: 1050px;
+            margin: 0 auto 38px;
+        }
+
+        #itinerary-results .results-heading .eyebrow {
+            color: var(--gold) !important;
+            font-size: 12px;
+            letter-spacing: 2px;
+        }
+
+        #itinerary-results .results-heading h2 {
+            margin: 15px 0;
+            color: var(--ivory) !important;
+            font-family: "Playfair Display", Georgia, serif;
+            font-size: clamp(2.4rem, 5vw, 4rem);
+            font-weight: 400;
+            line-height: 1.2;
+        }
+
+        #itinerary-results #plan-summary {
+            color: #e0e7e0 !important;
+            font-size: 15px;
+            line-height: 1.9;
+        }
+
+        /* Day-card grid */
+
+        #itinerary-results #plan-days {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            align-items: stretch;
+            gap: 24px;
+        }
+
+        /* Each generated day card */
+
+        #itinerary-results #plan-days > * {
+            box-sizing: border-box;
+            min-width: 0;
+            padding: 28px !important;
+            border: 1px solid var(--card-border) !important;
+            border-radius: 6px !important;
+            background: var(--cream) !important;
+            color: var(--forest) !important;
+            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.10);
+        }
+
+        /* All card text */
+
+        #itinerary-results #plan-days > * h1,
+        #itinerary-results #plan-days > * h2,
+        #itinerary-results #plan-days > * h3,
+        #itinerary-results #plan-days > * h4,
+        #itinerary-results #plan-days > * p,
+        #itinerary-results #plan-days > * span,
+        #itinerary-results #plan-days > * strong,
+        #itinerary-results #plan-days > * li,
+        #itinerary-results #plan-days > * div,
+        #itinerary-results #plan-days > * small {
+            color: var(--forest) !important;
+        }
+
+        /* Card titles */
+
+        #itinerary-results #plan-days > * h1,
+        #itinerary-results #plan-days > * h2,
+        #itinerary-results #plan-days > * h3,
+        #itinerary-results #plan-days > * h4 {
+            margin-top: 12px;
+            margin-bottom: 12px;
+            font-family: "Playfair Display", Georgia, serif;
+            font-size: clamp(1.5rem, 2.4vw, 2rem);
+            font-weight: 400;
+            line-height: 1.35;
+        }
+
+        #itinerary-results #plan-days > * p {
+            font-size: 15px;
+            line-height: 1.85;
+        }
+
+        #itinerary-results #plan-days > * hr {
+            border: 0;
+            border-top: 1px solid var(--card-border);
+        }
+
+        /* Travel notes beneath the cards */
+
+        #itinerary-results .results-note {
+            margin: 30px 0 22px;
+            color: #e0e7e0 !important;
+            font-size: 13px;
+            line-height: 1.8;
+        }
+
+        /* Print / Save as PDF button */
+
+        #itinerary-results #print-plan {
+            display: inline-block;
+            margin-top: 5px;
+            padding: 14px 23px;
+            border: 0;
+            border-radius: 4px;
+            background: var(--gold) !important;
+            color: var(--forest) !important;
+            font: inherit;
+            font-size: 15px;
+            cursor: pointer;
+        }
+
+        #itinerary-results #print-plan:hover {
+            background: #e4cda5 !important;
+        }
+
+        /* ======================================
+           BOTTOM CTA
+        ====================================== */
+
+        .planner-bottom {
+            padding: 70px 7%;
+            text-align: center;
+            background: var(--forest);
+            color: var(--ivory);
+        }
+
+        .planner-bottom h2 {
+            color: var(--ivory);
+            font-family: "Playfair Display", Georgia, serif;
+            font-size: clamp(2rem, 4vw, 3.2rem);
+            font-weight: 400;
+        }
+
+        .planner-bottom > p:not(.eyebrow) {
+            margin-bottom: 25px;
+            color: #d9e2da;
+            line-height: 1.8;
+        }
+
+        .planner-bottom .btn-primary {
+            display: inline-block;
+            padding: 14px 23px;
+            background: var(--gold);
+            color: var(--forest);
+            text-decoration: none;
+        }
+
+        /* FOOTER */
+
+        .footer {
+            padding: 35px 7%;
+            text-align: center;
+            background: var(--forest-dark);
+            color: var(--ivory);
+        }
+
+        .footer > p {
+            font-size: 13px;
+            line-height: 1.8;
+        }
+
+        /* ======================================
+           TABLET
+        ====================================== */
+
+        @media (max-width: 950px) {
+            .planner-layout {
+                grid-template-columns: minmax(0, 1fr);
+                gap: 30px;
+                padding: 35px 5%;
+            }
+
+            .planner-form {
+                padding: 30px;
+            }
+
+            .planner-side > img {
+                height: 320px;
+            }
+
+            #itinerary-results #plan-days {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        /* ======================================
+           MOBILE
+        ====================================== */
+
+        @media (max-width: 600px) {
+            .planner-layout {
+                padding: 25px 16px;
+                gap: 25px;
+            }
+
+            .planner-form {
+                padding: 22px 17px;
+            }
+
+            .planner-form h2 {
+                font-size: 2rem;
+            }
+
+            .planner-description {
+                font-size: 13px;
+            }
+
+            .planner-form fieldset.interest-options {
+                margin: 28px 0 24px !important;
+                padding: 22px 16px 24px !important;
+            }
+
+            .interest-heading {
+                margin-bottom: 15px;
+                font-size: 15px;
+            }
+
+            .planner-form fieldset.interest-options label {
+                gap: 11px;
+                padding: 7px 0;
+                font-size: 14px;
+            }
+
+            .planner-form #trip-days {
+                max-width: 100%;
+            }
+
+            .planner-button {
+                width: 100%;
+                padding: 14px 12px;
+                font-size: 14px;
+            }
+
+            .planner-side > img {
+                height: 250px;
+            }
+
+            .planner-side-copy {
+                padding: 24px 20px;
+            }
+
+            #itinerary-results {
+                padding: 48px 18px;
+            }
+
+            #itinerary-results .results-heading h2 {
+                font-size: 2.4rem;
+            }
+
+            #itinerary-results #plan-days {
+                grid-template-columns: minmax(0, 1fr);
+                gap: 18px;
+            }
+
+            #itinerary-results #plan-days > * {
+                padding: 22px !important;
+            }
+
+            .planner-bottom {
+                padding: 50px 20px;
+            }
+        }
+
+        /* PRINTING */
+
+        @media print {
+            .navbar,
+            .planner-hero,
+            .planner-layout,
+            .planner-bottom,
+            .footer,
+            #itinerary-results #print-plan {
+                display: none !important;
+            }
+
+            #itinerary-results {
+                display: block !important;
+                padding: 0 !important;
+                background: white !important;
+                color: #173d32 !important;
+            }
+
+            #itinerary-results .results-heading h2,
+            #itinerary-results #plan-summary,
+            #itinerary-results .results-note {
+                color: #173d32 !important;
+            }
+
+            #itinerary-results #plan-days {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            #itinerary-results #plan-days > * {
+                break-inside: avoid;
+                box-shadow: none;
+                border: 1px solid #ccc !important;
+                background: white !important;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header class="navbar">
+
+    <a href="index.html" class="logo">
+        Somewhere <span>in Kashmir.</span>
+    </a>
+
+    <button class="menu-toggle"
+            type="button"
+            aria-label="Toggle navigation"
+            aria-expanded="false">
+        ☰
+    </button>
+
+    <nav class="nav-links" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="story.html">My Story</a>
+        <a href="destinations.html">Destinations</a>
+        <a href="hidden-gems.html">Hidden Gems</a>
+        <a href="itinerary.html" class="nav-cta active">
+            Plan Your Trip ↗
+        </a>
+    </nav>
+
+</header>
+
+<main>
+
+    <!-- PLANNER HERO -->
+
+    <section class="planner-hero">
+
+        <p class="eyebrow">YOUR JOURNEY, YOUR WAY</p>
+
+        <h1>
+            Make every day<br>
+            in Kashmir count.
+        </h1>
+
+        <p>
+            Tell us how long you have and what you love.
+            We'll help you sketch out a trip worth remembering.
+        </p>
+
+    </section>
+
+    <!-- PLANNER FORM AND IMAGE -->
+
+    <section class="planner-layout">
+
+        <div class="planner-form">
+
+            <p class="eyebrow">LET'S PLAN YOUR ESCAPE</p>
+
+            <h2>Your Kashmir, your pace.</h2>
+
+            <p class="planner-description">
+                Choose your available days and the experiences you want.
+                We'll create a suggested itinerary you can adjust.
+            </p>
+
+            <label for="trip-days">
+                How many days do you have?
+            </label>
+
+            <select id="trip-days">
+                <option value="3">3 days</option>
+                <option value="4">4 days</option>
+                <option value="5" selected>5 days</option>
+                <option value="6">6 days</option>
+                <option value="7">7 days</option>
+            </select>
+
+            <fieldset class="interest-options">
+
+                <legend>Trip interests</legend>
+
+                <p class="interest-heading">
+                    What would you love to experience?
+                </p>
+
+                <label>
+                    <input type="checkbox"
+                           name="interest"
+                           value="nature"
+                           checked>
+                    <span>Nature &amp; scenic valleys</span>
+                </label>
+
+                <label>
+                    <input type="checkbox"
+                           name="interest"
+                           value="culture">
+                    <span>Culture, heritage &amp; gardens</span>
+                </label>
+
+                <label>
+                    <input type="checkbox"
+                           name="interest"
+                           value="adventure">
+                    <span>Adventure &amp; mountains</span>
+                </label>
+
+                <label>
+                    <input type="checkbox"
+                           name="interest"
+                           value="relaxation">
+                    <span>Lakeside relaxation</span>
+                </label>
+
+                <label>
+                    <input type="checkbox"
+                           name="interest"
+                           value="hidden">
+                    <span>Hidden gems &amp; quieter places</span>
+                </label>
+
+            </fieldset>
+
+            <button type="button"
+                    class="btn-primary planner-button"
+                    id="generate-plan">
+                Create my itinerary ↗
+            </button>
+
+            <p class="planner-note">
+                This is a suggested outline, not a live booking or route
+                service. Travel times and access can vary by season
+                and local conditions.
+            </p>
+
+        </div>
+
+        <!-- SIDE PANEL -->
+
+        <div class="planner-side">
+
+            <img
+                src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1000&q=85"
+                alt="Mountain scenery in the Himalayas"
+                loading="lazy">
+
+            <div class="planner-side-copy">
+
+                <p class="eyebrow">A THOUGHT BEFORE YOU GO</p>
+
+                <h3>You don't have to see everything.</h3>
+
+                <p>
+                    A good trip isn't about ticking off every attraction.
+                    It's about choosing places you can genuinely enjoy
+                    without spending the entire day travelling between them.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- GENERATED ITINERARY RESULTS -->
+
+    <section class="itinerary-results"
+             id="itinerary-results"
+             aria-live="polite"
+             hidden>
+
+        <div class="results-heading">
+
+            <p class="eyebrow">YOUR TRIP OUTLINE</p>
+
+            <h2 id="plan-title">Your Kashmir itinerary</h2>
+
+            <p id="plan-summary"></p>
+
+        </div>
+
+        <div id="plan-days" class="plan-days"></div>
+
+        <p class="results-note">
+            Before travelling, verify opening times, road conditions,
+            weather, permits and local access restrictions.
+        </p>
+
+        <button type="button"
+                class="btn-primary"
+                id="print-plan">
+            Print / Save as PDF ↗
+        </button>
+
+    </section>
+
+    <!-- BOTTOM CTA -->
+
+    <section class="planner-bottom">
+
+        <p class="eyebrow">STILL CURIOUS?</p>
+
+        <h2>Discover somewhere unexpected.</h2>
+
+        <p>
+            Explore beyond the usual stops and find your own Kashmir.
+        </p>
+
+        <a href="hidden-gems.html" class="btn-primary">
+            Explore hidden gems ↗
+        </a>
+
+    </section>
+
+</main>
+
+<!-- FOOTER -->
+
+<footer class="footer">
+
+    <a href="index.html" class="logo">
+        Somewhere <span>in Kashmir.</span>
+    </a>
+
+    <p>
+        Made with love for the mountains and the memories they create.
+    </p>
+
+</footer>
+
+</body>
+</html>

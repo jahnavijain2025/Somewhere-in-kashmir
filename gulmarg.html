@@ -1,0 +1,462 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Discover Gulmarg |Somewhere in Kashmir</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+
+    <style>
+        .destination-page {
+            background: #f5f1e8;
+            color: #173b35;
+        }
+
+        .destination-page .place-hero {
+            min-height: 72vh;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            padding: 90px 9%;
+            color: white;
+            background:
+                linear-gradient(90deg, rgba(8,30,25,.75), rgba(8,30,25,.12)),
+                url("https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=2000&q=85")
+                center / cover no-repeat;
+        }
+
+        .destination-page .place-hero h1 {
+            font-size: clamp(3.8rem, 9vw, 7rem);
+            line-height: 1;
+            margin: 12px 0;
+            color: white;
+        }
+
+        .destination-page .place-hero > p:not(.eyebrow) {
+            font-size: 1.2rem;
+            color: white;
+        }
+
+        .destination-page .eyebrow {
+            color: #c79d55;
+            letter-spacing: 2px;
+            font-size: .75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .destination-page .place-intro {
+            max-width: 950px;
+            margin: auto;
+            padding: 80px 8%;
+            text-align: center;
+        }
+
+        .destination-page .place-intro h2,
+        .destination-page .place-section-heading h2,
+        .destination-page .place-cta h2 {
+            font-family: Georgia, "Times New Roman", serif;
+            font-weight: 400;
+            font-size: clamp(2rem, 4vw, 3.2rem);
+            margin: 14px 0 20px;
+        }
+
+        .destination-page .place-intro p:last-child,
+        .destination-page .place-card p,
+        .destination-page .place-cta p {
+            color: #58655f;
+            line-height: 1.9;
+            font-size: 1.02rem;
+        }
+
+        .destination-page .place-attractions {
+            padding: 25px 8% 80px;
+        }
+
+        .destination-page .place-section-heading {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .destination-page .place-card {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+            align-items: center;
+            gap: 40px;
+            max-width: 1450px;
+            margin: auto;
+            padding: 38px;
+            border-bottom: 1px solid #dcd5c8;
+            background: #f5f1e8;
+            border-radius: 12px;
+        }
+
+        .destination-page .place-card img {
+            width: 100%;
+            height: 330px;
+            display: block;
+            object-fit: cover;
+            object-position: center;
+            background: #e3ded3;
+            border-radius: 7px;
+        }
+
+        .destination-page .place-card h3 {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: clamp(1.8rem, 3vw, 2.5rem);
+            font-weight: 400;
+            margin: 18px 0;
+        }
+
+        .destination-page .photo-credit {
+            display: block;
+            margin-top: 7px;
+            font-size: .72rem;
+            color: #77766f;
+        }
+
+        .destination-page .photo-credit a {
+            color: inherit;
+        }
+
+        .destination-page .place-cta {
+            text-align: center;
+            padding: 75px 8%;
+            background: #e9e2d5;
+        }
+
+        .destination-page .place-cta p {
+            margin-bottom: 25px;
+        }
+
+        @media (max-width: 760px) {
+            .destination-page .place-hero {
+                min-height: 60vh;
+                padding: 75px 7%;
+            }
+
+            .destination-page .place-intro {
+                padding: 60px 7%;
+            }
+
+            .destination-page .place-attractions {
+                padding: 20px 6% 55px;
+            }
+
+            .destination-page .place-card {
+                grid-template-columns: minmax(0, 1fr);
+                gap: 18px;
+                padding: 22px 0;
+            }
+
+            .destination-page .place-card img {
+                height: 260px;
+            }
+        }
+    </style>
+</head>
+
+<body class="destination-page">
+
+<header class="navbar">
+    <a href="index.html" class="logo">Somewhere <span>in Kashmir.</span></a>
+
+    <button class="menu-toggle"
+            aria-label="Toggle navigation"
+            aria-expanded="false">☰</button>
+
+    <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="story.html">My Story</a>
+        <a href="destinations.html" class="active">Destinations</a>
+        <a href="hidden-gems.html">Hidden Gems</a>
+        <a href="itinerary.html" class="nav-cta">Plan Your Trip ↗</a>
+    </nav>
+</header>
+
+<main>
+
+    <section class="place-hero gulmarg-hero">
+        <p class="eyebrow">02 / THE ALPINE ESCAPE</p>
+        <h1>Gulmarg</h1>
+        <p>Meadows, snow peaks &amp; mountain adventures.</p>
+        <a href="#attractions" class="btn-primary">Explore Gulmarg ↓</a>
+    </section>
+
+    <section class="place-intro">
+        <p class="eyebrow">WHERE THE MOUNTAINS OPEN UP</p>
+        <h2>A landscape made for adventure.</h2>
+        <p>
+            From the famous Gondola ride to high-altitude lakes and quiet
+            heritage landmarks, Gulmarg changes with the seasons. Visit
+            for snow-covered slopes in winter or green meadows and mountain
+            walks in warmer months. Check weather, transport and activity
+            availability before setting out.
+        </p>
+    </section>
+
+    <section class="place-attractions" id="attractions">
+
+        <div class="place-section-heading">
+            <p class="eyebrow">PLACES TO DISCOVER</p>
+            <h2>Make time for these.</h2>
+        </div>
+
+        <!-- 01: Gulmarg Gondola -->
+        <article class="place-card">
+            <div>
+                <img
+                    src="https://commons.wikimedia.org/wiki/Special:FilePath/Gondola_down_to_Gulmarg.jpg?width=1400"
+                    alt="Gulmarg Gondola cable car above the mountain landscape"
+                    loading="lazy"
+                    onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1400&q=85';">
+
+                <small class="photo-credit">
+                    <a href="https://commons.wikimedia.org/wiki/Category:Gulmarg_Gondola"
+                       target="_blank" rel="noopener">
+                        View photo source
+                    </a>
+                </small>
+            </div>
+
+            <div>
+                <span class="eyebrow">01 / ABOVE THE MEADOWS</span>
+                <h3>Gulmarg Gondola</h3>
+                <p>
+                    Ride one of Kashmir's best-known cable cars for sweeping
+                    views of the surrounding mountains. The ride operates in
+                    stages and may be affected by weather, so check ticket
+                    availability and operating conditions before visiting.
+                </p>
+            </div>
+        </article>
+
+        <!-- 02: Apharwat Peak -->
+        <article class="place-card">
+            <div>
+                <img
+                    src="https://commons.wikimedia.org/wiki/Special:FilePath/Apharwat_Peak.JPG?width=1400"
+                    alt="Apharwat Peak in the Gulmarg mountain region"
+                    loading="lazy"
+                    onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1454496522488-7a8e488e8606?auto=format&fit=crop&w=1400&q=85';">
+
+                <small class="photo-credit">
+                    <a href="https://commons.wikimedia.org/wiki/Category:Apharwat_Peak"
+                       target="_blank" rel="noopener">
+                        View photo source
+                    </a>
+                </small>
+            </div>
+
+            <div>
+                <span class="eyebrow">02 / HIGH-ALTITUDE VIEWS</span>
+                <h3>Apharwat Peak</h3>
+                <p>
+                    A high mountain destination reached via the upper Gondola
+                    stage when services are operating. The landscape can be
+                    snowy and dramatic, but conditions change quickly. Follow
+                    local guidance and do not venture beyond permitted areas.
+                </p>
+            </div>
+        </article>
+
+        <!-- 03: Alpather Lake -->
+        <article class="place-card">
+            <div>
+                <img
+                    src="https://commons.wikimedia.org/wiki/Special:FilePath/Alpather_lake%2CGulmarg.jpg?width=1400"
+                    alt="Alpather Lake near Gulmarg among the high mountains"
+                    loading="lazy"
+                    onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1400&q=85';">
+
+                <small class="photo-credit">
+                    <a href="https://commons.wikimedia.org/wiki/Category:Alpather_Lake"
+                       target="_blank" rel="noopener">
+                        View photo source
+                    </a>
+                </small>
+            </div>
+
+            <div>
+                <span class="eyebrow">03 / THE ALPINE LAKE</span>
+                <h3>Alpather Lake</h3>
+                <p>
+                    A high-altitude lake near the Apharwat range, known for
+                    its striking mountain setting. The route is seasonal and
+                    can be demanding, so check trail conditions and use a
+                    local guide when appropriate.
+                </p>
+            </div>
+        </article>
+
+        <!-- 04: Gulmarg Golf Course -->
+        <article class="place-card">
+            <div>
+                <img
+                    src="https://commons.wikimedia.org/wiki/Special:FilePath/Gulmarg_Golf_Club.jpg?width=1400"
+                    alt="Gulmarg Golf Club and its surrounding mountain landscape"
+                    loading="lazy"
+                    onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=1400&q=85';">
+
+                <small class="photo-credit">
+                    <a href="https://commons.wikimedia.org/wiki/Category:Gulmarg"
+                       target="_blank" rel="noopener">
+                        View Gulmarg photo sources
+                    </a>
+                </small>
+            </div>
+
+            <div>
+                <span class="eyebrow">04 / OPEN GREEN SPACES</span>
+                <h3>Gulmarg Golf Course</h3>
+                <p>
+                    Set among broad meadows and tall trees, Gulmarg's golf
+                    course is a beautiful place to appreciate the open
+                    landscape. Access and playing arrangements depend on
+                    the season and local operations.
+                </p>
+            </div>
+        </article>
+
+        <!-- 05: Drung Waterfall -->
+        <article class="place-card">
+            <div>
+                <img
+                    src="https://commons.wikimedia.org/wiki/Special:FilePath/Waterfall_of_gulmarg.jpg?width=1400"
+                    alt="Waterfall and flowing mountain water in the Gulmarg region"
+                    loading="lazy"
+                    onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?auto=format&fit=crop&w=1400&q=85';">
+
+                <small class="photo-credit">
+                    <a href="https://commons.wikimedia.org/wiki/File:Waterfall_of_gulmarg.jpg"
+                       target="_blank" rel="noopener">
+                        View photo source
+                    </a>
+                </small>
+            </div>
+
+            <div>
+                <span class="eyebrow">05 / WATER &amp; ROCK</span>
+                <h3>Drung Waterfall</h3>
+                <p>
+                    A popular waterfall excursion near the Gulmarg area,
+                    especially atmospheric when the surrounding landscape
+                    is covered in snow. Water flow and winter access vary
+                    by season; confirm road and local transport conditions
+                    before going.
+                </p>
+            </div>
+        </article>
+
+        <!-- 06: St Mary's Church -->
+        <article class="place-card">
+            <div>
+                <img
+                    src="https://commons.wikimedia.org/wiki/Special:FilePath/St._Mary%27s_Church%2C_Gulmarg.jpg?width=1400"
+                    alt="Historic St Mary's Church in Gulmarg"
+                    loading="lazy"
+                    onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1400&q=85';">
+
+                <small class="photo-credit">
+                    <a href="https://commons.wikimedia.org/wiki/Category:St._Mary%27s_Church,_Gulmarg"
+                       target="_blank" rel="noopener">
+                        View photo source
+                    </a>
+                </small>
+            </div>
+
+            <div>
+                <span class="eyebrow">06 / COLONIAL HERITAGE</span>
+                <h3>St. Mary's Church</h3>
+                <p>
+                    A historic church dating to the early twentieth century,
+                    surrounded by Gulmarg's alpine scenery. Its stone exterior
+                    and peaceful setting offer a different side of the
+                    destination beyond outdoor adventures.
+                </p>
+            </div>
+        </article>
+
+        <!-- 07: Maharani Temple -->
+        <article class="place-card">
+            <div>
+                <img
+                    src="https://commons.wikimedia.org/wiki/Special:FilePath/Maharani_Temple%2C_Gulmarg.jpg?width=1400"
+                    alt="Maharani Temple, also known as the Shiva Temple, in Gulmarg"
+                    loading="lazy"
+                    onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1605649487212-47bdab064df7?auto=format&fit=crop&w=1400&q=85';">
+
+                <small class="photo-credit">
+                    <a href="https://commons.wikimedia.org/wiki/File:Maharani_Temple,_Gulmarg.jpg"
+                       target="_blank" rel="noopener">
+                        View photo source
+                    </a>
+                </small>
+            </div>
+
+            <div>
+                <span class="eyebrow">07 / SACRED LANDMARK</span>
+                <h3>Maharani Temple</h3>
+                <p>
+                    Also known as the Shiva Temple, this distinctive shrine
+                    stands on a small rise in Gulmarg and is visible from
+                    many parts of the meadow. It is a memorable stop for
+                    its architecture and setting.
+                </p>
+            </div>
+        </article>
+
+        <!-- 08: Baba Reshi Shrine -->
+        <article class="place-card">
+            <div>
+                <img
+                    src="https://commons.wikimedia.org/wiki/Special:FilePath/Baba_Reshi_shrine_01.jpg?width=1400"
+                    alt="Baba Reshi shrine in the Kashmir region near Gulmarg"
+                    loading="lazy"
+                    onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&fit=crop&w=1400&q=85';">
+
+                <small class="photo-credit">
+                    <a href="https://commons.wikimedia.org/wiki/File:Baba_Reshi_shrine_01.jpg"
+                       target="_blank" rel="noopener">
+                        View photo source
+                    </a>
+                </small>
+            </div>
+
+            <div>
+                <span class="eyebrow">08 / SPIRITUAL HERITAGE</span>
+                <h3>Baba Reshi Shrine</h3>
+                <p>
+                    A revered shrine known for its traditional architecture
+                    and peaceful surroundings. Located below the Gulmarg
+                    area, it can be included as a heritage stop when road
+                    and visitor access are suitable.
+                </p>
+            </div>
+        </article>
+
+    </section>
+
+    <section class="place-cta">
+        <p class="eyebrow">KEEP EXPLORING</p>
+        <h2>Where will you go next?</h2>
+        <p>Follow the rivers and valleys deeper into Kashmir.</p>
+        <a href="destinations.html" class="btn-primary">
+            Back to destinations ↗
+        </a>
+    </section>
+
+</main>
+
+<footer class="footer">
+    <a href="index.html" class="logo">Somewhere <span>in Kashmir.</span></a>
+    <p>Made with love for the mountains and the memories they create.</p>
+</footer>
+
+</body>
+</html>

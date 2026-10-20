@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore Srinagar, Kashmir — Dal Lake, Mughal gardens, historic shrines and Himalayan wildlife.">
+    <title>Discover Srinagar | Somewhere in Kashmir</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* SRINAGAR PAGE */
+
+        .srinagar-page {
+            background: #173b35;
+            color: #173b35;
+        }
+
+        /* HERO BACKGROUND */
+
+        .srinagar-page .place-hero {
+            min-height: 85vh;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            padding: 120px 9%;
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(7, 28, 25, 0.65) 0%,
+                    rgba(7, 28, 25, 0.28) 55%,
+                    rgba(7, 28, 25, 0.08) 100%
+                ),
+                url("https://images.pexels.com/photos/20283818/pexels-photo-20283818.jpeg?auto=compress&cs=tinysrgb&w=2400")
+                center 55% / cover no-repeat !important;
+            color: white;
+        }
+
+        /* ATTRACTIVE HERO HEADING */
+
+        .srinagar-page .place-hero h1 {
+            font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+            font-size: clamp(5rem, 10vw, 9.5rem);
+            font-weight: 400;
+            letter-spacing: -4px;
+            line-height: 0.95;
+            margin: 24px 0 28px;
+            color: #fffaf0;
+            text-shadow:
+                0 3px 8px rgba(0, 0, 0, 0.18),
+                0 12px 35px rgba(0, 0, 0, 0.22);
+        }
+
+        .srinagar-page .place-hero .eyebrow {
+            color: #e7c58b;
+            font-size: 0.78rem;
+            font-weight: 600;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .srinagar-page .place-hero > p:not(.eyebrow) {
+            color: #fffaf0;
+            font-size: clamp(1rem, 1.5vw, 1.3rem);
+            letter-spacing: 0.4px;
+            line-height: 1.7;
+            margin-bottom: 22px;
+            text-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        /* INTRODUCTION CARD */
+
+        .srinagar-page .place-intro {
+            width: calc(100% - 40px);
+            max-width: 1050px;
+            margin: 70px auto;
+            padding: 70px 75px;
+            text-align: center;
+            background: #f5f1e8;
+            color: #173b35;
+            border: 1px solid rgba(199, 157, 85, 0.3);
+            border-radius: 14px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+            box-sizing: border-box;
+        }
+
+        .srinagar-page .place-intro .eyebrow,
+        .srinagar-page .place-section-heading .eyebrow {
+            color: #a47732;
+            font-size: 0.85rem;
+            letter-spacing: 3px;
+        }
+
+        .srinagar-page .place-intro h2,
+        .srinagar-page .place-section-heading h2,
+        .srinagar-page .place-cta h2 {
+            font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+            font-weight: 400;
+            font-size: clamp(2.8rem, 5vw, 4.2rem);
+            line-height: 1.12;
+            margin: 20px 0 28px;
+            color: #173b35;
+        }
+
+        .srinagar-page .place-intro > p:last-child {
+            max-width: 760px;
+            margin: 0 auto;
+            color: #58655f;
+            font-size: 1.1rem;
+            line-height: 2;
+        }
+
+        /* PLACES TO DISCOVER CARD */
+
+        .srinagar-page .place-attractions {
+            width: calc(100% - 40px);
+            max-width: 1150px;
+            margin: 70px auto;
+            padding: 55px 40px;
+            background: #f5f1e8;
+            color: #173b35;
+            border: 1px solid rgba(199, 157, 85, 0.3);
+            border-radius: 14px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+            box-sizing: border-box;
+        }
+
+        .srinagar-page .place-section-heading {
+            text-align: center;
+            margin: 0 auto 45px;
+        }
+
+        .srinagar-page .place-section-heading h2 {
+            margin-top: 18px;
+            margin-bottom: 0;
+        }
+
+        /* ATTRACTION CARDS */
+
+        .srinagar-page .place-card {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+            align-items: center;
+            gap: 40px;
+            max-width: 100%;
+            margin: 0 auto 30px;
+            padding: 30px;
+            background: #fffdf7;
+            border: 1px solid #e3dccf;
+            border-radius: 10px;
+            box-shadow: 0 5px 18px rgba(23, 59, 53, 0.06);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+            box-sizing: border-box;
+        }
+
+        .srinagar-page .place-card:last-child {
+            margin-bottom: 0;
+        }
+
+        .srinagar-page .place-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 28px rgba(23, 59, 53, 0.12);
+        }
+
+        .srinagar-page .place-card img {
+            display: block;
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            object-position: center;
+            background: #e3ded3;
+            border-radius: 5px;
+        }
+
+        .srinagar-page .hazratbal-photo {
+            height: 300px;
+            object-fit: contain;
+            object-position: center;
+            background: #e8e2d7;
+        }
+
+        .srinagar-page .place-card .eyebrow {
+            color: #a47732;
+            font-size: 0.72rem;
+            letter-spacing: 2px;
+        }
+
+        .srinagar-page .place-card h3 {
+            font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+            font-size: clamp(1.8rem, 3vw, 2.6rem);
+            font-weight: 400;
+            line-height: 1.2;
+            margin: 18px 0;
+            color: #173b35;
+        }
+
+        .srinagar-page .place-card p {
+            color: #58655f;
+            font-size: 1rem;
+            line-height: 1.9;
+            margin-bottom: 0;
+        }
+
+        .srinagar-page .photo-credit {
+            display: block;
+            margin-top: 10px;
+            color: #77766f;
+            font-size: 0.72rem;
+            line-height: 1.6;
+        }
+
+        .srinagar-page .photo-credit a {
+            color: #58655f;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+
+        /* CLOSING SECTION */
+
+        .srinagar-page .place-cta {
+            text-align: center;
+            padding: 85px 8%;
+            margin-top: 70px;
+            background: #e9e2d5;
+            color: #173b35;
+        }
+
+        .srinagar-page .place-cta h2 {
+            margin-bottom: 20px;
+        }
+
+        .srinagar-page .place-cta p {
+            color: #58655f;
+            margin-bottom: 28px;
+            line-height: 1.8;
+        }
+
+        /* MOBILE RESPONSIVENESS */
+
+        @media (max-width: 760px) {
+            .srinagar-page .place-hero {
+                min-height: 70vh;
+                padding: 100px 7%;
+                background-position: center center !important;
+            }
+
+            .srinagar-page .place-hero h1 {
+                font-size: clamp(4rem, 15vw, 6rem);
+                letter-spacing: -2px;
+            }
+
+            .srinagar-page .place-hero .eyebrow {
+                letter-spacing: 3px;
+            }
+
+            .srinagar-page .place-intro {
+                width: calc(100% - 32px);
+                margin: 35px auto;
+                padding: 40px 24px;
+            }
+
+            .srinagar-page .place-intro h2,
+            .srinagar-page .place-section-heading h2,
+            .srinagar-page .place-cta h2 {
+                font-size: clamp(2.3rem, 9vw, 3.2rem);
+            }
+
+            .srinagar-page .place-intro > p:last-child {
+                font-size: 1rem;
+                line-height: 1.85;
+            }
+
+            .srinagar-page .place-attractions {
+                width: calc(100% - 32px);
+                margin: 35px auto;
+                padding: 32px 18px;
+            }
+
+            .srinagar-page .place-section-heading {
+                margin-bottom: 30px;
+            }
+
+            .srinagar-page .place-card {
+                grid-template-columns: 1fr;
+                gap: 20px;
+                padding: 18px;
+                margin-bottom: 22px;
+            }
+
+            .srinagar-page .place-card img,
+            .srinagar-page .hazratbal-photo {
+                height: 250px;
+            }
+
+            .srinagar-page .place-card h3 {
+                font-size: 2rem;
+                margin: 14px 0;
+            }
+
+            .srinagar-page .place-cta {
+                padding: 60px 7%;
+                margin-top: 40px;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .srinagar-page .place-intro {
+                padding: 32px 18px;
+            }
+
+            .srinagar-page .place-attractions {
+                padding: 28px 12px;
+            }
+
+            .srinagar-page .place-card {
+                padding: 14px;
+            }
+        }
+    </style>
+
+    <script src="script.js" defer></script>
+</head>
+
+<body class="srinagar-page">
+
+<header class="navbar">
+    <a href="index.html" class="logo">Somewhere <span>in Kashmir</span></a>
+
+    <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
+
+    <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="story.html">My Story</a>
+        <a href="destinations.html" class="active">Destinations</a>
+        <a href="hidden-gems.html">Hidden Gems</a>
+        <a href="itinerary.html" class="nav-cta">Plan Your Trip ↗</a>
+    </nav>
+</header>
+
+<main>
+
+    <section class="place-hero srinagar-hero">
+        <p class="eyebrow">01 / THE LAKESIDE ESCAPE</p>
+        <h1>Srinagar</h1>
+        <p>Lakes, gardens &amp; timeless charm.</p>
+        <a href="#attractions" class="btn-primary">Explore the city ↓</a>
+    </section>
+
+    <section class="place-intro">
+        <p class="eyebrow">THE HEART OF KASHMIR</p>
+        <h2>A city best experienced slowly.</h2>
+        <p>
+            From the gentle movement of shikaras on Dal Lake to the
+            terraced Mughal gardens overlooking the water, Srinagar
+            brings together nature, history and everyday Kashmiri life.
+            Leave time to wander, enjoy the views and experience the city
+            beyond a checklist of attractions.
+        </p>
+    </section>
+
+    <section class="place-attractions" id="attractions">
+        <div class="place-section-heading">
+            <p class="eyebrow">PLACES TO DISCOVER</p>
+            <h2>Make time for these.</h2>
+        </div>
+
+        <article class="place-card">
+            <div>
+                <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Houseboats_on_Dal_Lake,_Srinagar_%2CKashmir_India.jpg?width=1400"
+                     alt="Traditional wooden houseboats on Dal Lake in Srinagar, Kashmir"
+                     loading="lazy">
+                <small class="photo-credit">Photo:
+                    <a href="https://commons.wikimedia.org/wiki/File:Houseboats_on_Dal_Lake,_Srinagar_%2CKashmir_India.jpg" target="_blank" rel="noopener">Wikimedia Commons</a>
+                </small>
+            </div>
+            <div>
+                <span class="eyebrow">01 / LAKE EXPERIENCE</span>
+                <h3>Dal Lake</h3>
+                <p>Take a shikara ride across Srinagar's iconic lake, admire the traditional houseboats and watch the mountains reflect on the water. The Floating Vegetable Market is an early-morning experience, often visited around 5 AM; confirm local arrangements before going.</p>
+            </div>
+        </article>
+
+        <article class="place-card">
+            <div>
+                <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Sunrse_view_of_Nagin_lake_%2CSrinagar%2C%2CKashmir.jpg?width=1400"
+                     alt="Nigeen Lake in Srinagar with peaceful waters and lakeside scenery"
+                     loading="lazy">
+                <small class="photo-credit">Photo:
+                    <a href="https://commons.wikimedia.org/wiki/Category:Nigeen_Lake" target="_blank" rel="noopener">Wikimedia Commons — Nigeen Lake</a>
+                </small>
+            </div>
+            <div>
+                <span class="eyebrow">02 / QUIETER WATERS</span>
+                <h3>Nigeen Lake</h3>
+                <p>A quieter alternative to the busier parts of Dal Lake, Nigeen is known for its houseboats, shikaras and relaxed lakeside atmosphere. Spend time here if you prefer a slower pace and a more peaceful view of Srinagar.</p>
+            </div>
+        </article>
+
+        <article class="place-card">
+            <div>
+                <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Nishat_Bagh%2C_A_Mughal_Garden_in_Srinagar.jpg?width=1200"
+                     alt="Nishat Bagh, the terraced Mughal garden beside Dal Lake in Srinagar"
+                     loading="lazy">
+                <small class="photo-credit">Photo:
+                    <a href="https://commons.wikimedia.org/wiki/File:Nishat_Bagh,_A_Mughal_Garden_in_Srinagar.jpg" target="_blank" rel="noopener">Wikimedia Commons</a>
+                </small>
+            </div>
+            <div>
+                <span class="eyebrow">03 / MUGHAL HERITAGE</span>
+                <h3>Nishat Bagh</h3>
+                <p>Known as the Garden of Joy, Nishat Bagh is a historic terraced garden on the eastern side of Dal Lake. Walk past its landscaped terraces, water channels and flower beds, with views towards the lake and the surrounding Zabarwan hills.</p>
+            </div>
+        </article>
+
+        <article class="place-card">
+            <div>
+                <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Shalimar_Bagh%2C_Srinagar.jpg?width=1400"
+                     alt="Shalimar Bagh, the historic Mughal garden in Srinagar"
+                     loading="lazy">
+                <small class="photo-credit">Photo:
+                    <a href="https://commons.wikimedia.org/wiki/File:Shalimar_Bagh,_Srinagar.jpg" target="_blank" rel="noopener">Wikimedia Commons</a>
+                </small>
+            </div>
+            <div>
+                <span class="eyebrow">04 / ROYAL GARDENS</span>
+                <h3>Shalimar Bagh</h3>
+                <p>Built by Mughal emperor Jahangir, Shalimar Bagh is celebrated for its formal garden layout, tree-lined paths, water channels and historic pavilions. It offers a glimpse into Kashmir's Mughal-era garden design.</p>
+            </div>
+        </article>
+
+        <article class="place-card">
+            <div>
+                <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Chashme_Shahi_Garden_Srinagar.jpg?width=1400"
+                     alt="Chashme Shahi Garden in Srinagar, Kashmir"
+                     loading="lazy">
+                <small class="photo-credit">Photo:
+                    <a href="https://commons.wikimedia.org/wiki/File:Chashme_Shahi_Garden_Srinagar.jpg" target="_blank" rel="noopener">Wikimedia Commons</a>
+                </small>
+            </div>
+            <div>
+                <span class="eyebrow">05 / THE ROYAL SPRING</span>
+                <h3>Chashme Shahi</h3>
+                <p>This compact Mughal garden is associated with a natural spring and sits in the Zabarwan range above Dal Lake. Its terraces, greenery and mountain setting make it a lovely stop on a garden-focused day in Srinagar.</p>
+            </div>
+        </article>
+
+        <article class="place-card">
+            <div>
+                <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Pari_Mahal_in_Srinagar.jpg?width=1200"
+                     alt="The historic arched terraces of Pari Mahal overlooking Srinagar"
+                     loading="lazy">
+                <small class="photo-credit">Photo:
+                    <a href="https://commons.wikimedia.org/wiki/File:Pari_Mahal_in_Srinagar.jpg" target="_blank" rel="noopener">Wikimedia Commons</a>
+                </small>
+            </div>
+            <div>
+                <span class="eyebrow">06 / PANORAMIC VIEWS</span>
+                <h3>Pari Mahal</h3>
+                <p>Pari Mahal is a seven-terraced historic monument perched on the Zabarwan hills above Dal Lake. Explore its arched architecture and garden terraces, then enjoy sweeping views across Srinagar.</p>
+            </div>
+        </article>
+
+        <article class="place-card">
+            <div>
+                <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Shankaracharya_Temple.jpg?width=1400"
+                     alt="Shankaracharya Temple on the hill overlooking Srinagar, Kashmir"
+                     loading="lazy">
+                <small class="photo-credit">Photo:
+                    <a href="https://commons.wikimedia.org/wiki/File:Shankaracharya_Temple.jpg" target="_blank" rel="noopener">Wikimedia Commons</a>
+                </small>
+            </div>
+            <div>
+                <span class="eyebrow">07 / HISTORY &amp; SPIRITUALITY</span>
+                <h3>Shankaracharya Temple</h3>
+                <p>Dedicated to Lord Shiva, this historic hilltop temple stands above Srinagar and offers expansive views of the city and Dal Lake. Check current access, opening arrangements and visitor rules before your visit.</p>
+            </div>
+        </article>
+
+        <article class="place-card">
+            <div>
+                <img class="hazratbal-photo"
+                     src="https://commons.wikimedia.org/wiki/Special:FilePath/Hazratbal_Shrine_Srinagar_01.jpg?width=1600"
+                     alt="Hazratbal Shrine in Srinagar, showing the white shrine building"
+                     loading="lazy">
+                <small class="photo-credit">Photo:
+                    <a href="https://commons.wikimedia.org/wiki/File:Hazratbal_Shrine_Srinagar_01.jpg" target="_blank" rel="noopener">Wikimedia Commons</a>
+                </small>
+            </div>
+            <div>
+                <span class="eyebrow">08 / HISTORY &amp; SPIRITUALITY</span>
+                <h3>Hazratbal Shrine</h3>
+                <p>Located on the northern bank of Dal Lake, Hazratbal is an important Muslim shrine known for its white marble architecture and spiritual significance. Dress respectfully and follow local visitor guidance.</p>
+            </div>
+        </article>
+
+        <article class="place-card">
+            <div>
+                <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Dachigam_National_Park-_Jammu_%26_Kashmir.jpg?width=1400"
+                     alt="The forested landscape of Dachigam National Park near Srinagar, Kashmir"
+                     loading="lazy">
+                <small class="photo-credit">Photo:
+                    <a href="https://commons.wikimedia.org/wiki/File:Dachigam_National_Park-_Jammu_%26_Kashmir.jpg" target="_blank" rel="noopener">Wikimedia Commons</a>
+                </small>
+            </div>
+            <div>
+                <span class="eyebrow">09 / NATURE &amp; WILDLIFE</span>
+                <h3>Dachigam National Park</h3>
+                <p>A protected Himalayan landscape near Srinagar, Dachigam is known for its forests, mountain scenery and the endangered hangul, also called the Kashmir stag. Wildlife sightings are never guaranteed; check access and guided-visit options before planning.</p>
+            </div>
+        </article>
+
+        <article class="place-card">
+            <div>
+                <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Indira_Gandhi_Memorial_Tulip_Garden%2C_Srinagar.jpg?width=1400"
+                     alt="Rows of colourful tulips at the Indira Gandhi Memorial Tulip Garden in Srinagar"
+                     loading="lazy">
+                <small class="photo-credit">Photo:
+                    <a href="https://commons.wikimedia.org/wiki/File:Indira_Gandhi_Memorial_Tulip_Garden,_Srinagar.jpg" target="_blank" rel="noopener">Wikimedia Commons</a>
+                </small>
+            </div>
+            <div>
+                <span class="eyebrow">10 / SEASONAL BEAUTY</span>
+                <h3>Indira Gandhi Memorial Tulip Garden</h3>
+                <p>Set against the Zabarwan hills, this garden is famous for its colourful spring tulip displays. It is a seasonal attraction, so check the current bloom and opening dates before planning your visit.</p>
+            </div>
+        </article>
+
+    </section>
+
+    <section class="place-cta">
+        <p class="eyebrow">YOUR KASHMIR JOURNEY CONTINUES</p>
+        <h2>Where will you go next?</h2>
+        <p>Continue exploring Kashmir's mountains, rivers and valleys.</p>
+        <a href="destinations.html" class="btn-primary">Back to destinations ↗</a>
+    </section>
+
+</main>
+
+<footer class="footer">
+    <a href="index.html" class="logo">Somewhere <span>in Kashmir.</span></a>
+    <p>Made with love for the mountains and the memories they create.</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,579 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover Sonamarg, Kashmir — glaciers, alpine rivers and Himalayan landscapes.">
+
+    <title>Discover Sonamarg | Somewhere in Kashmir</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+
+    <style>
+        /* SHARED DESTINATION DESIGN */
+        .destination-page {
+            background: #173b35;
+            color: #173b35;
+        }
+
+        /* HERO */
+        .destination-page .place-hero {
+            min-height: 85vh;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            padding: 120px 9%;
+            box-sizing: border-box;
+            color: #fffaf0;
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(7, 28, 25, .65),
+                    rgba(7, 28, 25, .12)
+                ),
+                url("https://images.unsplash.com/photo-1595815771614-ade9d652a65d?auto=format&fit=crop&w=2400&q=85")
+                center 55% / cover no-repeat;
+        }
+
+        .destination-page .place-hero h1 {
+            font-family: "Playfair Display", Georgia, serif;
+            font-size: clamp(5rem, 10vw, 9.5rem);
+            font-weight: 400;
+            letter-spacing: -4px;
+            line-height: .95;
+            margin: 24px 0 28px;
+            color: #fffaf0;
+            text-shadow: 0 4px 25px rgba(0, 0, 0, .25);
+        }
+
+        .destination-page .place-hero .eyebrow {
+            color: #e7c58b;
+            font-size: .78rem;
+            font-weight: 600;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+        }
+
+        .destination-page .place-hero > p:not(.eyebrow) {
+            color: #fffaf0;
+            font-size: clamp(1rem, 1.5vw, 1.3rem);
+            line-height: 1.7;
+            margin-bottom: 22px;
+        }
+
+        .destination-page .eyebrow {
+            color: #a47732;
+            letter-spacing: 3px;
+            font-size: .8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        /* INTRODUCTION */
+        .destination-page .place-intro {
+            width: calc(100% - 40px);
+            max-width: 1150px;
+            margin: 70px auto;
+            padding: 55px 40px;
+            text-align: center;
+            background: #f5f1e8;
+            color: #173b35;
+            border: 1px solid rgba(199, 157, 85, .3);
+            border-radius: 14px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, .12);
+            box-sizing: border-box;
+        }
+
+        .destination-page .place-intro .eyebrow,
+        .destination-page .place-section-heading .eyebrow {
+            color: #a47732;
+            font-size: .85rem;
+            letter-spacing: 3px;
+            margin-bottom: 18px;
+        }
+
+        /* SECTION HEADINGS */
+        .destination-page .place-intro h2,
+        .destination-page .place-section-heading h2,
+        .destination-page .place-cta h2 {
+            font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+            font-size: clamp(2.3rem, 4vw, 3.2rem);
+            font-weight: 400;
+            line-height: 1.15;
+            margin: 14px 0 24px;
+            color: #173b35;
+        }
+
+        .destination-page .place-intro p:last-child {
+            max-width: 760px;
+            margin: 0 auto;
+            color: #58655f;
+            font-size: 1rem;
+            line-height: 1.9;
+        }
+
+        /* ATTRACTIONS SECTION */
+        .destination-page .place-attractions {
+            width: calc(100% - 40px);
+            max-width: 1150px;
+            margin: 70px auto;
+            padding: 55px 40px;
+            background: #f5f1e8;
+            color: #173b35;
+            border: 1px solid rgba(199, 157, 85, .3);
+            border-radius: 14px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, .12);
+            box-sizing: border-box;
+        }
+
+        .destination-page .place-section-heading {
+            text-align: center;
+            margin: 0 auto 40px;
+        }
+
+        .destination-page .place-section-heading h2 {
+            margin-top: 14px;
+            margin-bottom: 0;
+        }
+
+        /* ATTRACTION CARDS */
+        .destination-page .place-card {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+            align-items: center;
+            gap: 40px;
+            width: 100%;
+            margin: 0 auto 24px;
+            padding: 24px;
+            background: #fffdf7;
+            border: 1px solid #e3dccf;
+            border-radius: 10px;
+            box-shadow: 0 5px 18px rgba(23, 59, 53, .06);
+            box-sizing: border-box;
+            transition: transform .25s ease, box-shadow .25s ease;
+        }
+
+        .destination-page .place-card:last-child {
+            margin-bottom: 0;
+        }
+
+        .destination-page .place-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 28px rgba(23, 59, 53, .12);
+        }
+
+        .destination-page .place-card img {
+            display: block;
+            width: 100%;
+            height: 270px;
+            object-fit: cover;
+            object-position: center;
+            background: #e3ded3;
+            border-radius: 5px;
+        }
+
+        .destination-page .place-card .eyebrow {
+            color: #a47732;
+            font-size: .72rem;
+            letter-spacing: 2px;
+        }
+
+        .destination-page .place-card h3 {
+            font-family: "Playfair Display", Georgia, serif;
+            font-size: clamp(1.8rem, 3vw, 2.5rem);
+            font-weight: 400;
+            line-height: 1.2;
+            margin: 16px 0;
+            color: #173b35;
+        }
+
+        .destination-page .place-card p {
+            color: #58655f;
+            font-size: .95rem;
+            line-height: 1.9;
+            margin-bottom: 0;
+        }
+
+        /* IMAGE CREDITS */
+        .destination-page .photo-credit {
+            display: block;
+            margin-top: 8px;
+            color: #77766f;
+            font-size: .72rem;
+            line-height: 1.6;
+        }
+
+        .destination-page .photo-credit a {
+            color: #58655f;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+
+        /* FOOTER CTA */
+        .destination-page .place-cta {
+            text-align: center;
+            padding: 75px 8%;
+            margin-top: 70px;
+            background: #e9e2d5;
+            color: #173b35;
+        }
+
+        .destination-page .place-cta h2 {
+            margin-bottom: 20px;
+        }
+
+        .destination-page .place-cta p {
+            color: #58655f;
+            line-height: 1.8;
+            margin-bottom: 28px;
+        }
+
+        /* MOBILE RESPONSIVENESS */
+        @media (max-width: 760px) {
+            .destination-page .place-hero {
+                min-height: 70vh;
+                padding: 100px 7%;
+                background-position: center;
+            }
+
+            .destination-page .place-hero h1 {
+                font-size: clamp(4rem, 15vw, 6rem);
+                letter-spacing: -2px;
+            }
+
+            .destination-page .place-hero .eyebrow {
+                letter-spacing: 3px;
+            }
+
+            .destination-page .place-intro {
+                width: calc(100% - 32px);
+                margin: 35px auto;
+                padding: 40px 24px;
+            }
+
+            .destination-page .place-intro h2,
+            .destination-page .place-section-heading h2,
+            .destination-page .place-cta h2 {
+                font-size: clamp(2.1rem, 8vw, 3rem);
+            }
+
+            .destination-page .place-intro p:last-child {
+                font-size: 1rem;
+                line-height: 1.85;
+            }
+
+            .destination-page .place-attractions {
+                width: calc(100% - 32px);
+                margin: 35px auto;
+                padding: 32px 18px;
+            }
+
+            .destination-page .place-section-heading {
+                margin-bottom: 28px;
+            }
+
+            .destination-page .place-card {
+                grid-template-columns: 1fr;
+                gap: 20px;
+                padding: 18px;
+                margin-bottom: 22px;
+            }
+
+            .destination-page .place-card img {
+                height: 250px;
+            }
+
+            .destination-page .place-card h3 {
+                font-size: 2rem;
+                margin: 14px 0;
+            }
+
+            .destination-page .place-cta {
+                padding: 60px 7%;
+                margin-top: 40px;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .destination-page .place-intro {
+                padding: 32px 18px;
+            }
+
+            .destination-page .place-attractions {
+                padding: 28px 12px;
+            }
+
+            .destination-page .place-card {
+                padding: 14px;
+            }
+        }
+    </style>
+</head>
+
+<body class="destination-page">
+
+<header class="navbar">
+    <a href="index.html" class="logo">Somewhere <span>in Kashmir.</span></a>
+
+    <button class="menu-toggle"
+            aria-label="Toggle navigation"
+            aria-expanded="false">☰</button>
+
+    <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="story.html">My Story</a>
+        <a href="destinations.html" class="active">Destinations</a>
+        <a href="hidden-gems.html">Hidden Gems</a>
+        <a href="itinerary.html" class="nav-cta">Plan Your Trip ↗</a>
+    </nav>
+</header>
+
+<main>
+
+    <section class="place-hero sonamarg-hero">
+        <p class="eyebrow">04 / THE MEADOW OF GOLD</p>
+        <h1>Sonamarg</h1>
+        <p>Glaciers, alpine rivers &amp; wild mountain landscapes.</p>
+        <a href="#attractions" class="btn-primary">Explore Sonamarg ↓</a>
+    </section>
+
+    <section class="place-intro">
+        <p class="eyebrow">WHERE THE ROAD MEETS THE HIGH HIMALAYAS</p>
+        <h2>Follow the mountains into the wild.</h2>
+        <p>
+            Sonamarg is known for its broad alpine valley, glacier excursions
+            and access to high-altitude trekking country. Snow, road access
+            and transport arrangements vary throughout the year, so check
+            current local advice before planning excursions to remote areas.
+        </p>
+    </section>
+
+    <section class="place-attractions" id="attractions">
+
+        <div class="place-section-heading">
+            <p class="eyebrow">PLACES TO DISCOVER</p>
+            <h2>Make time for these.</h2>
+        </div>
+
+        <!-- 01: THAJIWAS GLACIER -->
+        <article class="place-card">
+            <div>
+                <img
+                    src="https://commons.wikimedia.org/wiki/Special:FilePath/Thajiwas_Glacier_%28J%26K%29.jpg?width=1400"
+                    alt="Thajiwas Glacier in the mountains near Sonamarg"
+                    loading="lazy">
+
+                <small class="photo-credit">
+                    <a href="https://commons.wikimedia.org/wiki/Category:Thajiwas_Glacier"
+                       target="_blank" rel="noopener">
+                        Photo source: Wikimedia Commons
+                    </a>
+                </small>
+            </div>
+
+            <div>
+                <span class="eyebrow">01 / THE GLACIER TRAIL</span>
+                <h3>Thajiwas Glacier</h3>
+                <p>
+                    A popular excursion from Sonamarg, Thajiwas is known for
+                    its snowfields and dramatic mountain scenery. The route
+                    and available activities depend on season and conditions;
+                    check local access and use authorised guides or transport
+                    where required.
+                </p>
+            </div>
+        </article>
+
+        <!-- 02: ZOJI LA PASS -->
+        <article class="place-card">
+            <div>
+                <img
+                    src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1400&q=85"
+                    alt="Snow-covered Himalayan mountain peaks"
+                    loading="lazy">
+
+                <small class="photo-credit">
+                    <a href="https://commons.wikimedia.org/wiki/File:Sonmarg,_Kashmir.jpg"
+                       target="_blank" rel="noopener">
+                        Explore Sonamarg photos on Wikimedia Commons
+                    </a>
+                </small>
+            </div>
+
+            <div>
+                <span class="eyebrow">02 / THE HIGH MOUNTAIN PASS</span>
+                <h3>Zoji La Pass &amp; Zero Point</h3>
+                <p>
+                    Zoji La is a dramatic high-altitude pass on the route
+                    between Kashmir and Ladakh. Snow, weather and road
+                    conditions can change rapidly, and travel may be
+                    restricted. Confirm current road status and authorised
+                    transport before planning this excursion.
+                </p>
+            </div>
+        </article>
+
+        <!-- 03: BALTAL VALLEY -->
+        <article class="place-card">
+            <div>
+                <img
+                    src="https://images.unsplash.com/photo-1595815771614-ade9d652a65d?auto=format&fit=crop&w=1400&q=85"
+                    alt="Alpine mountain valley with rugged Himalayan peaks"
+                    loading="lazy">
+
+                <small class="photo-credit">
+                    <a href="https://commons.wikimedia.org/wiki/Category:Baltal"
+                       target="_blank" rel="noopener">
+                        Explore Baltal photos on Wikimedia Commons
+                    </a>
+                </small>
+            </div>
+
+            <div>
+                <span class="eyebrow">03 / THE ALPINE VALLEY</span>
+                <h3>Baltal Valley</h3>
+                <p>
+                    Baltal lies beyond Sonamarg on the route towards Zoji La
+                    and is known as a base area for the Amarnath pilgrimage.
+                    Its high mountain setting is striking, but access can be
+                    affected by weather, security and pilgrimage arrangements.
+                </p>
+            </div>
+        </article>
+
+        <!-- 04: SINDH RIVER -->
+        <article class="place-card">
+            <div>
+                <img
+                    src="https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?auto=format&fit=crop&w=1400&q=85"
+                    alt="Water flowing through a lush mountain landscape"
+                    loading="lazy">
+
+                <small class="photo-credit">
+                    <a href="https://commons.wikimedia.org/wiki/Category:Sind_River_(Kashmir)"
+                       target="_blank" rel="noopener">
+                        Explore river photos on Wikimedia Commons
+                    </a>
+                </small>
+            </div>
+
+            <div>
+                <span class="eyebrow">04 / THE RIVER VALLEY</span>
+                <h3>Sindh River</h3>
+                <p>
+                    The Sindh River runs through the Sonamarg valley, adding
+                    movement and sound to the landscape. Enjoy the river
+                    from safe viewing spots and follow local guidance around
+                    fast currents and slippery banks.
+                </p>
+            </div>
+        </article>
+
+        <!-- 05: NILAGRAD RIVER -->
+        <article class="place-card">
+            <div>
+                <img
+                    src="https://images.unsplash.com/photo-1433086966358-54859d0ed716?auto=format&fit=crop&w=1400&q=85"
+                    alt="Waterfall and greenery in a mountain landscape"
+                    loading="lazy">
+
+                <small class="photo-credit">
+                    <a href="https://commons.wikimedia.org/wiki/Category:Nilagrad"
+                       target="_blank" rel="noopener">
+                        Explore Nilagrad photos on Wikimedia Commons
+                    </a>
+                </small>
+            </div>
+
+            <div>
+                <span class="eyebrow">05 / COLOURED WATERS</span>
+                <h3>Nilagrad River</h3>
+                <p>
+                    Nilagrad is known for its distinctive reddish appearance
+                    in some stretches and its location in the wider Sonamarg
+                    region. Verify the route, local access and conditions
+                    before travelling.
+                </p>
+            </div>
+        </article>
+
+        <!-- 06: GANGABAL LAKE -->
+        <article class="place-card">
+            <div>
+                <img
+                    src="https://commons.wikimedia.org/wiki/Special:FilePath/Krishansar_Lake%2C_Sonmarg%2C_Kashmir_valley%2C_India_01.jpg?width=1400"
+                    alt="High-altitude alpine lake in the Sonamarg trekking region"
+                    loading="lazy">
+
+                <small class="photo-credit">
+                    <a href="https://commons.wikimedia.org/wiki/File:Krishansar_Lake,_Sonmarg,_Kashmir_valley,_India_01.jpg"
+                       target="_blank" rel="noopener">
+                        Photo source: Wikimedia Commons
+                    </a>
+                </small>
+            </div>
+
+            <div>
+                <span class="eyebrow">06 / THE HIGH-ALTITUDE LAKES</span>
+                <h3>Gangabal Lake</h3>
+                <p>
+                    Gangabal is a celebrated alpine lake beneath Mount Harmukh
+                    and is reached by trekking rather than a simple roadside
+                    visit. This demanding mountain journey requires
+                    preparation, weather checks and route planning.
+                </p>
+            </div>
+        </article>
+
+        <!-- 07: KASHMIR GREAT LAKES TREK -->
+        <article class="place-card">
+            <div>
+                <img
+                    src="https://commons.wikimedia.org/wiki/Special:FilePath/Kashmir_great_lakes_trek.jpg?width=1400"
+                    alt="Alpine mountain scenery along the Kashmir Great Lakes Trek"
+                    loading="lazy">
+
+                <small class="photo-credit">
+                    <a href="https://commons.wikimedia.org/wiki/File:Kashmir_great_lakes_trek.jpg"
+                       target="_blank" rel="noopener">
+                        Photo source: Wikimedia Commons
+                    </a>
+                </small>
+            </div>
+
+            <div>
+                <span class="eyebrow">07 / THE TREKKING ROUTE</span>
+                <h3>Kashmir Great Lakes Trek</h3>
+                <p>
+                    A multi-day trek through alpine meadows, high passes
+                    and glacial lakes, this route is best suited to trekkers
+                    with appropriate fitness and preparation. The trail is
+                    seasonal and should be undertaken with a reliable
+                    operator and current route guidance.
+                </p>
+            </div>
+        </article>
+
+    </section>
+
+    <section class="place-cta">
+        <p class="eyebrow">KEEP EXPLORING</p>
+        <h2>Where will you go next?</h2>
+        <p>Return to the destination collection and plan your route.</p>
+        <a href="destinations.html" class="btn-primary">
+            Back to destinations ↗
+        </a>
+    </section>
+
+</main>
+
+<footer class="footer">
+    <a href="index.html" class="logo">Somewhere <span>in Kashmir.</span></a>
+    <p>Made with love for the mountains and the memories they create.</p>
+</footer>
+
+</body>
+</html>

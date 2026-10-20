@@ -1,0 +1,5303 @@
+
+/* ========================================
+   Somewhere in Kashmir — DESIGN SYSTEM
+======================================== */
+
+:root {
+    --forest: #173d32;
+    --forest-dark: #102b24;
+    --cream: #f5f1e8;
+    --muted: #b7c2b9;
+    --gold: #d4b783;
+    --white: #ffffff;
+    --serif: "Playfair Display", Georgia, serif;
+    --sans: "DM Sans", Arial, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 85px;
+}
+
+body {
+    background: var(--cream);
+    color: var(--forest-dark);
+    font-family: var(--sans);
+    line-height: 1.7;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    font: inherit;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+::selection {
+    background: var(--gold);
+    color: var(--forest-dark);
+}
+
+/* Navigation */
+
+.site-header {
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 84px;
+    padding: 0 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    color: var(--white);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.logo {
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    white-space: nowrap;
+}
+
+.logo span {
+    color: var(--gold);
+}
+
+.navigation {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+}
+
+.navigation a:not(.nav-cta) {
+    transition: color 0.25s ease;
+}
+
+.navigation a:not(.nav-cta):hover {
+    color: var(--gold);
+}
+
+.nav-cta {
+    padding: 11px 17px;
+    border: 1px solid rgba(255, 255, 255, 0.65);
+    transition: background 0.25s ease, color 0.25s ease;
+}
+
+.nav-cta:hover {
+    background: var(--cream);
+    color: var(--forest-dark);
+}
+
+.menu-toggle {
+    display: none;
+}
+
+/* Homepage hero */
+
+.hero {
+    min-height: 760px;
+    min-height: 100svh;
+    position: relative;
+    isolation: isolate;
+    display: flex;
+    align-items: center;
+    color: var(--white);
+    background-image: url("https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=2200&q=90");
+    background-size: cover;
+    background-position: center;
+    background-color: var(--forest-dark);
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background:
+        linear-gradient(90deg,
+            rgba(10, 30, 24, 0.82) 0%,
+            rgba(10, 30, 24, 0.50) 48%,
+            rgba(10, 30, 24, 0.12) 100%),
+        linear-gradient(0deg,
+            rgba(10, 30, 24, 0.48),
+            transparent 35%);
+}
+
+.hero-content {
+    max-width: 1000px;
+    padding: 150px 7% 135px;
+}
+
+.eyebrow,
+.section-label {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+.eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--gold);
+    margin-bottom: 28px;
+}
+
+.eyebrow-line {
+    width: 34px;
+    height: 1px;
+    background: var(--gold);
+}
+
+.hero h1 {
+    font-family: var(--serif);
+    font-size: clamp(40px, 5.5vw, 76px);
+    font-weight: 400;
+    line-height: 1.18;
+    letter-spacing: -1.5px;
+    max-width: 950px;
+}
+
+.hero h1 em,
+h2 em {
+    font-weight: 400;
+}
+
+.hero h1 em {
+    color: #e4cda5;
+}
+
+.hero-description {
+    max-width: 500px;
+    margin-top: 25px;
+    color: rgba(255, 255, 255, 0.83);
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.primary-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 26px;
+    margin-top: 32px;
+    padding: 15px 21px;
+    background: var(--cream);
+    color: var(--forest-dark);
+    font-size: 12px;
+    font-weight: 600;
+    transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.primary-button:hover {
+    background: var(--gold);
+    transform: translateY(-2px);
+}
+
+.primary-button span {
+    font-size: 17px;
+}
+
+.text-link {
+    display: block;
+    width: fit-content;
+    margin-top: 18px;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.83);
+}
+
+.text-link:hover {
+    color: var(--gold);
+}
+
+.hero-bottom {
+    position: absolute;
+    bottom: 0;
+    left: 7%;
+    right: 7%;
+    min-height: 66px;
+    border-top: 1px solid rgba(255, 255, 255, 0.30);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    color: rgba(255, 255, 255, 0.80);
+    font-size: 9px;
+    letter-spacing: 1.5px;
+}
+
+/* Shared sections */
+
+.section-padding {
+    padding: 110px 9%;
+}
+
+.section-label {
+    color: #738075;
+}
+
+.section-label span {
+    color: #a38655;
+}
+
+h2 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(32px, 4vw, 51px);
+    line-height: 1.3;
+    letter-spacing: -0.7px;
+}
+
+h2 em {
+    color: #a38655;
+}
+
+.intro {
+    background: var(--cream);
+}
+
+.intro-grid {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 70px;
+    align-items: start;
+    margin-top: 35px;
+}
+
+.intro-grid h2 {
+    font-size: clamp(34px, 4vw, 53px);
+}
+
+.intro-copy {
+    font-size: 13px;
+    color: #5c685f;
+}
+
+.intro-copy p + p {
+    margin-top: 16px;
+}
+
+.underlined-link {
+    display: inline-block;
+    margin-top: 25px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #9c8054;
+    color: var(--forest);
+    font-weight: 600;
+    font-size: 12px;
+}
+
+.underlined-link span {
+    margin-left: 10px;
+}
+
+/* Destination cards */
+
+.destinations {
+    background: #e9e5db;
+}
+
+.section-heading {
+    margin-top: 24px;
+    margin-bottom: 35px;
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+.section-heading p {
+    margin-top: 10px;
+    font-size: 13px;
+    color: #687269;
+}
+
+.section-index {
+    padding-bottom: 9px;
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    color: #738075;
+    white-space: nowrap;
+}
+
+.destination-preview {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.destination-card {
+    position: relative;
+    min-height: 400px;
+    overflow: hidden;
+    background: var(--forest);
+    color: var(--white);
+}
+
+.destination-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        0deg,
+        rgba(10, 25, 20, 0.88),
+        rgba(10, 25, 20, 0.04) 75%
+    );
+    pointer-events: none;
+}
+
+.destination-card img {
+    width: 100%;
+    height: 100%;
+    min-height: 400px;
+    position: absolute;
+    inset: 0;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.destination-card:hover img {
+    transform: scale(1.06);
+}
+
+.card-caption {
+    position: absolute;
+    z-index: 1;
+    left: 23px;
+    right: 18px;
+    bottom: 25px;
+}
+
+.card-caption > span {
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    color: #e4cda5;
+}
+
+.card-caption h3 {
+    margin-top: 8px;
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: 30px;
+}
+
+.card-caption p {
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.83);
+}
+
+.coming-soon {
+    margin-top: 28px;
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    color: #687269;
+    text-align: center;
+}
+
+/* Experiences */
+
+.experiences {
+    background: var(--forest);
+    color: var(--cream);
+}
+
+.experiences .section-label {
+    color: #c0c8bf;
+}
+
+.experiences h2 em {
+    color: var(--gold);
+}
+
+.experiences .section-heading p {
+    color: #c0c8bf;
+}
+
+.experience-list {
+    margin-top: 35px;
+    border-top: 1px solid rgba(255, 255, 255, 0.20);
+}
+
+.experience-list > div {
+    display: grid;
+    grid-template-columns: 50px 1fr auto;
+    align-items: center;
+    gap: 20px;
+    padding: 23px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.20);
+}
+
+.experience-list > div > span:first-child {
+    color: var(--gold);
+    font-size: 11px;
+}
+
+.experience-list h3 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(20px, 2.5vw, 29px);
+}
+
+.experience-list > div > span:last-child {
+    color: #c0c8bf;
+    font-size: 9px;
+    letter-spacing: 1.5px;
+}
+
+/* Planner invitation */
+
+.planner {
+    background: #dfe3d8;
+    text-align: center;
+}
+
+.planner-content {
+    max-width: 760px;
+    margin: auto;
+}
+
+.planner h2 {
+    margin-top: 25px;
+}
+
+.planner-content > p:not(.planner-note) {
+    max-width: 560px;
+    margin: 20px auto 0;
+    color: #5c685f;
+    font-size: 14px;
+}
+
+.planner-note {
+    margin-top: 25px;
+    color: #687269;
+    font-size: 9px;
+    letter-spacing: 1.4px;
+}
+
+/* Footer */
+
+.site-footer {
+    padding: 48px 7%;
+    background: var(--forest-dark);
+    color: var(--cream);
+    text-align: center;
+}
+
+.footer-logo {
+    display: inline-block;
+}
+
+.site-footer p {
+    margin: 12px auto 22px;
+    color: #c0c8bf;
+    font-size: 12px;
+}
+
+.site-footer > span {
+    color: var(--gold);
+    font-size: 9px;
+    letter-spacing: 1.5px;
+}
+
+/* Responsive layouts */
+
+@media (max-width: 900px) {
+    .site-header {
+        padding: 0 5%;
+    }
+
+    .navigation {
+        gap: 16px;
+        font-size: 11px;
+    }
+
+    .section-padding {
+        padding: 85px 6%;
+    }
+
+    .intro-grid {
+        gap: 35px;
+    }
+
+    .destination-card,
+    .destination-card img {
+        min-height: 340px;
+    }
+
+    .card-caption {
+        left: 15px;
+        bottom: 18px;
+    }
+}
+
+@media (max-width: 680px) {
+    .site-header {
+        min-height: 72px;
+        padding: 0 6%;
+    }
+
+    .logo {
+        font-size: 12px;
+        letter-spacing: 1.4px;
+    }
+
+    .menu-toggle {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 6px;
+        width: 42px;
+        height: 42px;
+        padding: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.45);
+        background: transparent;
+        cursor: pointer;
+    }
+
+    .menu-toggle span {
+        display: block;
+        width: 100%;
+        height: 1px;
+        background: var(--white);
+    }
+
+    .navigation {
+        display: none;
+        position: absolute;
+        top: 71px;
+        left: 0;
+        right: 0;
+        padding: 20px 6% 26px;
+        background: var(--forest-dark);
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+    }
+
+    .navigation.open {
+        display: flex;
+    }
+
+    .navigation a {
+        padding: 13px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.13);
+    }
+
+    .navigation .nav-cta {
+        margin-top: 14px;
+        padding: 12px;
+        text-align: center;
+    }
+
+    .hero {
+        min-height: 760px;
+        min-height: 100svh;
+        background-position: 56% center;
+    }
+
+    .hero-overlay {
+        background:
+            linear-gradient(90deg,
+                rgba(10, 30, 24, 0.75),
+                rgba(10, 30, 24, 0.30)),
+            linear-gradient(0deg,
+                rgba(10, 30, 24, 0.50),
+                transparent 55%);
+    }
+
+    .hero-content {
+        padding: 125px 6% 140px;
+    }
+
+    .eyebrow {
+        font-size: 8px;
+        letter-spacing: 1.4px;
+    }
+
+    .hero h1 {
+        font-size: clamp(38px, 10vw, 54px);
+        letter-spacing: -0.7px;
+    }
+
+    .hero-description {
+        font-size: 13px;
+    }
+
+    .hero-bottom {
+        left: 6%;
+        right: 6%;
+        min-height: 58px;
+        font-size: 8px;
+        letter-spacing: 0.7px;
+    }
+
+    .hero-bottom .scroll-note {
+        display: none;
+    }
+
+    .section-padding {
+        padding: 72px 6%;
+    }
+
+    .section-label {
+        font-size: 9px;
+        letter-spacing: 1.3px;
+    }
+
+    .intro-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        margin-top: 25px;
+    }
+
+    .section-heading {
+        align-items: start;
+        margin-bottom: 26px;
+    }
+
+    .section-index {
+        display: none;
+    }
+
+    .destination-preview {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .destination-card,
+    .destination-card img {
+        min-height: 390px;
+    }
+
+    .card-caption {
+        left: 22px;
+        bottom: 23px;
+    }
+
+    .experience-list > div {
+        grid-template-columns: 28px 1fr;
+        gap: 12px;
+        padding: 20px 0;
+    }
+
+    .experience-list > div > span:last-child {
+        display: none;
+    }
+
+    .planner h2 {
+        font-size: 35px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* CINEMATIC DESTINATION EXPLORER */
+
+.destination-explorer {
+    background: #eae6dc;
+    color: #17352d;
+    padding: 55px 8% 100px;
+}
+
+.explorer-heading h1 {
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    font-weight: 400;
+    line-height: 1.15;
+    margin: 0 0 12px;
+}
+
+.explorer-heading h1 em {
+    color: #aa8b55;
+    font-weight: 400;
+}
+
+.explorer-subheading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 44px;
+}
+
+.explorer-subheading p {
+    color: #6c7d76;
+    margin: 0;
+    line-height: 1.7;
+}
+
+.explorer-subheading span {
+    color: #718078;
+    font-size: 0.65rem;
+    letter-spacing: 2px;
+}
+
+.explorer-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 25px;
+}
+
+.explorer-card {
+    display: block;
+    height: 440px;
+    position: relative;
+    overflow: hidden;
+    background: #23382e;
+    color: white;
+    text-decoration: none;
+}
+
+.explorer-card img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.7s ease;
+}
+
+.explorer-card:hover img {
+    transform: scale(1.06);
+}
+
+.explorer-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom,
+        transparent 25%,
+        rgba(12, 27, 21, 0.12) 45%,
+        rgba(12, 27, 21, 0.92) 100%
+    );
+}
+
+.explorer-card-content {
+    position: absolute;
+    z-index: 1;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 30px;
+}
+
+.card-eyebrow {
+    display: block;
+    color: #e8c98d;
+    font-size: 0.68rem;
+    letter-spacing: 1.6px;
+    margin-bottom: 25px;
+}
+
+.explorer-card-content h2 {
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    font-weight: 400;
+    margin: 0 0 7px;
+}
+
+.explorer-card-content p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.card-discover {
+    display: inline-block;
+    font-size: 0.68rem;
+    letter-spacing: 1.5px;
+    margin-top: 20px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid rgba(255,255,255,0.65);
+    opacity: 0;
+    transform: translateY(6px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.explorer-card:hover .card-discover,
+.explorer-card:focus-visible .card-discover {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.explorer-footer {
+    padding-top: 35px;
+    text-align: center;
+    font-size: 0.68rem;
+    letter-spacing: 1.5px;
+    color: #748078;
+    line-height: 2;
+}
+
+.explorer-footer a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.explorer-footer a:hover {
+    color: #17352d;
+}
+
+@media (max-width: 700px) {
+    .destination-explorer {
+        padding: 45px 5% 65px;
+    }
+
+    .explorer-subheading {
+        align-items: flex-start;
+        flex-direction: column;
+        margin-bottom: 28px;
+    }
+
+    .explorer-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .explorer-card {
+        height: 380px;
+    }
+
+    .explorer-card-content {
+        padding: 23px;
+    }
+
+    .card-discover {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+
+/* INDIVIDUAL DESTINATION PAGES */
+
+.place-hero {
+    min-height: 470px;
+    padding: 100px 8%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    color: white;
+    background-size: cover;
+    background-position: center;
+    background-color: #23382e;
+    background-image: linear-gradient(
+        90deg,
+        rgba(12, 30, 23, 0.78),
+        rgba(12, 30, 23, 0.12)
+    ), url("https://images.unsplash.com/photo-1595815771614-ade9d652a65d?auto=format&fit=crop&w=1800&q=85");
+}
+
+.place-hero .eyebrow {
+    color: #e8c98d;
+}
+
+.place-hero h1 {
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: clamp(3.5rem, 8vw, 6.5rem);
+    font-weight: 400;
+    margin: 15px 0;
+}
+
+.place-hero > p:not(.eyebrow) {
+    font-size: 1.1rem;
+    margin: 0 0 25px;
+}
+
+.place-intro {
+    max-width: 800px;
+    margin: auto;
+    padding: 80px 7%;
+    text-align: center;
+}
+
+.place-intro h2,
+.place-section-heading h2,
+.place-cta h2 {
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 400;
+    color: #23382e;
+}
+
+.place-intro > p:last-child {
+    line-height: 1.95;
+    color: #59665f;
+}
+
+.place-attractions {
+    background: #f4f1e9;
+    padding: 70px 8%;
+}
+
+.place-section-heading {
+    margin-bottom: 35px;
+}
+
+.place-card {
+    display: grid;
+    grid-template-columns: 0.85fr 1.15fr;
+    gap: 35px;
+    align-items: center;
+    padding: 28px 0;
+    border-top: 1px solid #d8d7cb;
+}
+
+.place-card img {
+    display: block;
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+}
+
+.place-card h3 {
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 1.9rem;
+    font-weight: 400;
+    margin: 12px 0;
+    color: #23382e;
+}
+
+.place-card p {
+    line-height: 1.9;
+    color: #59665f;
+}
+
+.place-cta {
+    text-align: center;
+    padding: 75px 7%;
+}
+
+.place-cta p {
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+@media (max-width: 700px) {
+    .place-hero {
+        min-height: 380px;
+        padding: 70px 6%;
+    }
+
+    .place-intro {
+        padding: 55px 6%;
+    }
+
+    .place-attractions {
+        padding: 50px 6%;
+    }
+
+    .place-card {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .place-card img {
+        height: 230px;
+    }
+}
+
+/* ===== SRINAGAR: FOREST GREEN THEME ===== */
+
+body:has(.srinagar-hero) {
+    background: #173d32 !important;
+}
+
+/* Intro section */
+body:has(.srinagar-hero) .place-intro {
+    background: #173d32 !important;
+    color: #f5f1e8 !important;
+    padding: 75px 8% !important;
+}
+
+body:has(.srinagar-hero) .place-intro h2 {
+    color: #fff8e9 !important;
+}
+
+body:has(.srinagar-hero) .place-intro p {
+    color: #d0ded4 !important;
+}
+
+/* Attractions section — rich forest green */
+body:has(.srinagar-hero) .place-attractions {
+    background: linear-gradient(
+        135deg,
+        #173d32 0%,
+        #1d493a 50%,
+        #123329 100%
+    ) !important;
+    color: #f5f1e8 !important;
+    padding: 70px 8% !important;
+}
+
+/* Section headings */
+body:has(.srinagar-hero) .place-section-heading h2 {
+    color: #fff8e9 !important;
+}
+
+body:has(.srinagar-hero) .place-section-heading .eyebrow {
+    color: #d8b778 !important;
+}
+
+/* Keep attraction cards warm cream */
+body:has(.srinagar-hero) .place-card {
+    background: #f5f1e8 !important;
+    border: 1px solid rgba(216, 183, 120, 0.4);
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.16);
+}
+
+/* Card text */
+body:has(.srinagar-hero) .place-card h3 {
+    color: #173d32 !important;
+}
+
+body:has(.srinagar-hero) .place-card p {
+    color: #52645a !important;
+}
+
+/* Gold accent labels */
+body:has(.srinagar-hero) .place-card .eyebrow {
+    color: #a77b36 !important;
+}
+
+/* Mobile spacing */
+@media (max-width: 700px) {
+    body:has(.srinagar-hero) .place-intro {
+        padding: 50px 6% !important;
+    }
+
+    body:has(.srinagar-hero) .place-attractions {
+        padding: 50px 5% !important;
+    }
+}
+
+/* ======================================
+   SRINAGAR — PREMIUM EDITORIAL FINISH
+====================================== */
+
+body:has(.srinagar-hero) .place-attractions {
+    background:
+        radial-gradient(ellipse at 50% 0%, #285544 0%, transparent 58%),
+        linear-gradient(150deg, #173d32, #102c25) !important;
+    padding: 85px 7% !important;
+}
+
+/* Section heading */
+body:has(.srinagar-hero) .place-section-heading {
+    margin-bottom: 50px;
+}
+
+body:has(.srinagar-hero) .place-section-heading h2 {
+    font-size: clamp(38px, 4.5vw, 58px);
+    letter-spacing: -1.5px;
+    margin-top: 16px;
+    margin-bottom: 28px;
+}
+
+body:has(.srinagar-hero) .place-section-heading .eyebrow {
+    letter-spacing: 3px;
+}
+
+/* Spacious, magazine-style cards */
+body:has(.srinagar-hero) .place-card {
+    display: grid;
+    grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.15fr);
+    align-items: stretch;
+    gap: 0;
+    max-width: 1100px;
+    margin: 0 auto 30px;
+    padding: 0 !important;
+    background: #f5f1e8 !important;
+    border: 1px solid rgba(216, 183, 120, 0.45);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 16px 42px rgba(0, 0, 0, 0.18);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+body:has(.srinagar-hero) .place-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 23px 50px rgba(0, 0, 0, 0.26);
+}
+
+/* Images */
+body:has(.srinagar-hero) .place-card img {
+    width: 100%;
+    height: 100%;
+    min-height: 300px;
+    max-height: 360px;
+    object-fit: cover;
+    display: block;
+}
+
+/* Card content spacing */
+body:has(.srinagar-hero) .place-card > div {
+    padding: 38px 34px;
+    align-self: center;
+}
+
+body:has(.srinagar-hero) .place-card h3 {
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: clamp(27px, 3vw, 36px);
+    line-height: 1.2;
+    margin: 15px 0;
+    color: #173d32 !important;
+}
+
+body:has(.srinagar-hero) .place-card p {
+    font-size: 14px;
+    line-height: 1.95;
+    color: #52645a !important;
+}
+
+/* Gold labels */
+body:has(.srinagar-hero) .place-card .eyebrow {
+    color: #a77b36 !important;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+/* Alternate image placement for variety */
+body:has(.srinagar-hero) .place-card:nth-of-type(even) img {
+    order: 2;
+}
+
+body:has(.srinagar-hero) .place-card:nth-of-type(even) > div {
+    order: 1;
+}
+
+/* Responsive layout */
+@media (max-width: 760px) {
+    body:has(.srinagar-hero) .place-attractions {
+        padding: 55px 5% !important;
+    }
+
+    body:has(.srinagar-hero) .place-card {
+        grid-template-columns: 1fr;
+        margin-bottom: 24px;
+    }
+
+    body:has(.srinagar-hero) .place-card img {
+        height: 240px;
+        min-height: 0;
+        max-height: none;
+    }
+
+    body:has(.srinagar-hero) .place-card > div {
+        padding: 25px;
+    }
+
+    body:has(.srinagar-hero) .place-card:nth-of-type(even) img,
+    body:has(.srinagar-hero) .place-card:nth-of-type(even) > div {
+        order: initial;
+    }
+}
+
+/* =====================================================
+   SRINAGAR HERO — DAL LAKE PHOTO + FOREST-GREEN MOOD
+   Put your chosen Dal Lake photo at: images/dal-lake-hero.jpg
+   If style.css is in the project root, this path is correct.
+===================================================== */
+
+body:has(.srinagar-hero) .srinagar-hero,
+body:has(.srinagar-hero) section.place-hero.srinagar-hero {
+    position: relative;
+    isolation: isolate;
+    min-height: 88vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 130px 9% 100px;
+    color: #fffaf0;
+    background-color: #102b24;
+    background-image:
+        linear-gradient(
+            90deg,
+            rgba(8, 29, 24, 0.76) 0%,
+            rgba(8, 29, 24, 0.48) 42%,
+            rgba(8, 29, 24, 0.12) 100%
+        ),
+        linear-gradient(
+            0deg,
+            rgba(8, 29, 24, 0.38),
+            transparent 55%
+        ),
+        url("images/dal-lake-hero.jpg");
+    background-size: cover;
+    background-position: center 55%;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+body:has(.srinagar-hero) .srinagar-hero > * {
+    position: relative;
+    z-index: 1;
+}
+
+body:has(.srinagar-hero) .srinagar-hero .eyebrow {
+    color: #e3c58d;
+    letter-spacing: 2.5px;
+}
+
+body:has(.srinagar-hero) .srinagar-hero h1 {
+    color: #fffaf0;
+    font-family: var(--serif, "Playfair Display", Georgia, serif);
+    font-size: clamp(4rem, 8vw, 7.5rem);
+    font-weight: 400;
+    line-height: 0.98;
+    letter-spacing: -2px;
+    margin: 14px 0;
+    text-shadow: 0 5px 28px rgba(0, 0, 0, 0.22);
+}
+
+body:has(.srinagar-hero) .srinagar-hero p {
+    color: rgba(255, 250, 240, 0.92);
+}
+
+body:has(.srinagar-hero) .srinagar-hero a {
+    color: #fffaf0;
+    text-decoration: none;
+    transition: color 0.25s ease;
+}
+
+body:has(.srinagar-hero) .srinagar-hero a:hover {
+    color: #e3c58d;
+}
+
+@media (max-width: 700px) {
+    body:has(.srinagar-hero) .srinagar-hero,
+    body:has(.srinagar-hero) section.place-hero.srinagar-hero {
+        min-height: 76vh;
+        padding: 110px 6% 75px;
+        background-position: 57% center;
+    }
+
+    body:has(.srinagar-hero) .srinagar-hero h1 {
+        font-size: clamp(3.5rem, 13vw, 5rem);
+        letter-spacing: -1px;
+    }
+}
+
+
+/* Srinagar Dal Lake hero photo */
+body:has(.srinagar-hero) .srinagar-hero {
+    background-image:
+        linear-gradient(
+            90deg,
+            rgba(8, 29, 24, 0.60) 0%,
+            rgba(8, 29, 24, 0.25) 55%,
+            rgba(8, 29, 24, 0.05) 100%
+        ),
+        url("https://images.pexels.com/photos/20283818/pexels-photo-20283818.jpeg?auto=compress&cs=tinysrgb&w=2400");
+    background-size: cover;
+    background-position: center 55%;
+    background-repeat: no-repeat;
+    min-height: 88vh;
+}
+
+/* FORCE Srinagar background photo */
+.srinagar-hero {
+    background:
+        linear-gradient(rgba(5, 25, 20, 0.35), rgba(5, 25, 20, 0.45)),
+        url("https://images.pexels.com/photos/20283818/pexels-photo-20283818.jpeg") center 55% / cover no-repeat !important;
+}
+
+/* Srinagar intro — matching cream card */
+body:has(.srinagar-hero) .place-intro {
+    max-width: 1000px;
+    margin: 55px auto;
+    padding: 55px 65px;
+    background: #f5f0e6;
+    color: #183c30;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+body:has(.srinagar-hero) .place-intro h2,
+body:has(.srinagar-hero) .place-intro p {
+    color: #183c30;
+}
+
+/* Attractions section — matching cream card */
+body:has(.srinagar-hero) .attractions-section {
+    max-width: 1100px;
+    margin: 55px auto;
+    padding: 50px 35px;
+    background: #f5f0e6;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+body:has(.srinagar-hero) .attractions-section h2 {
+    color: #183c30;
+}
+
+@media (max-width: 700px) {
+    body:has(.srinagar-hero) .place-intro,
+    body:has(.srinagar-hero) .attractions-section {
+        margin: 25px 16px;
+        padding: 30px 22px;
+    }
+}
+
+
+/* ============================================
+   SONAMARG — MATCH THE SRINAGAR DESIGN
+   Add at the VERY END of style.css
+============================================ */
+
+body:has(.sonamarg-hero) {
+    background: #173d32 !important;
+    color: #f5f1e8;
+}
+
+body:has(.sonamarg-hero) main {
+    background: #173d32 !important;
+}
+
+/* Hero image and typography */
+
+body:has(.sonamarg-hero) section.place-hero.sonamarg-hero {
+    position: relative;
+    isolation: isolate;
+    min-height: 88vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 130px 9% 100px;
+    color: #fffaf0;
+    background-color: #102b24;
+    background-image:
+        linear-gradient(
+            90deg,
+            rgba(8, 29, 24, 0.72) 0%,
+            rgba(8, 29, 24, 0.38) 50%,
+            rgba(8, 29, 24, 0.10) 100%
+        ),
+        url("https://images.unsplash.com/photo-1595815771614-ade9d652a65d?auto=format&fit=crop&w=2200&q=90");
+    background-size: cover;
+    background-position: center 55%;
+    background-repeat: no-repeat;
+}
+
+body:has(.sonamarg-hero) .sonamarg-hero .eyebrow {
+    color: #e3c58d;
+    letter-spacing: 2.5px;
+}
+
+body:has(.sonamarg-hero) .sonamarg-hero h1 {
+    color: #fffaf0;
+    font-family: var(--serif, "Playfair Display", Georgia, serif);
+    font-size: clamp(4rem, 8vw, 7.5rem);
+    font-weight: 400;
+    line-height: 0.98;
+    letter-spacing: -2px;
+    margin: 14px 0;
+    text-shadow: 0 5px 28px rgba(0, 0, 0, 0.22);
+}
+
+body:has(.sonamarg-hero) .sonamarg-hero p {
+    color: rgba(255, 250, 240, 0.92);
+}
+
+/* Introduction: GREEN background, gold border */
+
+body:has(.sonamarg-hero) .place-intro {
+    display: block;
+    width: calc(100% - 40px);
+    max-width: 850px;
+    margin: 55px auto 60px;
+    padding: 55px 65px;
+    text-align: center;
+    background: #173d32 !important;
+    color: #f5f1e8 !important;
+    border: 1px solid rgba(199, 157, 85, 0.35);
+    border-radius: 10px;
+    box-shadow: none;
+    box-sizing: border-box;
+}
+
+body:has(.sonamarg-hero) .place-intro .eyebrow {
+    display: block;
+    color: #fffaf0 !important;
+    letter-spacing: 3px;
+    font-size: 10px;
+    margin-bottom: 18px;
+}
+
+body:has(.sonamarg-hero) .place-intro h2 {
+    color: #fffaf0 !important;
+    font-family: var(--serif, "Playfair Display", Georgia, serif);
+    font-size: clamp(2.8rem, 4.5vw, 3.6rem);
+    font-weight: 400;
+    line-height: 1.12;
+    margin: 14px 0 24px;
+}
+
+body:has(.sonamarg-hero) .place-intro p:last-child {
+    max-width: 760px;
+    margin: 0 auto;
+    color: #d0ded4 !important;
+    font-size: 14px;
+    line-height: 1.95;
+}
+
+/* Places section: green background */
+
+body:has(.sonamarg-hero) .place-attractions {
+    background:
+        radial-gradient(
+            ellipse at 50% 0%,
+            #285544 0%,
+            transparent 58%
+        ),
+        linear-gradient(150deg, #173d32, #102c25) !important;
+    color: #f5f1e8 !important;
+    padding: 70px 7% 85px;
+}
+
+/* Heading matches Srinagar */
+
+body:has(.sonamarg-hero) .place-section-heading {
+    max-width: 1100px;
+    margin: 0 auto 50px;
+    text-align: center;
+}
+
+body:has(.sonamarg-hero) .place-section-heading .eyebrow {
+    display: block;
+    color: #d8b778 !important;
+    letter-spacing: 3px;
+    font-size: 10px;
+    margin-bottom: 16px;
+}
+
+body:has(.sonamarg-hero) .place-section-heading h2 {
+    color: #fffaf0 !important;
+    font-family: var(--serif, "Playfair Display", Georgia, serif);
+    font-size: clamp(38px, 4.5vw, 58px);
+    font-weight: 400;
+    line-height: 1.15;
+    letter-spacing: -1.5px;
+    margin: 16px 0 28px;
+}
+
+/* Cream attraction cards */
+
+body:has(.sonamarg-hero) .place-card {
+    display: grid;
+    grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.15fr);
+    align-items: stretch;
+    gap: 0;
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto 30px;
+    padding: 0;
+    background: #f5f1e8 !important;
+    color: #173d32 !important;
+    border: 1px solid rgba(216, 183, 120, 0.45);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 16px 42px rgba(0, 0, 0, 0.18);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+body:has(.sonamarg-hero) .place-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 23px 50px rgba(0, 0, 0, 0.26);
+}
+
+body:has(.sonamarg-hero) .place-card > div {
+    min-width: 0;
+    padding: 38px 34px;
+    align-self: center;
+}
+
+body:has(.sonamarg-hero) .place-card img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 300px;
+    max-height: 360px;
+    object-fit: cover;
+}
+
+body:has(.sonamarg-hero) .place-card h3 {
+    color: #173d32 !important;
+    font-family: var(--serif, "Playfair Display", Georgia, serif);
+    font-size: clamp(27px, 3vw, 36px);
+    font-weight: 400;
+    line-height: 1.2;
+    margin: 15px 0;
+}
+
+body:has(.sonamarg-hero) .place-card p {
+    color: #52645a !important;
+    font-size: 14px;
+    line-height: 1.95;
+    margin: 0;
+}
+
+body:has(.sonamarg-hero) .place-card .eyebrow {
+    color: #a77b36 !important;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+body:has(.sonamarg-hero) .photo-credit {
+    display: block;
+    padding: 8px 18px 12px;
+    margin: 0;
+    background: #f5f1e8;
+    color: #77766f;
+    font-size: 10px;
+}
+
+body:has(.sonamarg-hero) .photo-credit a {
+    color: #52645a;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+/* Closing section */
+
+body:has(.sonamarg-hero) .place-cta {
+    background: #173d32 !important;
+    color: #f5f1e8 !important;
+    text-align: center;
+    padding: 75px 7%;
+}
+
+body:has(.sonamarg-hero) .place-cta .eyebrow {
+    color: #d4b783 !important;
+}
+
+body:has(.sonamarg-hero) .place-cta h2 {
+    color: #fffaf0 !important;
+    font-family: var(--serif, "Playfair Display", Georgia, serif);
+    font-size: clamp(2.5rem, 4.5vw, 3.6rem);
+    font-weight: 400;
+}
+
+body:has(.sonamarg-hero) .place-cta p {
+    color: #d0ded4 !important;
+}
+
+/* Mobile layout */
+
+@media (max-width: 760px) {
+    body:has(.sonamarg-hero) section.place-hero.sonamarg-hero {
+        min-height: 76vh;
+        padding: 110px 6% 75px;
+        background-position: 57% center;
+    }
+
+    body:has(.sonamarg-hero) .sonamarg-hero h1 {
+        font-size: clamp(3.5rem, 13vw, 5rem);
+        letter-spacing: -1px;
+    }
+
+    body:has(.sonamarg-hero) .place-intro {
+        width: calc(100% - 32px);
+        margin: 35px auto;
+        padding: 40px 24px;
+    }
+
+    body:has(.sonamarg-hero) .place-intro h2 {
+        font-size: clamp(2.3rem, 8vw, 3.2rem);
+    }
+
+    body:has(.sonamarg-hero) .place-attractions {
+        padding: 55px 5% 65px;
+    }
+
+    body:has(.sonamarg-hero) .place-section-heading {
+        margin-bottom: 32px;
+    }
+
+    body:has(.sonamarg-hero) .place-section-heading h2 {
+        font-size: clamp(2.3rem, 8vw, 3.2rem);
+    }
+
+    body:has(.sonamarg-hero) .place-card {
+        grid-template-columns: 1fr;
+        margin-bottom: 24px;
+    }
+
+    body:has(.sonamarg-hero) .place-card img {
+        height: 250px;
+        min-height: 0;
+        max-height: none;
+    }
+
+    body:has(.sonamarg-hero) .place-card > div {
+        padding: 25px;
+    }
+}
+
+/* ============================================
+   PAHALGAM — MATCH SONAMARG AND SRINAGAR
+============================================ */
+
+body:has(.pahalgam-hero) {
+    background: #173d32 !important;
+    color: #f5f1e8;
+}
+
+body:has(.pahalgam-hero) main {
+    background: #173d32 !important;
+}
+
+/* HERO */
+
+body:has(.pahalgam-hero) section.place-hero.pahalgam-hero {
+    position: relative;
+    isolation: isolate;
+    min-height: 88vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 130px 9% 100px;
+    color: #fffaf0;
+    background-color: #102b24;
+    background-image:
+        linear-gradient(
+            90deg,
+            rgba(8, 29, 24, .68) 0%,
+            rgba(8, 29, 24, .35) 50%,
+            rgba(8, 29, 24, .08) 100%
+        ),
+        url("https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&w=2200&q=90");
+    background-size: cover;
+    background-position: center 55%;
+    background-repeat: no-repeat;
+}
+
+body:has(.pahalgam-hero) .pahalgam-hero .eyebrow {
+    color: #e3c58d;
+    letter-spacing: 2.5px;
+}
+
+body:has(.pahalgam-hero) .pahalgam-hero h1 {
+    color: #fffaf0;
+    font-family: var(--serif, "Playfair Display", Georgia, serif);
+    font-size: clamp(4rem, 8vw, 7.5rem);
+    font-weight: 400;
+    line-height: .98;
+    letter-spacing: -2px;
+    margin: 14px 0;
+    text-shadow: 0 5px 28px rgba(0, 0, 0, .22);
+}
+
+body:has(.pahalgam-hero) .pahalgam-hero p {
+    color: rgba(255, 250, 240, .94);
+}
+
+/* INTRODUCTION — GREEN WITH GOLD BORDER */
+
+body:has(.pahalgam-hero) .place-intro {
+    display: block;
+    width: calc(100% - 40px);
+    max-width: 850px;
+    margin: 55px auto 60px;
+    padding: 55px 65px;
+    text-align: center;
+    background: #173d32 !important;
+    color: #f5f1e8 !important;
+    border: 1px solid rgba(199, 157, 85, .35);
+    border-radius: 10px;
+    box-shadow: none;
+    box-sizing: border-box;
+}
+
+body:has(.pahalgam-hero) .place-intro .eyebrow {
+    display: block;
+    color: #fffaf0 !important;
+    letter-spacing: 3px;
+    font-size: 10px;
+    margin-bottom: 18px;
+}
+
+body:has(.pahalgam-hero) .place-intro h2 {
+    color: #fffaf0 !important;
+    font-family: var(--serif, "Playfair Display", Georgia, serif);
+    font-size: clamp(2.8rem, 4.5vw, 3.6rem);
+    font-weight: 400;
+    line-height: 1.12;
+    margin: 14px 0 24px;
+}
+
+body:has(.pahalgam-hero) .place-intro p:last-child {
+    max-width: 760px;
+    margin: 0 auto;
+    color: #d0ded4 !important;
+    font-size: 14px;
+    line-height: 1.95;
+}
+
+/* PLACES TO DISCOVER */
+
+body:has(.pahalgam-hero) .place-attractions {
+    background:
+        radial-gradient(ellipse at 50% 0%, #285544 0%, transparent 58%),
+        linear-gradient(150deg, #173d32, #102c25) !important;
+    color: #f5f1e8 !important;
+    padding: 70px 7% 85px;
+}
+
+body:has(.pahalgam-hero) .place-section-heading {
+    max-width: 1100px;
+    margin: 0 auto 50px;
+    text-align: center;
+}
+
+body:has(.pahalgam-hero) .place-section-heading .eyebrow {
+    display: block;
+    color: #d8b778 !important;
+    letter-spacing: 3px;
+    font-size: 10px;
+    margin-bottom: 16px;
+}
+
+body:has(.pahalgam-hero) .place-section-heading h2 {
+    color: #fffaf0 !important;
+    font-family: var(--serif, "Playfair Display", Georgia, serif);
+    font-size: clamp(38px, 4.5vw, 58px);
+    font-weight: 400;
+    line-height: 1.15;
+    letter-spacing: -1.5px;
+    margin: 16px 0 28px;
+}
+
+/* CREAM CARDS */
+
+body:has(.pahalgam-hero) .place-card {
+    display: grid;
+    grid-template-columns: minmax(0, .95fr) minmax(0, 1.15fr);
+    align-items: stretch;
+    gap: 0;
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto 30px;
+    padding: 0;
+    background: #f5f1e8 !important;
+    color: #173d32 !important;
+    border: 1px solid rgba(216, 183, 120, .45);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 16px 42px rgba(0, 0, 0, .18);
+    transition: transform .3s ease, box-shadow .3s ease;
+}
+
+body:has(.pahalgam-hero) .place-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 23px 50px rgba(0, 0, 0, .26);
+}
+
+body:has(.pahalgam-hero) .place-card > div {
+    min-width: 0;
+    padding: 38px 34px;
+    align-self: center;
+}
+
+body:has(.pahalgam-hero) .place-card img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 300px;
+    max-height: 360px;
+    object-fit: cover;
+}
+
+body:has(.pahalgam-hero) .place-card h3 {
+    color: #173d32 !important;
+    font-family: var(--serif, "Playfair Display", Georgia, serif);
+    font-size: clamp(27px, 3vw, 36px);
+    font-weight: 400;
+    line-height: 1.2;
+    margin: 15px 0;
+}
+
+body:has(.pahalgam-hero) .place-card p {
+    color: #52645a !important;
+    font-size: 14px;
+    line-height: 1.95;
+    margin: 0;
+}
+
+body:has(.pahalgam-hero) .place-card .eyebrow {
+    color: #a77b36 !important;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+body:has(.pahalgam-hero) .photo-credit {
+    display: block;
+    padding: 8px 18px 12px;
+    margin: 0;
+    background: #f5f1e8;
+    color: #77766f;
+    font-size: 10px;
+}
+
+body:has(.pahalgam-hero) .photo-credit a {
+    color: #52645a;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+/* CLOSING SECTION */
+
+body:has(.pahalgam-hero) .place-cta {
+    background: #173d32 !important;
+    color: #f5f1e8 !important;
+    text-align: center;
+    padding: 75px 7%;
+}
+
+body:has(.pahalgam-hero) .place-cta .eyebrow {
+    color: #d4b783 !important;
+}
+
+body:has(.pahalgam-hero) .place-cta h2 {
+    color: #fffaf0 !important;
+    font-family: var(--serif, "Playfair Display", Georgia, serif);
+    font-size: clamp(2.5rem, 4.5vw, 3.6rem);
+    font-weight: 400;
+}
+
+body:has(.pahalgam-hero) .place-cta p {
+    color: #d0ded4 !important;
+}
+
+/* MOBILE */
+
+@media (max-width: 760px) {
+    body:has(.pahalgam-hero) section.place-hero.pahalgam-hero {
+        min-height: 76vh;
+        padding: 110px 6% 75px;
+        background-position: center;
+    }
+
+    body:has(.pahalgam-hero) .pahalgam-hero h1 {
+        font-size: clamp(3.5rem, 13vw, 5rem);
+        letter-spacing: -1px;
+    }
+
+    body:has(.pahalgam-hero) .place-intro {
+        width: calc(100% - 32px);
+        margin: 35px auto;
+        padding: 40px 24px;
+    }
+
+    body:has(.pahalgam-hero) .place-intro h2 {
+        font-size: clamp(2.3rem, 8vw, 3.2rem);
+    }
+
+    body:has(.pahalgam-hero) .place-attractions {
+        padding: 55px 5% 65px;
+    }
+
+    body:has(.pahalgam-hero) .place-section-heading {
+        margin-bottom: 32px;
+    }
+
+    body:has(.pahalgam-hero) .place-section-heading h2 {
+        font-size: clamp(2.3rem, 8vw, 3.2rem);
+    }
+
+    body:has(.pahalgam-hero) .place-card {
+        grid-template-columns: 1fr;
+        margin-bottom: 24px;
+    }
+
+    body:has(.pahalgam-hero) .place-card img {
+        height: 250px;
+        min-height: 0;
+        max-height: none;
+    }
+
+    body:has(.pahalgam-hero) .place-card > div {
+        padding: 25px;
+    }
+}
+
+/* ============================================
+   GULMARG — MATCH SONAMARG AND SRINAGAR
+============================================ */
+
+body:has(.gulmarg-hero) {
+    background: #173d32 !important;
+    color: #f5f1e8;
+}
+
+body:has(.gulmarg-hero) main {
+    background: #173d32 !important;
+}
+
+/* HERO */
+
+body:has(.gulmarg-hero) section.place-hero.gulmarg-hero {
+    position: relative;
+    isolation: isolate;
+    min-height: 88vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 130px 9% 100px;
+    color: #fffaf0;
+    background-color: #102b24;
+    background-image:
+        linear-gradient(
+            90deg,
+            rgba(8, 29, 24, .68) 0%,
+            rgba(8, 29, 24, .35) 50%,
+            rgba(8, 29, 24, .08) 100%
+        ),
+        url("https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=2200&q=90");
+    background-size: cover;
+    background-position: center 55%;
+    background-repeat: no-repeat;
+}
+
+body:has(.gulmarg-hero) .gulmarg-hero .eyebrow {
+    color: #e3c58d;
+    letter-spacing: 2.5px;
+}
+
+body:has(.gulmarg-hero) .gulmarg-hero h1 {
+    color: #fffaf0;
+    font-family: var(--serif, "Playfair Display", Georgia, serif);
+    font-size: clamp(4rem, 8vw, 7.5rem);
+    font-weight: 400;
+    line-height: .98;
+    letter-spacing: -2px;
+    margin: 14px 0;
+    text-shadow: 0 5px 28px rgba(0, 0, 0, .22);
+}
+
+body:has(.gulmarg-hero) .gulmarg-hero p {
+    color: rgba(255, 250, 240, .94);
+}
+
+/* INTRODUCTION — GREEN WITH GOLD BORDER */
+
+body:has(.gulmarg-hero) .place-intro {
+    display: block;
+    width: calc(100% - 40px);
+    max-width: 850px;
+    margin: 55px auto 60px;
+    padding: 55px 65px;
+    text-align: center;
+    background: #173d32 !important;
+    color: #f5f1e8 !important;
+    border: 1px solid rgba(199, 157, 85, .35);
+    border-radius: 10px;
+    box-shadow: none;
+    box-sizing: border-box;
+}
+
+body:has(.gulmarg-hero) .place-intro .eyebrow {
+    display: block;
+    color: #fffaf0 !important;
+    letter-spacing: 3px;
+    font-size: 10px;
+    margin-bottom: 18px;
+}
+
+body:has(.gulmarg-hero) .place-intro h2 {
+    color: #fffaf0 !important;
+    font-family: var(--serif, "Playfair Display", Georgia, serif);
+    font-size: clamp(2.8rem, 4.5vw, 3.6rem);
+    font-weight: 400;
+    line-height: 1.12;
+    margin: 14px 0 24px;
+}
+
+body:has(.gulmarg-hero) .place-intro p:last-child {
+    max-width: 760px;
+    margin: 0 auto;
+    color: #d0ded4 !important;
+    font-size: 14px;
+    line-height: 1.95;
+}
+
+/* PLACES TO DISCOVER */
+
+body:has(.gulmarg-hero) .place-attractions {
+    background:
+        radial-gradient(ellipse at 50% 0%, #285544 0%, transparent 58%),
+        linear-gradient(150deg, #173d32, #102c25) !important;
+    color: #f5f1e8 !important;
+    padding: 70px 7% 85px;
+}
+
+body:has(.gulmarg-hero) .place-section-heading {
+    max-width: 1100px;
+    margin: 0 auto 50px;
+    text-align: center;
+}
+
+body:has(.gulmarg-hero) .place-section-heading .eyebrow {
+    display: block;
+    color: #d8b778 !important;
+    letter-spacing: 3px;
+    font-size: 10px;
+    margin-bottom: 16px;
+}
+
+body:has(.gulmarg-hero) .place-section-heading h2 {
+    color: #fffaf0 !important;
+    font-family: var(--serif, "Playfair Display", Georgia, serif);
+    font-size: clamp(38px, 4.5vw, 58px);
+    font-weight: 400;
+    line-height: 1.15;
+    letter-spacing: -1.5px;
+    margin: 16px 0 28px;
+}
+
+/* CREAM CARDS */
+
+body:has(.gulmarg-hero) .place-card {
+    display: grid;
+    grid-template-columns: minmax(0, .95fr) minmax(0, 1.15fr);
+    align-items: stretch;
+    gap: 0;
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto 30px;
+    padding: 0;
+    background: #f5f1e8 !important;
+    color: #173d32 !important;
+    border: 1px solid rgba(216, 183, 120, .45);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 16px 42px rgba(0, 0, 0, .18);
+    transition: transform .3s ease, box-shadow .3s ease;
+}
+
+body:has(.gulmarg-hero) .place-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 23px 50px rgba(0, 0, 0, .26);
+}
+
+body:has(.gulmarg-hero) .place-card > div {
+    min-width: 0;
+    padding: 38px 34px;
+    align-self: center;
+}
+
+body:has(.gulmarg-hero) .place-card img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 300px;
+    max-height: 360px;
+    object-fit: cover;
+}
+
+body:has(.gulmarg-hero) .place-card h3 {
+    color: #173d32 !important;
+    font-family: var(--serif, "Playfair Display", Georgia, serif);
+    font-size: clamp(27px, 3vw, 36px);
+    font-weight: 400;
+    line-height: 1.2;
+    margin: 15px 0;
+}
+
+body:has(.gulmarg-hero) .place-card p {
+    color: #52645a !important;
+    font-size: 14px;
+    line-height: 1.95;
+    margin: 0;
+}
+
+body:has(.gulmarg-hero) .place-card .eyebrow {
+    color: #a77b36 !important;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+body:has(.gulmarg-hero) .photo-credit {
+    display: block;
+    padding: 8px 18px 12px;
+    margin: 0;
+    background: #f5f1e8;
+    color: #77766f;
+    font-size: 10px;
+}
+
+body:has(.gulmarg-hero) .photo-credit a {
+    color: #52645a;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+/* CLOSING SECTION */
+
+body:has(.gulmarg-hero) .place-cta {
+    background: #173d32 !important;
+    color: #f5f1e8 !important;
+    text-align: center;
+    padding: 75px 7%;
+}
+
+body:has(.gulmarg-hero) .place-cta .eyebrow {
+    color: #d4b783 !important;
+}
+
+body:has(.gulmarg-hero) .place-cta h2 {
+    color: #fffaf0 !important;
+    font-family: var(--serif, "Playfair Display", Georgia, serif);
+    font-size: clamp(2.5rem, 4.5vw, 3.6rem);
+    font-weight: 400;
+}
+
+body:has(.gulmarg-hero) .place-cta p {
+    color: #d0ded4 !important;
+}
+
+/* MOBILE */
+
+@media (max-width: 760px) {
+    body:has(.gulmarg-hero) section.place-hero.gulmarg-hero {
+        min-height: 76vh;
+        padding: 110px 6% 75px;
+        background-position: center;
+    }
+
+    body:has(.gulmarg-hero) .gulmarg-hero h1 {
+        font-size: clamp(3.5rem, 13vw, 5rem);
+        letter-spacing: -1px;
+    }
+
+    body:has(.gulmarg-hero) .place-intro {
+        width: calc(100% - 32px);
+        margin: 35px auto;
+        padding: 40px 24px;
+    }
+
+    body:has(.gulmarg-hero) .place-intro h2 {
+        font-size: clamp(2.3rem, 8vw, 3.2rem);
+    }
+
+    body:has(.gulmarg-hero) .place-attractions {
+        padding: 55px 5% 65px;
+    }
+
+    body:has(.gulmarg-hero) .place-section-heading {
+        margin-bottom: 32px;
+    }
+
+    body:has(.gulmarg-hero) .place-section-heading h2 {
+        font-size: clamp(2.3rem, 8vw, 3.2rem);
+    }
+
+    body:has(.gulmarg-hero) .place-card {
+        grid-template-columns: 1fr;
+        margin-bottom: 24px;
+    }
+
+    body:has(.gulmarg-hero) .place-card img {
+        height: 250px;
+        min-height: 0;
+        max-height: none;
+    }
+
+    body:has(.gulmarg-hero) .place-card > div {
+        padding: 25px;
+    }
+}
+
+/* ============================================
+   PAHALGAM — MATCH SONAMARG AND SRINAGAR
+============================================ */
+
+body:has(.pahalgam-hero) {
+    background: #173d32 !important;
+    color: #f5f1e8;
+}
+
+body:has(.pahalgam-hero) main {
+    background: #173d32 !important;
+}
+
+/* HERO */
+
+body:has(.pahalgam-hero) section.place-hero.pahalgam-hero {
+    position: relative;
+    isolation: isolate;
+    min-height: 88vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 130px 9% 100px;
+    color: #fffaf0;
+    background-color: #102b24;
+    background-image:
+        linear-gradient(
+            90deg,
+            rgba(8, 29, 24, .68) 0%,
+            rgba(8, 29, 24, .35) 50%,
+            rgba(8, 29, 24, .08) 100%
+        ),
+        url("https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&w=2200&q=90");
+    background-size: cover;
+    background-position: center 55%;
+    background-repeat: no-repeat;
+}
+
+body:has(.pahalgam-hero) .pahalgam-hero .eyebrow {
+    color: #e3c58d;
+    letter-spacing: 2.5px;
+}
+
+body:has(.pahalgam-hero) .pahalgam-hero h1 {
+    color: #fffaf0;
+    font-family: var(--serif, "Playfair Display", Georgia, serif);
+    font-size: clamp(4rem, 8vw, 7.5rem);
+    font-weight: 400;
+    line-height: .98;
+    letter-spacing: -2px;
+    margin: 14px 0;
+    text-shadow: 0 5px 28px rgba(0, 0, 0, .22);
+}
+
+body:has(.pahalgam-hero) .pahalgam-hero p {
+    color: rgba(255, 250, 240, .94);
+}
+
+/* INTRODUCTION — GREEN WITH GOLD BORDER */
+
+body:has(.pahalgam-hero) .place-intro {
+    display: block;
+    width: calc(100% - 40px);
+    max-width: 850px;
+    margin: 55px auto 60px;
+    padding: 55px 65px;
+    text-align: center;
+    background: #173d32 !important;
+    color: #f5f1e8 !important;
+    border: 1px solid rgba(199, 157, 85, .35);
+    border-radius: 10px;
+    box-shadow: none;
+    box-sizing: border-box;
+}
+
+body:has(.pahalgam-hero) .place-intro .eyebrow {
+    display: block;
+    color: #fffaf0 !important;
+    letter-spacing: 3px;
+    font-size: 10px;
+    margin-bottom: 18px;
+}
+
+body:has(.pahalgam-hero) .place-intro h2 {
+    color: #fffaf0 !important;
+    font-family: var(--serif, "Playfair Display", Georgia, serif);
+    font-size: clamp(2.8rem, 4.5vw, 3.6rem);
+    font-weight: 400;
+    line-height: 1.12;
+    margin: 14px 0 24px;
+}
+
+body:has(.pahalgam-hero) .place-intro p:last-child {
+    max-width: 760px;
+    margin: 0 auto;
+    color: #d0ded4 !important;
+    font-size: 14px;
+    line-height: 1.95;
+}
+
+/* PLACES TO DISCOVER */
+
+body:has(.pahalgam-hero) .place-attractions {
+    background:
+        radial-gradient(ellipse at 50% 0%, #285544 0%, transparent 58%),
+        linear-gradient(150deg, #173d32, #102c25) !important;
+    color: #f5f1e8 !important;
+    padding: 70px 7% 85px;
+}
+
+body:has(.pahalgam-hero) .place-section-heading {
+    max-width: 1100px;
+    margin: 0 auto 50px;
+    text-align: center;
+}
+
+body:has(.pahalgam-hero) .place-section-heading .eyebrow {
+    display: block;
+    color: #d8b778 !important;
+    letter-spacing: 3px;
+    font-size: 10px;
+    margin-bottom: 16px;
+}
+
+body:has(.pahalgam-hero) .place-section-heading h2 {
+    color: #fffaf0 !important;
+    font-family: var(--serif, "Playfair Display", Georgia, serif);
+    font-size: clamp(38px, 4.5vw, 58px);
+    font-weight: 400;
+    line-height: 1.15;
+    letter-spacing: -1.5px;
+    margin: 16px 0 28px;
+}
+
+/* CREAM CARDS */
+
+body:has(.pahalgam-hero) .place-card {
+    display: grid;
+    grid-template-columns: minmax(0, .95fr) minmax(0, 1.15fr);
+    align-items: stretch;
+    gap: 0;
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto 30px;
+    padding: 0;
+    background: #f5f1e8 !important;
+    color: #173d32 !important;
+    border: 1px solid rgba(216, 183, 120, .45);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 16px 42px rgba(0, 0, 0, .18);
+    transition: transform .3s ease, box-shadow .3s ease;
+}
+
+body:has(.pahalgam-hero) .place-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 23px 50px rgba(0, 0, 0, .26);
+}
+
+body:has(.pahalgam-hero) .place-card > div {
+    min-width: 0;
+    padding: 38px 34px;
+    align-self: center;
+}
+
+body:has(.pahalgam-hero) .place-card img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 300px;
+    max-height: 360px;
+    object-fit: cover;
+}
+
+body:has(.pahalgam-hero) .place-card h3 {
+    color: #173d32 !important;
+    font-family: var(--serif, "Playfair Display", Georgia, serif);
+    font-size: clamp(27px, 3vw, 36px);
+    font-weight: 400;
+    line-height: 1.2;
+    margin: 15px 0;
+}
+
+body:has(.pahalgam-hero) .place-card p {
+    color: #52645a !important;
+    font-size: 14px;
+    line-height: 1.95;
+    margin: 0;
+}
+
+body:has(.pahalgam-hero) .place-card .eyebrow {
+    color: #a77b36 !important;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+body:has(.pahalgam-hero) .photo-credit {
+    display: block;
+    padding: 8px 18px 12px;
+    margin: 0;
+    background: #f5f1e8;
+    color: #77766f;
+    font-size: 10px;
+}
+
+body:has(.pahalgam-hero) .photo-credit a {
+    color: #52645a;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+/* CLOSING SECTION */
+
+body:has(.pahalgam-hero) .place-cta {
+    background: #173d32 !important;
+    color: #f5f1e8 !important;
+    text-align: center;
+    padding: 75px 7%;
+}
+
+body:has(.pahalgam-hero) .place-cta .eyebrow {
+    color: #d4b783 !important;
+}
+
+body:has(.pahalgam-hero) .place-cta h2 {
+    color: #fffaf0 !important;
+    font-family: var(--serif, "Playfair Display", Georgia, serif);
+    font-size: clamp(2.5rem, 4.5vw, 3.6rem);
+    font-weight: 400;
+}
+
+body:has(.pahalgam-hero) .place-cta p {
+    color: #d0ded4 !important;
+}
+
+/* MOBILE */
+
+@media (max-width: 760px) {
+    body:has(.pahalgam-hero) section.place-hero.pahalgam-hero {
+        min-height: 76vh;
+        padding: 110px 6% 75px;
+        background-position: center;
+    }
+
+    body:has(.pahalgam-hero) .pahalgam-hero h1 {
+        font-size: clamp(3.5rem, 13vw, 5rem);
+        letter-spacing: -1px;
+    }
+
+    body:has(.pahalgam-hero) .place-intro {
+        width: calc(100% - 32px);
+        margin: 35px auto;
+        padding: 40px 24px;
+    }
+
+    body:has(.pahalgam-hero) .place-intro h2 {
+        font-size: clamp(2.3rem, 8vw, 3.2rem);
+    }
+
+    body:has(.pahalgam-hero) .place-attractions {
+        padding: 55px 5% 65px;
+    }
+
+    body:has(.pahalgam-hero) .place-section-heading {
+        margin-bottom: 32px;
+    }
+
+    body:has(.pahalgam-hero) .place-section-heading h2 {
+        font-size: clamp(2.3rem, 8vw, 3.2rem);
+    }
+
+    body:has(.pahalgam-hero) .place-card {
+        grid-template-columns: 1fr;
+        margin-bottom: 24px;
+    }
+
+    body:has(.pahalgam-hero) .place-card img {
+        height: 250px;
+        min-height: 0;
+        max-height: none;
+    }
+
+    body:has(.pahalgam-hero) .place-card > div {
+        padding: 25px;
+    }
+}
+
+/* ============================================
+   PAHALGAM — MATCH SONAMARG AND SRINAGAR
+============================================ */
+
+body:has(.pahalgam-hero) {
+    background: #173d32 !important;
+    color: #f5f1e8;
+}
+
+body:has(.pahalgam-hero) main {
+    background: #173d32 !important;
+}
+
+/* HERO */
+
+body:has(.pahalgam-hero) section.place-hero.pahalgam-hero {
+    position: relative;
+    isolation: isolate;
+    min-height: 88vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 130px 9% 100px;
+    color: #fffaf0;
+    background-color: #102b24;
+    background-image:
+        linear-gradient(
+            90deg,
+            rgba(8, 29, 24, .68) 0%,
+            rgba(8, 29, 24, .35) 50%,
+            rgba(8, 29, 24, .08) 100%
+        ),
+        url("https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&w=2200&q=90");
+    background-size: cover;
+    background-position: center 55%;
+    background-repeat: no-repeat;
+}
+
+body:has(.pahalgam-hero) .pahalgam-hero .eyebrow {
+    color: #e3c58d;
+    letter-spacing: 2.5px;
+}
+
+body:has(.pahalgam-hero) .pahalgam-hero h1 {
+    color: #fffaf0;
+    font-family: var(--serif, "Playfair Display", Georgia, serif);
+    font-size: clamp(4rem, 8vw, 7.5rem);
+    font-weight: 400;
+    line-height: .98;
+    letter-spacing: -2px;
+    margin: 14px 0;
+    text-shadow: 0 5px 28px rgba(0, 0, 0, .22);
+}
+
+body:has(.pahalgam-hero) .pahalgam-hero p {
+    color: rgba(255, 250, 240, .94);
+}
+
+/* INTRODUCTION — GREEN WITH GOLD BORDER */
+
+body:has(.pahalgam-hero) .place-intro {
+    display: block;
+    width: calc(100% - 40px);
+    max-width: 850px;
+    margin: 55px auto 60px;
+    padding: 55px 65px;
+    text-align: center;
+    background: #173d32 !important;
+    color: #f5f1e8 !important;
+    border: 1px solid rgba(199, 157, 85, .35);
+    border-radius: 10px;
+    box-shadow: none;
+    box-sizing: border-box;
+}
+
+body:has(.pahalgam-hero) .place-intro .eyebrow {
+    display: block;
+    color: #fffaf0 !important;
+    letter-spacing: 3px;
+    font-size: 10px;
+    margin-bottom: 18px;
+}
+
+body:has(.pahalgam-hero) .place-intro h2 {
+    color: #fffaf0 !important;
+    font-family: var(--serif, "Playfair Display", Georgia, serif);
+    font-size: clamp(2.8rem, 4.5vw, 3.6rem);
+    font-weight: 400;
+    line-height: 1.12;
+    margin: 14px 0 24px;
+}
+
+body:has(.pahalgam-hero) .place-intro p:last-child {
+    max-width: 760px;
+    margin: 0 auto;
+    color: #d0ded4 !important;
+    font-size: 14px;
+    line-height: 1.95;
+}
+
+/* PLACES TO DISCOVER */
+
+body:has(.pahalgam-hero) .place-attractions {
+    background:
+        radial-gradient(ellipse at 50% 0%, #285544 0%, transparent 58%),
+        linear-gradient(150deg, #173d32, #102c25) !important;
+    color: #f5f1e8 !important;
+    padding: 70px 7% 85px;
+}
+
+body:has(.pahalgam-hero) .place-section-heading {
+    max-width: 1100px;
+    margin: 0 auto 50px;
+    text-align: center;
+}
+
+body:has(.pahalgam-hero) .place-section-heading .eyebrow {
+    display: block;
+    color: #d8b778 !important;
+    letter-spacing: 3px;
+    font-size: 10px;
+    margin-bottom: 16px;
+}
+
+body:has(.pahalgam-hero) .place-section-heading h2 {
+    color: #fffaf0 !important;
+    font-family: var(--serif, "Playfair Display", Georgia, serif);
+    font-size: clamp(38px, 4.5vw, 58px);
+    font-weight: 400;
+    line-height: 1.15;
+    letter-spacing: -1.5px;
+    margin: 16px 0 28px;
+}
+
+/* CREAM CARDS */
+
+body:has(.pahalgam-hero) .place-card {
+    display: grid;
+    grid-template-columns: minmax(0, .95fr) minmax(0, 1.15fr);
+    align-items: stretch;
+    gap: 0;
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto 30px;
+    padding: 0;
+    background: #f5f1e8 !important;
+    color: #173d32 !important;
+    border: 1px solid rgba(216, 183, 120, .45);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 16px 42px rgba(0, 0, 0, .18);
+    transition: transform .3s ease, box-shadow .3s ease;
+}
+
+body:has(.pahalgam-hero) .place-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 23px 50px rgba(0, 0, 0, .26);
+}
+
+body:has(.pahalgam-hero) .place-card > div {
+    min-width: 0;
+    padding: 38px 34px;
+    align-self: center;
+}
+
+body:has(.pahalgam-hero) .place-card img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 300px;
+    max-height: 360px;
+    object-fit: cover;
+}
+
+body:has(.pahalgam-hero) .place-card h3 {
+    color: #173d32 !important;
+    font-family: var(--serif, "Playfair Display", Georgia, serif);
+    font-size: clamp(27px, 3vw, 36px);
+    font-weight: 400;
+    line-height: 1.2;
+    margin: 15px 0;
+}
+
+body:has(.pahalgam-hero) .place-card p {
+    color: #52645a !important;
+    font-size: 14px;
+    line-height: 1.95;
+    margin: 0;
+}
+
+body:has(.pahalgam-hero) .place-card .eyebrow {
+    color: #a77b36 !important;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+body:has(.pahalgam-hero) .photo-credit {
+    display: block;
+    padding: 8px 18px 12px;
+    margin: 0;
+    background: #f5f1e8;
+    color: #77766f;
+    font-size: 10px;
+}
+
+body:has(.pahalgam-hero) .photo-credit a {
+    color: #52645a;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+/* CLOSING SECTION */
+
+body:has(.pahalgam-hero) .place-cta {
+    background: #173d32 !important;
+    color: #f5f1e8 !important;
+    text-align: center;
+    padding: 75px 7%;
+}
+
+body:has(.pahalgam-hero) .place-cta .eyebrow {
+    color: #d4b783 !important;
+}
+
+body:has(.pahalgam-hero) .place-cta h2 {
+    color: #fffaf0 !important;
+    font-family: var(--serif, "Playfair Display", Georgia, serif);
+    font-size: clamp(2.5rem, 4.5vw, 3.6rem);
+    font-weight: 400;
+}
+
+body:has(.pahalgam-hero) .place-cta p {
+    color: #d0ded4 !important;
+}
+
+/* MOBILE */
+
+@media (max-width: 760px) {
+    body:has(.pahalgam-hero) section.place-hero.pahalgam-hero {
+        min-height: 76vh;
+        padding: 110px 6% 75px;
+        background-position: center;
+    }
+
+    body:has(.pahalgam-hero) .pahalgam-hero h1 {
+        font-size: clamp(3.5rem, 13vw, 5rem);
+        letter-spacing: -1px;
+    }
+
+    body:has(.pahalgam-hero) .place-intro {
+        width: calc(100% - 32px);
+        margin: 35px auto;
+        padding: 40px 24px;
+    }
+
+    body:has(.pahalgam-hero) .place-intro h2 {
+        font-size: clamp(2.3rem, 8vw, 3.2rem);
+    }
+
+    body:has(.pahalgam-hero) .place-attractions {
+        padding: 55px 5% 65px;
+    }
+
+    body:has(.pahalgam-hero) .place-section-heading {
+        margin-bottom: 32px;
+    }
+
+    body:has(.pahalgam-hero) .place-section-heading h2 {
+        font-size: clamp(2.3rem, 8vw, 3.2rem);
+    }
+
+    body:has(.pahalgam-hero) .place-card {
+        grid-template-columns: 1fr;
+        margin-bottom: 24px;
+    }
+
+    body:has(.pahalgam-hero) .place-card img {
+        height: 250px;
+        min-height: 0;
+        max-height: none;
+    }
+
+    body:has(.pahalgam-hero) .place-card > div {
+        padding: 25px;
+    }
+}
+/* DESTINATIONS — FIX THE 2 × 2 ORDER */
+
+.destinations-grid,
+.destination-grid,
+.destinations-container,
+.destination-cards {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 22px !important;
+}
+
+/* Keep all four cards equal in size */
+.destination-card,
+.destination-tile,
+.destination-item {
+    width: 100%;
+    height: 420px;
+    min-height: 420px;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Images fill their cards */
+.destination-card img,
+.destination-tile img,
+.destination-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Mobile: stack the cards */
+@media (max-width: 700px) {
+    .destinations-grid,
+    .destination-grid,
+    .destinations-container,
+    .destination-cards {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+/* =====================================
+   DESTINATIONS — 2 x 2 GRID
+===================================== */
+
+.destinations .destination-preview {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+    width: 100%;
+}
+
+.destinations .destination-card {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 420px;
+    min-height: 420px;
+    overflow: hidden;
+}
+
+/* Keep every destination image fitted to its card */
+.destinations .destination-card img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Keep text visible over the image */
+.destinations .destination-card .card-caption {
+    position: absolute;
+    z-index: 2;
+    right: 22px;
+    bottom: 25px;
+    left: 25px;
+}
+
+/* Tablet and mobile: one card per row */
+@media (max-width: 700px) {
+    .destinations .destination-preview {
+        grid-template-columns: 1fr;
+    }
+
+    .destinations .destination-card {
+        height: 350px;
+        min-height: 350px;
+    }
+}
+
+/* =====================================
+   DESTINATIONS — HEADING REFINEMENT
+===================================== */
+
+.destinations > .section-container > .eyebrow {
+    font-size: 11px;
+    letter-spacing: 3.5px;
+    line-height: 1.8;
+    font-weight: 600;
+    color: #a38655;
+    text-transform: uppercase;
+    margin-bottom: 22px;
+}
+
+.destinations .section-heading {
+    margin-bottom: 48px;
+}
+
+.destinations .section-heading h2 {
+    font-size: clamp(3.2rem, 5.5vw, 5.4rem);
+    line-height: 1.08;
+    letter-spacing: -1.8px;
+    max-width: 1000px;
+    margin: 0;
+}
+
+.destinations .section-heading h2 em {
+    font-weight: 400;
+    color: #a38655;
+}
+
+.destinations .section-heading p {
+    margin-top: 22px;
+    font-size: 15px;
+    line-height: 1.9;
+    color: #687269;
+    max-width: 560px;
+}
+
+.destinations .section-index {
+    font-size: 10px;
+    letter-spacing: 2px;
+    line-height: 1.8;
+    padding-bottom: 10px;
+}
+
+/* More breathing room around the destination cards */
+.destinations .destination-preview {
+    margin-top: 10px;
+    gap: 30px;
+}
+
+@media (max-width: 700px) {
+    .destinations > .section-container > .eyebrow {
+        font-size: 9px;
+        letter-spacing: 2.5px;
+        margin-bottom: 15px;
+    }
+
+    .destinations .section-heading {
+        margin-bottom: 28px;
+    }
+
+    .destinations .section-heading h2 {
+        font-size: clamp(2.6rem, 10vw, 3.8rem);
+        letter-spacing: -1px;
+    }
+
+    .destinations .section-heading p {
+        font-size: 14px;
+        margin-top: 15px;
+    }
+}
+
+
+/* DESTINATIONS — HEADING SIZE BALANCE */
+
+.destinations > .section-container > .eyebrow {
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 4px;
+    line-height: 1.8;
+    margin-bottom: 22px;
+    color: #a38655;
+}
+
+.destinations .section-heading h2 {
+    font-size: clamp(2.8rem, 4.2vw, 4.2rem);
+    line-height: 1.12;
+    letter-spacing: -1px;
+    font-weight: 400;
+    margin: 0;
+}
+
+.destinations .section-heading p {
+    font-size: 15px;
+    line-height: 1.8;
+    margin-top: 18px;
+}
+
+@media (max-width: 700px) {
+    .destinations > .section-container > .eyebrow {
+        font-size: 11px;
+        letter-spacing: 2.5px;
+        margin-bottom: 15px;
+    }
+
+    .destinations .section-heading h2 {
+        font-size: clamp(2.3rem, 8vw, 3.2rem);
+    }
+}
+
+/* BIG, BOLD DESTINATIONS EYEBROW */
+
+.destinations > .section-container > .eyebrow {
+    font-size: clamp(18px, 2vw, 25px);
+    font-weight: 600;
+    letter-spacing: 5px;
+    line-height: 1.5;
+    margin-bottom: 28px;
+    color: #a38655;
+    text-transform: uppercase;
+}
+
+.destinations .section-heading h2 {
+    font-size: clamp(2.6rem, 4vw, 4rem);
+    line-height: 1.12;
+    letter-spacing: -1px;
+}
+
+@media (max-width: 700px) {
+    .destinations > .section-container > .eyebrow {
+        font-size: 14px;
+        letter-spacing: 2.5px;
+        margin-bottom: 20px;
+    }
+}
+
+/* =========================================
+   HIDDEN GEMS — FIX THE OVERSIZED IMAGE
+========================================= */
+
+.hidden-gems-feature {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    align-items: stretch;
+    width: 100%;
+    overflow: hidden;
+    background: #173d32;
+    color: #fff;
+}
+
+.hidden-gems-feature-image {
+    width: 100%;
+    height: 540px;
+    min-height: 0 !important;
+    overflow: hidden;
+}
+
+.hidden-gems-feature-image img {
+    display: block;
+    width: 100%;
+    height: 100% !important;
+    min-height: 0 !important;
+    object-fit: cover;
+    object-position: center;
+}
+
+.hidden-gems-feature-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: stretch;
+    min-width: 0;
+    padding: 55px clamp(28px, 5vw, 80px);
+    box-sizing: border-box;
+}
+
+.hidden-gems-feature-content .eyebrow {
+    color: #d4b783;
+    font-size: 11px;
+    letter-spacing: 3px;
+    line-height: 1.8;
+}
+
+.hidden-gems-feature-content h2 {
+    margin: 20px 0;
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: clamp(2.4rem, 3.5vw, 4rem);
+    font-weight: 400;
+    line-height: 1.2;
+    color: #fff;
+}
+
+.hidden-gems-feature-content h2 em {
+    color: #e4cda5;
+}
+
+.hidden-gems-feature-content > p:not(.eyebrow) {
+    margin: 10px 0;
+    color: #d9e2da;
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.hidden-gems-feature-content .btn-primary {
+    align-self: flex-start;
+    margin-top: 20px;
+}
+
+/* Mobile layout */
+@media (max-width: 700px) {
+    .hidden-gems-feature {
+        grid-template-columns: 1fr !important;
+    }
+
+    .hidden-gems-feature-image {
+        height: 300px;
+    }
+
+    .hidden-gems-feature-content {
+        padding: 45px 7%;   
+    }
+
+    .hidden-gems-feature-content h2 {
+        font-size: clamp(2.3rem, 8vw, 3.2rem);
+    }
+}
+
+/* =========================================
+   SECTION SPACING — Somewhere in Kashmir
+========================================= */
+
+/* Space between My Story and Destinations */
+.intro {
+    margin-bottom: 0;
+    padding-bottom: 100px !important;
+}
+
+.destinations {
+    margin-top: 0;
+    padding-top: 100px !important;
+}
+
+/* Space between Destinations and Hidden Gems */
+.destinations {
+    padding-bottom: 110px !important;
+}
+
+.hidden-gems-feature {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+/* Keep the transition between sections clean */
+.intro,
+.destinations,
+.hidden-gems-feature {
+    position: relative;
+}
+
+/* Mobile spacing */
+@media (max-width: 700px) {
+    .intro {
+        padding-bottom: 65px !important;
+    }
+
+    .destinations {
+        padding-top: 65px !important;
+        padding-bottom: 70px !important;
+    }
+}
+
+/* =========================================
+   FINAL CTA + FOOTER SPACING
+========================================= */
+
+/* Give the final journey section breathing room */
+.home-cta {
+    padding: 110px 8% !important;
+    margin-top: 100px !important;
+    margin-bottom: 0 !important;
+    text-align: center;
+}
+
+.home-cta-content {
+    max-width: 820px;
+    margin: 0 auto;
+}
+
+.home-cta-content .eyebrow {
+    margin-bottom: 25px;
+    letter-spacing: 3px;
+    line-height: 1.8;
+}
+
+.home-cta-content h2 {
+    margin: 20px 0 25px;
+    line-height: 1.25;
+}
+
+.home-cta-content > p:not(.eyebrow) {
+    max-width: 650px;
+    margin: 0 auto 25px;
+    line-height: 1.9;
+}
+
+.home-cta-content .btn-primary {
+    margin-top: 15px;
+}
+
+/* Clear separation before the footer */
+.site-footer {
+    margin-top: 0;
+    padding: 65px 7% 50px;
+    text-align: center;
+}
+
+/* Mobile spacing */
+@media (max-width: 700px) {
+    .home-cta {
+        margin-top: 65px !important;
+        padding: 75px 7% !important;
+    }
+
+    .site-footer {
+        padding: 45px 7% 35px;
+    }
+}
+
+/* =========================================
+   HIDDEN GEMS — GREEN BOX + SECTION GAP
+========================================= */
+
+/* Create breathing room after the destinations grid */
+.destinations {
+    padding-bottom: 90px !important;
+}
+
+/* Keep Hidden Gems inside one clean green box */
+.hidden-gems-feature {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    align-items: stretch;
+    width: calc(100% - 48px);
+    max-width: 1600px;
+    margin: 0 auto 90px !important;
+    overflow: hidden;
+    background-color: #173d32;
+    color: #f5f1e8;
+    box-sizing: border-box;
+}
+
+/* Image stays inside the green box */
+.hidden-gems-feature-image {
+    width: 100%;
+    height: 540px;
+    min-height: 0 !important;
+    overflow: hidden;
+}
+
+.hidden-gems-feature-image img {
+    display: block;
+    width: 100%;
+    height: 100% !important;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Text panel */
+.hidden-gems-feature-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 60px clamp(30px, 5vw, 85px);
+    min-width: 0;
+    box-sizing: border-box;
+}
+
+.hidden-gems-feature-content h2 {
+    color: #fff;
+    line-height: 1.2;
+}
+
+.hidden-gems-feature-content h2 em {
+    color: #e5c99b;
+}
+
+.hidden-gems-feature-content .eyebrow {
+    color: #e5c99b;
+    letter-spacing: 3px;
+}
+
+/* Responsive layout */
+@media (max-width: 700px) {
+    .destinations {
+        padding-bottom: 60px !important;
+    }
+
+    .hidden-gems-feature {
+        width: calc(100% - 24px);
+        grid-template-columns: 1fr !important;
+        margin-bottom: 60px !important;
+    }
+
+    .hidden-gems-feature-image {
+        height: 300px;
+    }
+
+    .hidden-gems-feature-content {
+        padding: 40px 28px;
+    }
+}
+
+/* ==========================================
+   DESTINATIONS — ORGANIZED SECTION BOX
+========================================== */
+
+.destinations {
+    width: calc(100% - 48px) !important;
+    max-width: 1600px;
+    margin: 70px auto 90px !important;
+    padding: 65px 32px 32px !important;
+    box-sizing: border-box;
+    background: #eae6dc;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+/* Heading stays inside the same box */
+.destinations > .section-container {
+    width: 100%;
+    max-width: none;
+    margin: 0 auto;
+    padding: 0 !important;
+    box-sizing: border-box;
+}
+
+/* Keep the heading and subtitle aligned */
+.destinations .section-heading {
+    margin-bottom: 38px;
+}
+
+/* Four cards arranged in a 2 × 2 grid */
+.destinations .destination-preview {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 24px;
+    width: 100%;
+    margin: 0;
+}
+
+.destinations .destination-card {
+    width: 100%;
+    height: 420px;
+    min-height: 0;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+/* Responsive layout */
+@media (max-width: 700px) {
+    .destinations {
+        width: calc(100% - 24px) !important;
+        margin: 40px auto 55px !important;
+        padding: 40px 16px 18px !important;
+    }
+
+    .destinations .destination-preview {
+        grid-template-columns: 1fr !important;
+        gap: 18px;
+    }
+
+    .destinations .destination-card {
+        height: 330px;
+    }
+}
+
+
+/* ==========================================
+   DESTINATIONS — FOREST GREEN BOX
+========================================== */
+
+.destinations {
+    background: #173d32 !important;
+    color: #f5f1e8;
+    border-radius: 4px;
+}
+
+/* Main heading */
+.destinations .section-heading h2 {
+    color: #f5f1e8;
+}
+
+.destinations .section-heading h2 em {
+    color: #d4b783;
+}
+
+/* Eyebrow */
+.destinations > .section-container > .eyebrow {
+    color: #d4b783;
+}
+
+/* Description and destination count */
+.destinations .section-heading p {
+    color: #d7dfd8;
+}
+
+.destinations .section-index {
+    color: #d4b783;
+}
+
+/* Keep the four image cards unchanged */
+.destinations .destination-preview {
+    gap: 24px;
+}
+
+/* Optional: subtle gold border around the green panel */
+.destinations {
+    border: 1px solid rgba(212, 183, 131, 0.22);
+}
+
+@media (max-width: 700px) {
+    .destinations .destination-preview {
+        gap: 18px;
+    }
+}
+
+/* ==========================================
+   MY STORY — MATCHING GREEN SECTION BOX
+========================================== */
+
+.intro {
+    width: calc(100% - 48px) !important;
+    max-width: 1600px;
+    margin: 70px auto 90px !important;
+    padding: 70px 55px !important;
+    box-sizing: border-box;
+    background: #173d32 !important;
+    color: #f5f1e8;
+    border: 1px solid rgba(212, 183, 131, 0.22);
+    border-radius: 4px;
+}
+
+/* Main story heading */
+.intro h2,
+.intro .section-heading h2 {
+    color: #f5f1e8;
+}
+
+.intro h2 em,
+.intro .section-heading h2 em {
+    color: #d4b783;
+}
+
+/* Story paragraphs */
+.intro p {
+    color: #d7dfd8;
+    line-height: 1.9;
+}
+
+/* Story eyebrow */
+.intro .eyebrow {
+    color: #d4b783;
+    letter-spacing: 3px;
+}
+
+/* Read our story link */
+.intro a {
+    color: #f5f1e8;
+}
+
+/* Responsive spacing */
+@media (max-width: 700px) {
+    .intro {
+        width: calc(100% - 24px) !important;
+        margin: 40px auto 55px !important;
+        padding: 40px 24px !important;
+    }
+}
+
+
+/* Make Discover All Destinations visible on green */
+.destinations .destination-footer,
+.destinations .destination-footer a,
+.destinations .underlined-link {
+    color: #f5f1e8 !important;
+}
+
+.destinations .destination-footer a span,
+.destinations .underlined-link span {
+    color: #d4b783 !important;
+}
+
+.destinations .destination-footer a,
+.destinations .underlined-link {
+    border-color: #d4b783 !important;
+    text-decoration-color: #d4b783 !important;
+}
+
+/* =========================================
+   HIDDEN GEMS INTRO — GREEN CONTENT BOX
+========================================= */
+
+.hidden-gems-page .hidden-gems-intro {
+    width: calc(100% - 80px);
+    max-width: 1500px;
+    margin: 65px auto 90px;
+    padding: 65px 8%;
+    box-sizing: border-box;
+    background: #173d32;
+    color: #f5f1e8;
+    border: 1px solid rgba(212, 183, 131, 0.25);
+    border-radius: 5px;
+    text-align: center;
+}
+
+.hidden-gems-page .hidden-gems-intro h1,
+.hidden-gems-page .hidden-gems-intro h2 {
+    color: #f5f1e8;
+    font-size: clamp(2.4rem, 4vw, 4rem);
+    line-height: 1.2;
+    font-weight: 400;
+    margin: 0 auto 25px;
+}
+
+.hidden-gems-page .hidden-gems-intro p {
+    max-width: 950px;
+    margin: 0 auto;
+    color: #dce5dd;
+    font-size: 16px;
+    line-height: 2;
+}
+
+.hidden-gems-page .hidden-gems-intro .eyebrow {
+    color: #d4b783;
+    font-size: 12px;
+    letter-spacing: 3px;
+    margin-bottom: 24px;
+}
+
+@media (max-width: 700px) {
+    .hidden-gems-page .hidden-gems-intro {
+        width: calc(100% - 24px);
+        margin: 40px auto 55px;
+        padding: 40px 24px;
+    }
+
+    .hidden-gems-page .hidden-gems-intro h1,
+    .hidden-gems-page .hidden-gems-intro h2 {
+        font-size: 2.3rem;
+    }
+
+    .hidden-gems-page .hidden-gems-intro p {
+        font-size: 14px;
+        line-height: 1.8;
+    }
+}
+
+/* HIDDEN GEMS — INTRO BOX */
+body:has(.hidden-gems-hero) .hidden-gems-hero + section,
+body:has(.hidden-gems-hero) section:has(h1) {
+    box-sizing: border-box;
+}
+
+body:has(.hidden-gems-hero) section:has(h1) {
+    width: calc(100% - 64px);
+    max-width: 1500px;
+    margin: 60px auto 80px !important;
+    padding: 60px 7% !important;
+    background: #173d32 !important;
+    color: #f5f1e8 !important;
+    border: 1px solid rgba(212, 183, 131, 0.3);
+    border-radius: 5px;
+}
+
+body:has(.hidden-gems-hero) section:has(h1) h1,
+body:has(.hidden-gems-hero) section:has(h1) h2 {
+    color: #f5f1e8 !important;
+}
+
+body:has(.hidden-gems-hero) section:has(h1) p {
+    color: #e0e7df !important;
+    line-height: 1.9;
+}
+
+@media (max-width: 700px) {
+    body:has(.hidden-gems-hero) section:has(h1) {
+        width: calc(100% - 24px);
+        margin: 35px auto 50px !important;
+        padding: 35px 22px !important;
+    }
+}
+
+
+/* FIX: PUT THE HIDDEN GEMS INTRO IN ITS OWN BOX */
+
+.hidden-gems-page .gems-intro {
+    display: block !important;
+    width: calc(100% - 80px) !important;
+    max-width: 1500px;
+    margin: 65px auto 90px !important;
+    padding: 65px 8% !important;
+    box-sizing: border-box !important;
+
+    background: #173d32 !important;
+    color: #f5f1e8 !important;
+
+    border: 1px solid rgba(212, 183, 131, 0.35);
+    border-radius: 5px;
+}
+
+/* Heading */
+.hidden-gems-page .gems-intro h2 {
+    color: #f5f1e8 !important;
+    font-size: clamp(2.5rem, 4vw, 4rem);
+    line-height: 1.2;
+    margin: 20px 0 25px;
+}
+
+/* Gold eyebrow */
+.hidden-gems-page .gems-intro .eyebrow {
+    color: #d4b783 !important;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    margin-bottom: 22px;
+}
+
+/* Description */
+.hidden-gems-page .gems-intro p:not(.eyebrow) {
+    max-width: 1000px;
+    color: #e0e7df !important;
+    font-size: 16px;
+    line-height: 2;
+    margin-bottom: 0;
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+    .hidden-gems-page .gems-intro {
+        width: calc(100% - 24px) !important;
+        margin: 40px auto 55px !important;
+        padding: 40px 24px !important;
+    }
+
+    .hidden-gems-page .gems-intro h2 {
+        font-size: 2.3rem;
+    }
+}
+
+/* FINAL JOURNEY CTA — FOREST GREEN BOX */
+.journey-cta {
+    width: calc(100% - 48px);
+    max-width: 1600px;
+    margin: 75px auto 90px !important;
+    padding: 90px 30px !important;
+    box-sizing: border-box;
+    background: #173d32 !important;
+    color: #f5f1e8 !important;
+    border: 1px solid rgba(212, 183, 131, 0.25);
+    border-radius: 5px;
+    text-align: center;
+}
+
+.journey-cta h2 {
+    color: #f5f1e8 !important;
+}
+
+.journey-cta h2 em {
+    color: #d4b783 !important;
+}
+
+.journey-cta p {
+    color: #e0e7df !important;
+    line-height: 1.9;
+}
+
+.journey-cta a {
+    color: #f0d5a1 !important;
+}
+
+@media (max-width: 700px) {
+    .journey-cta {
+        width: calc(100% - 24px);
+        margin: 45px auto 55px !important;
+        padding: 55px 22px !important;
+    }
+}
+
+/* FINAL ITINERARY SECTION — SOLID FOREST GREEN */
+
+.home-cta {
+    background: #173d32 !important;
+    background-image: none !important;
+    color: #f5f1e8 !important;
+    width: calc(100% - 48px);
+    max-width: 1600px;
+    margin: 75px auto 90px !important;
+    padding: 90px 7% !important;
+    box-sizing: border-box;
+    border: 1px solid rgba(212, 183, 131, 0.3);
+    border-radius: 5px;
+    text-align: center;
+}
+
+.home-cta .eyebrow {
+    color: #d4b783 !important;
+    letter-spacing: 3px;
+}
+
+.home-cta h2 {
+    color: #f5f1e8 !important;
+}
+
+.home-cta h2 em {
+    color: #d4b783 !important;
+}
+
+.home-cta-content > p:not(.eyebrow) {
+    color: #e0e7df !important;
+}
+
+.home-cta .btn-primary {
+    background: #e4cda5 !important;
+    color: #173d32 !important;
+}
+
+@media (max-width: 700px) {
+    .home-cta {
+        width: calc(100% - 24px);
+        margin: 45px auto 55px !important;
+        padding: 55px 22px !important;
+    }
+}
+
+/* Signature quote in the My Story section */
+.story-quote {
+    margin: 32px 0;
+    padding: 24px 28px;
+    border-left: 4px solid #b3945d;
+    background: #173d32;
+    color: #f5f1e8;
+    font-family: Georgia, serif;
+    font-size: clamp(1.4rem, 2.5vw, 2rem);
+    font-style: italic;
+    line-height: 1.5;
+    border-radius: 0 4px 4px 0;
+}
+
+.story-quote::before,
+.story-quote::after {
+    color: #d4b783;
+}
+
+/* =========================================
+   MY STORY PAGE — COMPLETE LAYOUT FIX
+   ========================================= */
+
+body:has(.story-hero) {
+    background: #f3efe5;
+    color: #17352d;
+}
+
+/* HERO */
+.story-hero {
+    min-height: 480px;
+    padding: 100px 8%;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    background:
+        linear-gradient(90deg, rgba(9, 35, 28, 0.82), rgba(9, 35, 28, 0.25)),
+        url("https://images.unsplash.com/photo-1595815771614-ade9d652a65d?auto=format&fit=crop&w=2000&q=85")
+        center 55% / cover no-repeat;
+    color: #fffaf0;
+}
+
+.story-hero-content {
+    width: 100%;
+    max-width: 850px;
+}
+
+.story-hero .eyebrow,
+.story-section .eyebrow,
+.story-highlight .eyebrow {
+    color: #c4a064;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    line-height: 1.8;
+    margin-bottom: 24px;
+}
+
+.story-hero h1 {
+    max-width: 850px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(3rem, 6vw, 5.5rem);
+    font-weight: 400;
+    line-height: 1.08;
+    letter-spacing: -2px;
+    margin: 0 0 24px;
+}
+
+.story-hero-content > p:last-child {
+    max-width: 600px;
+    font-size: 18px;
+    line-height: 1.9;
+    color: #f0eee6;
+}
+
+/* EXPERIENCE — TWO-COLUMN LAYOUT */
+.story-section {
+    width: calc(100% - 80px);
+    max-width: 1500px;
+    margin: 90px auto;
+    padding: 65px;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+    align-items: start;
+    gap: 65px;
+    background: #fffdf7;
+    border: 1px solid #e5dece;
+    border-radius: 5px;
+}
+
+.story-copy {
+    min-width: 0;
+}
+
+.story-copy h2,
+.story-highlight h2 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(2.4rem, 4vw, 4rem);
+    font-weight: 400;
+    line-height: 1.15;
+    letter-spacing: -1px;
+    margin: 0 0 30px;
+}
+
+.story-copy > p:not(.eyebrow) {
+    font-size: 16px;
+    line-height: 1.95;
+    color: #4e6058;
+    margin: 0 0 20px;
+}
+
+.story-copy strong {
+    color: #173d32;
+}
+
+/* SIGNATURE QUOTE */
+.story-quote {
+    margin: 32px 0;
+    padding: 30px;
+    border-left: 4px solid #c4a064;
+    border-radius: 0 5px 5px 0;
+    background: #173d32;
+    color: #fffaf0;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(1.5rem, 2.5vw, 2.2rem);
+    font-style: italic;
+    line-height: 1.5;
+    box-sizing: border-box;
+}
+
+/* IMAGE */
+.story-image {
+    width: 100%;
+    min-width: 0;
+    margin: 0;
+    position: sticky;
+    top: 35px;
+}
+
+.story-image img {
+    display: block;
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 3px;
+}
+
+.image-caption {
+    color: #7a8178;
+    font-size: 13px;
+    font-style: italic;
+    line-height: 1.7;
+    margin-top: 14px;
+}
+
+/* PROJECT IDEA — GREEN FEATURE BOX */
+.story-highlight {
+    width: calc(100% - 80px);
+    max-width: 1500px;
+    margin: 90px auto;
+    padding: 85px 10%;
+    box-sizing: border-box;
+    text-align: center;
+    background: #173d32;
+    color: #f5f1e8;
+    border: 1px solid rgba(196, 160, 100, 0.4);
+    border-radius: 5px;
+}
+
+.story-highlight .eyebrow {
+    color: #d4b783;
+}
+
+.story-highlight h2 {
+    color: #fffaf0;
+    margin-bottom: 25px;
+}
+
+.story-highlight > p:not(.eyebrow) {
+    max-width: 760px;
+    margin: 0 auto 22px;
+    color: #e0e7df;
+    font-size: 16px;
+    line-height: 1.95;
+}
+
+/* BUTTONS */
+.story-copy .btn-primary,
+.story-highlight .btn-primary {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 15px 23px;
+    background: #d8bd8b;
+    color: #173d32;
+    text-decoration: none;
+    border: 1px solid #d8bd8b;
+    transition: background 0.25s ease, color 0.25s ease;
+}
+
+.story-copy .btn-primary:hover,
+.story-highlight .btn-primary:hover {
+    background: transparent;
+    color: #d8bd8b;
+}
+
+/* FOOTER */
+body:has(.story-hero) .footer {
+    box-sizing: border-box;
+    padding: 55px 25px;
+    text-align: center;
+    background: #0d2c24;
+    color: #e0e7df;
+}
+
+body:has(.story-hero) .footer p {
+    line-height: 1.8;
+    margin-top: 18px;
+}
+
+/* TABLETS */
+@media (max-width: 1000px) {
+    .story-section {
+        width: calc(100% - 40px);
+        padding: 40px;
+        gap: 35px;
+    }
+
+    .story-image img {
+        height: 500px;
+    }
+}
+
+/* MOBILE */
+@media (max-width: 700px) {
+    .story-hero {
+        min-height: 420px;
+        padding: 75px 25px;
+    }
+
+    .story-hero h1 {
+        font-size: clamp(2.7rem, 11vw, 4rem);
+        letter-spacing: -1px;
+    }
+
+    .story-hero-content > p:last-child {
+        font-size: 16px;
+    }
+
+    .story-section {
+        width: calc(100% - 24px);
+        margin: 40px auto;
+        padding: 26px 22px;
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .story-copy h2,
+    .story-highlight h2 {
+        font-size: 2.5rem;
+    }
+
+    .story-image {
+        position: static;
+    }
+
+    .story-image img {
+        height: 360px;
+    }
+
+    .story-quote {
+        padding: 22px;
+        font-size: 1.5rem;
+    }
+
+    .story-highlight {
+        width: calc(100% - 24px);
+        margin: 45px auto;
+        padding: 45px 23px;
+    }
+}
+
+/* Keep the complete story experience section green */
+body:has(.story-hero) .story-section {
+    background: #173d32 !important;
+    color: #f5f1e8;
+    border-color: #285447;
+}
+
+/* Heading and paragraphs */
+body:has(.story-hero) .story-copy h2 {
+    color: #fffaf0;
+}
+
+body:has(.story-hero) .story-copy > p:not(.eyebrow) {
+    color: #e1e8df;
+}
+
+body:has(.story-hero) .story-copy strong {
+    color: #e2c58f;
+}
+
+/* Gold label */
+body:has(.story-hero) .story-copy .eyebrow {
+    color: #e2bd7e;
+}
+
+/* Image caption */
+body:has(.story-hero) .story-image .image-caption {
+    color: #d2d8ce;
+}
+
+/* Keep the quote visually distinct */
+body:has(.story-hero) .story-quote {
+    background: #0d2c24;
+    color: #fffaf0;
+    border-left-color: #d2ae70;
+}
+
+/* Keep the project feature green too */
+body:has(.story-hero) .story-highlight {
+    background: #173d32;
+    color: #fffaf0;
+    border-color: #c4a064;
+}
+
+/* Comfortable spacing around the green story box */
+body:has(.story-hero) .story-section {
+    margin-top: 65px;
+    margin-bottom: 65px;
+    border-radius: 8px;
+}
+
+/* =========================================
+   ITINERARY PAGE — LAYOUT REDESIGN
+   ========================================= */
+
+body:has(.itinerary-hero) {
+    background: #f3efe5;
+    color: #17352d;
+}
+
+/* HERO SECTION */
+.itinerary-hero {
+    min-height: 390px;
+    padding: 80px 8%;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    background: #173d32;
+    color: #fffaf0;
+}
+
+.itinerary-hero > div,
+.itinerary-hero .itinerary-hero-content {
+    max-width: 850px;
+}
+
+.itinerary-hero .eyebrow,
+.itinerary-hero .section-eyebrow {
+    color: #d4b783;
+    letter-spacing: 3px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 24px;
+}
+
+.itinerary-hero h1 {
+    color: #fffaf0;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(3rem, 6vw, 5rem);
+    font-weight: 400;
+    line-height: 1.1;
+    margin: 0 0 22px;
+}
+
+.itinerary-hero p {
+    max-width: 650px;
+    font-size: 17px;
+    line-height: 1.9;
+    color: #e1e8df;
+}
+
+/* MAIN ITINERARY FORM */
+.itinerary-form-section,
+.itinerary-planner,
+.itinerary-builder {
+    width: calc(100% - 80px);
+    max-width: 1250px;
+    margin: 70px auto;
+    padding: 55px;
+    box-sizing: border-box;
+    background: #fffdf7;
+    border: 1px solid #e5dece;
+    border-radius: 8px;
+}
+
+.itinerary-form-section h2,
+.itinerary-planner h2,
+.itinerary-builder h2 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(2.3rem, 4vw, 3.5rem);
+    font-weight: 400;
+    line-height: 1.2;
+    color: #173d32;
+    margin: 0 0 15px;
+}
+
+.itinerary-form-section > p,
+.itinerary-planner > p,
+.itinerary-builder > p {
+    color: #637168;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+/* FORM CONTROLS */
+.itinerary-form-section label,
+.itinerary-planner label,
+.itinerary-builder label {
+    color: #173d32;
+    font-weight: 500;
+}
+
+.itinerary-form-section select,
+.itinerary-planner select,
+.itinerary-builder select {
+    display: block;
+    width: 100%;
+    max-width: 450px;
+    margin: 12px 0 28px;
+    padding: 14px 16px;
+    border: 1px solid #d8d0bf;
+    border-radius: 4px;
+    background: #f8f5ed;
+    color: #173d32;
+    font: inherit;
+}
+
+.itinerary-form-section fieldset,
+.itinerary-planner fieldset,
+.itinerary-builder fieldset {
+    margin: 18px 0 28px;
+    padding: 24px;
+    border: 1px solid #d8d0bf;
+    border-radius: 5px;
+    background: #f8f5ed;
+}
+
+.itinerary-form-section legend,
+.itinerary-planner legend,
+.itinerary-builder legend {
+    padding: 0 8px;
+    color: #173d32;
+    font-weight: 600;
+}
+
+.itinerary-form-section input[type="checkbox"],
+.itinerary-planner input[type="checkbox"],
+.itinerary-builder input[type="checkbox"] {
+    accent-color: #173d32;
+    margin-right: 8px;
+}
+
+.itinerary-form-section fieldset label,
+.itinerary-planner fieldset label,
+.itinerary-builder fieldset label {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    margin: 9px 18px 9px 0;
+    line-height: 1.7;
+}
+
+/* BUTTON */
+.itinerary-form-section button,
+.itinerary-planner button,
+.itinerary-builder button {
+    padding: 15px 25px;
+    border: 1px solid #173d32;
+    border-radius: 3px;
+    background: #173d32;
+    color: #fffaf0;
+    font: inherit;
+    cursor: pointer;
+    transition: background 0.25s ease, color 0.25s ease;
+}
+
+.itinerary-form-section button:hover,
+.itinerary-planner button:hover,
+.itinerary-builder button:hover {
+    background: #d4b783;
+    color: #173d32;
+}
+
+/* TRAVEL NOTE */
+.itinerary-form-section small,
+.itinerary-planner small,
+.itinerary-builder small {
+    display: block;
+    margin-top: 20px;
+    color: #7a8178;
+    line-height: 1.8;
+}
+
+/* IMAGE — FULL, ORGANIZED FEATURE */
+body:has(.itinerary-hero) main > img,
+body:has(.itinerary-hero) .itinerary-image img {
+    display: block;
+    width: calc(100% - 80px);
+    max-width: 1250px;
+    height: 420px;
+    object-fit: cover;
+    margin: 65px auto;
+    border-radius: 5px;
+}
+
+/* REFLECTION / CLOSING SECTION */
+body:has(.itinerary-hero) main > section:last-of-type {
+    margin-top: 75px;
+    margin-bottom: 75px;
+}
+
+/* FOOTER */
+body:has(.itinerary-hero) .footer {
+    background: #0d2c24;
+    color: #e1e8df;
+    padding: 55px 25px;
+    text-align: center;
+}
+
+/* MOBILE */
+@media (max-width: 700px) {
+    .itinerary-hero {
+        min-height: 340px;
+        padding: 60px 25px;
+    }
+
+    .itinerary-hero h1 {
+        font-size: 2.8rem;
+    }
+
+    .itinerary-form-section,
+    .itinerary-planner,
+    .itinerary-builder {
+        width: calc(100% - 24px);
+        margin: 35px auto;
+        padding: 27px 22px;
+    }
+
+    .itinerary-form-section fieldset,
+    .itinerary-planner fieldset,
+    .itinerary-builder fieldset {
+        padding: 18px;
+    }
+
+    .itinerary-form-section fieldset label,
+    .itinerary-planner fieldset label,
+    .itinerary-builder fieldset label {
+        display: flex;
+        margin: 12px 0;
+    }
+
+    body:has(.itinerary-hero) main > img,
+    body:has(.itinerary-hero) .itinerary-image img {
+        width: calc(100% - 24px);
+        height: 280px;
+        margin: 35px auto;
+    }
+}
+
+/* ==========================================
+   ITINERARY PAGE — SAME LAYOUT, GREEN THEME
+   ========================================== */
+
+body:has(.planner-hero) {
+    background: #f3efe5;
+    color: #17372e;
+}
+
+/* HERO — forest green background */
+.planner-hero {
+    box-sizing: border-box;
+    min-height: 390px;
+    padding: 75px 8%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    background: #173d32;
+    color: #fffaf0;
+}
+
+.planner-hero .eyebrow,
+.planner-form .eyebrow,
+.planner-side-copy .eyebrow,
+.planner-bottom .eyebrow {
+    color: #d5b47a;
+    letter-spacing: 3px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.planner-hero h1 {
+    max-width: 850px;
+    margin: 20px 0;
+    color: #fffaf0;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(42px, 5.5vw, 76px);
+    font-weight: 400;
+    line-height: 1.12;
+}
+
+.planner-hero > p:last-child {
+    max-width: 650px;
+    color: #e5e9df;
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+/* MAIN LAYOUT — preserve the form and image side by side */
+.planner-layout {
+    box-sizing: border-box;
+    width: calc(100% - 64px);
+    max-width: 1450px;
+    margin: 65px auto;
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+    gap: 30px;
+    align-items: stretch;
+}
+
+/* FORM CARD */
+.planner-form {
+    box-sizing: border-box;
+    min-width: 0;
+    padding: clamp(25px, 4vw, 55px);
+    background: #fffdf7;
+    border: 1px solid #e5dece;
+    border-radius: 6px;
+}
+
+.planner-form h2 {
+    margin: 18px 0 15px;
+    color: #173d32;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(34px, 4vw, 52px);
+    font-weight: 400;
+    line-height: 1.15;
+}
+
+.planner-description {
+    margin-bottom: 30px;
+    color: #68766d;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+.planner-form > label {
+    display: block;
+    margin: 20px 0 10px;
+    color: #173d32;
+    font-weight: 600;
+}
+
+#trip-days {
+    width: 100%;
+    max-width: 320px;
+    padding: 13px 15px;
+    border: 1px solid #d6cfbd;
+    border-radius: 4px;
+    background: #f7f3e9;
+    color: #173d32;
+    font: inherit;
+}
+
+/* INTEREST OPTIONS */
+.interest-options {
+    margin: 28px 0;
+    padding: 22px;
+    border: 1px solid #d9d1bf;
+    border-radius: 5px;
+    background: #f7f4eb;
+}
+
+.interest-options legend {
+    padding: 0 8px;
+    color: #173d32;
+    font-weight: 600;
+}
+
+.interest-options label {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin: 15px 0;
+    color: #40574c;
+    line-height: 1.6;
+    cursor: pointer;
+}
+
+.interest-options input[type="checkbox"] {
+    flex-shrink: 0;
+    width: 17px;
+    height: 17px;
+    margin-top: 3px;
+    accent-color: #214d3d;
+}
+
+/* BUTTONS */
+.planner-button,
+.itinerary-results button,
+.planner-bottom .btn-primary {
+    display: inline-block;
+    padding: 14px 23px;
+    border: 1px solid #173d32;
+    border-radius: 3px;
+    background: #173d32;
+    color: #fffaf0;
+    font: inherit;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.planner-button:hover,
+.itinerary-results button:hover,
+.planner-bottom .btn-primary:hover {
+    background: #d5b47a;
+    color: #173d32;
+}
+
+.planner-note {
+    margin-top: 25px;
+    color: #7a8378;
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+/* RIGHT-HAND IMAGE AND TRAVEL TIP */
+.planner-side {
+    min-width: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    background: #173d32;
+    border-radius: 6px;
+}
+
+.planner-side > img {
+    display: block;
+    width: 100%;
+    height: 360px;
+    object-fit: cover;
+}
+
+.planner-side-copy {
+    flex: 1;
+    padding: 30px;
+    background: #173d32;
+    color: #fffaf0;
+}
+
+.planner-side-copy h3 {
+    margin: 18px 0 12px;
+    color: #fffaf0;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(25px, 2.5vw, 34px);
+    font-weight: 400;
+    line-height: 1.25;
+}
+
+.planner-side-copy > p:last-child {
+    color: #e1e8df;
+    line-height: 1.8;
+}
+
+/* GENERATED ITINERARY */
+.itinerary-results {
+    box-sizing: border-box;
+    width: calc(100% - 64px);
+    max-width: 1450px;
+    margin: 65px auto;
+    padding: clamp(25px, 5vw, 60px);
+    border: 1px solid #d9d1bf;
+    border-radius: 6px;
+    background: #fffdf7;
+}
+
+.itinerary-results[hidden] {
+    display: none !important;
+}
+
+.results-heading h2 {
+    margin: 15px 0;
+    color: #173d32;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(34px, 4vw, 52px);
+    font-weight: 400;
+}
+
+.results-heading > p:last-child,
+.results-note {
+    color: #68766d;
+    line-height: 1.8;
+}
+
+.plan-days {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+    margin: 35px 0;
+}
+
+.plan-days > * {
+    padding: 24px;
+    border: 1px solid #e2dac9;
+    border-radius: 5px;
+    background: #f7f4eb;
+    line-height: 1.8;
+}
+
+.results-note {
+    margin: 25px 0;
+    font-size: 13px;
+}
+
+/* BOTTOM DISCOVERY SECTION — green box */
+.planner-bottom {
+    box-sizing: border-box;
+    width: calc(100% - 64px);
+    max-width: 1450px;
+    margin: 65px auto;
+    padding: clamp(35px, 6vw, 75px);
+    border-radius: 6px;
+    background: #173d32;
+    color: #fffaf0;
+}
+
+.planner-bottom h2 {
+    margin: 18px 0;
+    color: #fffaf0;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(35px, 4.5vw, 58px);
+    font-weight: 400;
+    line-height: 1.15;
+}
+
+.planner-bottom > p:not(.eyebrow) {
+    margin-bottom: 25px;
+    color: #e1e8df;
+    line-height: 1.8;
+}
+
+.planner-bottom .btn-primary {
+    border-color: #d5b47a;
+}
+
+/* FOOTER */
+body:has(.planner-hero) .footer {
+    padding: 45px 25px;
+    background: #0d2c24;
+    color: #e1e8df;
+    text-align: center;
+}
+
+/* RESPONSIVE LAYOUT */
+@media (max-width: 850px) {
+    .planner-hero {
+        padding: 55px 25px;
+    }
+
+    .planner-layout {
+        width: calc(100% - 30px);
+        margin: 35px auto;
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+
+    .planner-side > img {
+        height: 300px;
+    }
+
+    .itinerary-results,
+    .planner-bottom {
+        width: calc(100% - 30px);
+        margin: 35px auto;
+    }
+
+    .plan-days {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* KEEP THE ENTIRE PLANNER AREA FOREST GREEN */
+
+body:has(.planner-hero) {
+    background: #173d32 !important;
+}
+
+body:has(.planner-hero) main {
+    background: #173d32 !important;
+}
+
+/* Keep the form as a cream card */
+.planner-form {
+    background: #fffdf7 !important;
+}
+
+/* Keep the mountain image and travel tip in green */
+.planner-side,
+.planner-side-copy {
+    background: #173d32 !important;
+}
+
+/* Green background around the complete form/image layout */
+.planner-layout {
+    background: #173d32 !important;
+    padding: 24px;
+    border-radius: 8px;
+}
+
+/* Keep the bottom discovery section green */
+.planner-bottom {
+    background: #173d32 !important;
+    color: #fffaf0;
+}
+
+/* Keep the footer a deeper green */
+body:has(.planner-hero) .footer {
+    background: #0d2c24 !important;
+}
+
+/* REST OF THE PAGE — CREAM BACKGROUND */
+body:has(.planner-hero),
+body:has(.planner-hero) main {
+    background: #f3efe5 !important;
+}
+
+/* HERO — KEEP GREEN */
+.planner-hero {
+    background: #173d32 !important;
+    color: #fffaf0 !important;
+}
+
+/* MAIN PLANNER BOX — CREAM FORM + GREEN IMAGE PANEL */
+.planner-layout {
+    background: transparent !important;
+    padding: 0 !important;
+}
+
+.planner-form {
+    background: #fffdf7 !important;
+    border-radius: 6px;
+}
+
+/* GREEN BOX AROUND THE MOUNTAIN IMAGE AND TEXT */
+.planner-side,
+.planner-side-copy {
+    background: #173d32 !important;
+    color: #fffaf0 !important;
+}
+
+/* BOTTOM DISCOVERY BOX — GREEN */
+.planner-bottom {
+    background: #173d32 !important;
+    color: #fffaf0 !important;
+    border-radius: 6px;
+}
+
+/* FOOTER — DEEP GREEN */
+body:has(.planner-hero) .footer {
+    background: #0d2c24 !important;
+    color: #fffaf0 !important;
+}
+
+/* MAKE THE COMPLETE PLANNER FORM BOX GREEN */
+.planner-form {
+    background: #173d32 !important;
+    color: #fffaf0 !important;
+    border: 1px solid #315648 !important;
+    border-radius: 6px;
+}
+
+/* Heading and description */
+.planner-form h2,
+.planner-form > label,
+.planner-form .interest-options legend {
+    color: #fffaf0 !important;
+}
+
+.planner-form .planner-description {
+    color: #dce7df !important;
+}
+
+/* Days dropdown */
+.planner-form #trip-days {
+    background: #f3efe5 !important;
+    color: #173d32 !important;
+    border: 1px solid #b8c5b9;
+}
+
+/* Checkbox group stays subtly cream */
+.planner-form .interest-options {
+    background: #f3efe5 !important;
+    border: 1px solid #d5cbb7 !important;
+    border-radius: 5px;
+}
+
+.planner-form .interest-options legend {
+    color: #173d32 !important;
+}
+
+.planner-form .interest-options label {
+    color: #29483d !important;
+}
+
+.planner-form .interest-options input[type="checkbox"] {
+    accent-color: #173d32;
+}
+
+/* Button and note */
+.planner-form .planner-button {
+    background: #d5b47a !important;
+    color: #173d32 !important;
+    border: 1px solid #d5b47a !important;
+}
+
+.planner-form .planner-note {
+    color: #dce7df !important;
+}
+
+/* FIX: PREVENT PLANNER CONTENT FROM GETTING CUT */
+.planner-layout {
+    box-sizing: border-box;
+    width: calc(100% - 64px);
+    max-width: 1450px;
+    margin: 55px auto;
+    padding: 0;
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+    gap: 30px;
+    align-items: stretch;
+}
+
+.planner-form,
+.planner-side {
+    box-sizing: border-box;
+    width: 100%;
+    min-width: 0;
+}
+
+/* Fix checkbox heading and spacing */
+.planner-form .interest-options {
+    box-sizing: border-box;
+    width: 100%;
+    min-width: 0;
+    margin-top: 30px;
+    padding: 24px;
+    overflow: visible;
+}
+
+.planner-form .interest-options legend {
+    max-width: 95%;
+    padding: 0 10px;
+    white-space: normal;
+    line-height: 1.5;
+}
+
+/* Keep the form button inside its card */
+.planner-form .planner-button {
+    max-width: 100%;
+    white-space: normal;
+    margin-top: 4px;
+}
+
+/* Keep the image inside its own green panel */
+.planner-side > img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: 360px;
+    object-fit: cover;
+}
+
+/* Stack the cards on smaller screens */
+@media (max-width: 850px) {
+    .planner-layout {
+        width: calc(100% - 30px);
+        grid-template-columns: minmax(0, 1fr);
+        gap: 24px;
+        margin: 30px auto;
+    }
+
+    .planner-form {
+        padding: 25px;
+    }
+
+    .planner-side > img {
+        height: 280px;
+    }
+
+    .planner-form .interest-options {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .planner-form {
+        padding: 18px;
+    }
+
+    .planner-form .interest-options {
+        padding: 18px 12px;
+    }
+
+    .planner-form .interest-options label {
+        overflow-wrap: anywhere;
+    }
+}
+
+/* GENERATED ITINERARY — VISIBILITY AND LAYOUT FIX */
+
+.itinerary-results[hidden] {
+    display: none !important;
+}
+
+.itinerary-results:not([hidden]) {
+    display: block !important;
+    box-sizing: border-box;
+    width: calc(100% - 64px);
+    max-width: 1450px;
+    margin: 50px auto;
+    padding: clamp(24px, 5vw, 55px);
+    background: #fffdf7;
+    border: 1px solid #e2dac9;
+    border-radius: 6px;
+    color: #173d32;
+}
+
+.plan-days {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+    margin: 30px 0;
+}
+
+.plan-day {
+    box-sizing: border-box;
+    min-width: 0;
+    padding: 25px;
+    background: #173d32;
+    border-radius: 5px;
+    color: #fffaf0;
+    line-height: 1.8;
+    overflow-wrap: anywhere;
+}
+
+.plan-day-label {
+    color: #d5b47a;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.plan-day h3 {
+    color: #fffaf0;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 27px;
+    font-weight: 400;
+}
+
+.plan-day .day-tip {
+    padding-top: 12px;
+    border-top: 1px solid #426457;
+    color: #e0e7df;
+    font-size: 14px;
+}
+
+@media (max-width: 700px) {
+    .itinerary-results:not([hidden]) {
+        width: calc(100% - 30px);
+    }
+
+    .plan-days {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* FIX: Improve contrast in the green destination section */
+.destination-section h2,
+.destinations-section h2,
+.home-destinations h2,
+.destination-heading h2 {
+    color: #fffaf0 !important;
+}
+
+.destination-section h2 span,
+.destinations-section h2 span,
+.home-destinations h2 span,
+.destination-heading h2 span {
+    color: #d9b77e !important;
+}
+
+.destination-section p,
+.destinations-section p,
+.home-destinations p,
+.destination-heading p {
+    color: #e5e9e2 !important;
+}
+
+/* Keep small section labels readable */
+.destination-section .eyebrow,
+.destinations-section .eyebrow,
+.home-destinations .eyebrow,
+.destination-heading .eyebrow {
+    color: #e2bd80 !important;
+}
+
+/* FIX: Planner layout getting cut off */
+.planner-layout {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr) !important;
+    gap: 32px !important;
+    align-items: stretch !important;
+    width: 100% !important;
+    max-width: 1440px;
+    margin: 0 auto !important;
+    padding: 40px !important;
+    box-sizing: border-box !important;
+}
+
+.planner-form,
+.planner-side {
+    min-width: 0 !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+.planner-form {
+    padding: 48px 36px !important;
+    border-radius: 6px;
+    overflow: visible !important;
+}
+
+.interest-options {
+    box-sizing: border-box !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    margin: 28px 0 !important;
+    padding: 28px 24px !important;
+}
+
+.interest-options legend {
+    padding: 0 8px;
+    max-width: 100%;
+}
+
+.interest-options label {
+    display: flex !important;
+    align-items: flex-start !important;
+    gap: 12px;
+    margin: 0 0 18px !important;
+    line-height: 1.5;
+}
+
+.interest-options label:last-child {
+    margin-bottom: 0 !important;
+}
+
+.interest-options input[type="checkbox"] {
+    flex-shrink: 0;
+    margin-top: 5px;
+}
+
+.planner-form select {
+    width: 100%;
+    max-width: 420px;
+    box-sizing: border-box;
+}
+
+.planner-button {
+    display: inline-block;
+    max-width: 100%;
+    white-space: normal;
+}
+
+.planner-note {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+    line-height: 1.7;
+}
+
+.planner-side {
+    overflow: hidden;
+    border-radius: 6px;
+    background: #173f33;
+}
+
+.planner-side img {
+    display: block;
+    width: 100%;
+    height: 380px;
+    object-fit: cover;
+}
+
+.planner-side-copy {
+    padding: 32px;
+    box-sizing: border-box;
+}
+
+@media (max-width: 900px) {
+    .planner-layout {
+        grid-template-columns: minmax(0, 1fr) !important;
+        padding: 24px !important;
+        gap: 24px !important;
+    }
+
+    .planner-form {
+        padding: 32px 24px !important;
+    }
+
+    .planner-side img {
+        height: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .planner-layout {
+        padding: 14px !important;
+    }
+
+    .planner-form {
+        padding: 26px 18px !important;
+    }
+
+    .interest-options {
+        padding: 24px 14px !important;
+    }
+
+    .planner-side-copy {
+        padding: 24px 18px;
+    }
+}
+/* Fix destination card images */
+.destination-card img,
+.place-card img,
+.destination-image img {
+    display: block;
+    width: 100%;
+    height: 340px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 4px;
+}
+
+
+/* =========================================
+   NAVBAR FIX —Somewhere in Kashmir
+   ========================================= */
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+    padding: 18px 5%;
+    min-height: 82px;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 1000;
+    background: #f5f1e8;
+}
+
+.navbar .logo {
+    flex-shrink: 0;
+    white-space: nowrap;
+    text-decoration: none;
+}
+
+.navbar .nav-links {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 26px;
+    margin-left: auto;
+    flex-wrap: nowrap;
+}
+
+.navbar .nav-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    text-decoration: none;
+    padding: 10px 0;
+    line-height: 1.4;
+}
+
+.navbar .nav-links a.nav-cta {
+    padding: 14px 20px;
+    border: 1px solid rgba(23, 59, 53, 0.2);
+    flex-shrink: 0;
+}
+
+.navbar .menu-toggle {
+    display: none;
+}
+
+/* TABLETS AND SMALLER SCREENS */
+@media (max-width: 900px) {
+    .navbar {
+        flex-wrap: wrap;
+        gap: 14px;
+        padding: 16px 5%;
+    }
+
+    .navbar .menu-toggle {
+        display: block;
+        margin-left: auto;
+        padding: 8px 12px;
+        background: transparent;
+        border: 1px solid rgba(23, 59, 53, 0.25);
+        border-radius: 4px;
+        color: #173b35;
+        font-size: 24px;
+        cursor: pointer;
+    }
+
+    .navbar .nav-links {
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+        gap: 4px;
+        margin: 0;
+        padding: 14px 0 4px;
+    }
+
+    .navbar .nav-links.active {
+        display: flex;
+    }
+
+    .navbar .nav-links a {
+        justify-content: flex-start;
+        padding: 12px 8px;
+    }
+
+    .navbar .nav-links a.nav-cta {
+        justify-content: center;
+        margin-top: 6px;
+    }
+}
+
+/* VERY SMALL PHONES */
+@media (max-width: 420px) {
+    .navbar {
+        padding: 14px 16px;
+    }
+
+    .navbar .logo {
+        font-size: 16px;
+    }
+}
+
+/* Destination section — fix text contrast */
+.destinations-section h1,
+.destinations-section h2,
+.destinations-section .section-title {
+    color: #F5F0E6;
+}
+
+/* Preserve the elegant gold italic accent */
+.destinations-section h1 em,
+.destinations-section h2 em,
+.destinations-section .section-title em {
+    color: #D5AE73;
+    font-style: italic;
+}
+
+/* Subtitle */
+.destinations-section p {
+    color: #D5DED6;
+}
+
+/* Small section label */
+.destinations-section .section-label {
+    color: #D5AE73;
+}
+
+/* =====================================
+   ITINERARY FORM — SPACING FIX
+===================================== */
+
+/* Prevent the form section from cutting off content */
+.itinerary-form,
+.itinerary-section,
+.planner-form {
+    height: auto;
+    min-height: 0;
+    overflow: visible;
+}
+
+/* Give each question card enough top spacing */
+.itinerary-form fieldset,
+.itinerary-section fieldset,
+.planner-form fieldset {
+    box-sizing: border-box;
+    min-width: 0;
+    height: auto;
+    min-height: 0;
+    padding: 28px 30px;
+    margin: 0 0 28px;
+    overflow: visible;
+}
+
+/* Keep the question heading inside its panel */
+.itinerary-form legend,
+.itinerary-section legend,
+.planner-form legend {
+    padding: 0 8px;
+    margin-bottom: 12px;
+    line-height: 1.6;
+}
+
+/* Space out checkbox choices */
+.itinerary-form label,
+.itinerary-section label,
+.planner-form label {
+    line-height: 1.6;
+}
+
+/* Prevent the submit button from being clipped */
+.itinerary-form button,
+.itinerary-section button,
+.planner-form button {
+    position: relative;
+    margin-top: 12px;
+    margin-bottom: 20px;
+}
+
+/* Mobile spacing */
+@media (max-width: 700px) {
+    .itinerary-form fieldset,
+    .itinerary-section fieldset,
+    .planner-form fieldset {
+        padding: 24px 18px;
+        margin-bottom: 24px;
+    }
+}
+

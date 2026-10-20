@@ -1,0 +1,590 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover Kashmir's quieter escapes: Doodhpathri, Chatpal, Lolab Valley, Gurez Valley, Daksum and Nigeen Lake.">
+    <title>Hidden Gems |Somewhere in Kashmir</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+
+    <style>
+        /* =========================================
+           HIDDEN GEMS — Somewhere in Kashmir
+        ========================================= */
+
+        body.hidden-gems-page {
+            background: #17372e;
+            color: #18372e;
+        }
+
+        .hidden-gems-page .gems-hero {
+            min-height: 620px;
+            padding: 110px 9%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            color: white;
+            background:
+                linear-gradient(
+                    100deg,
+                    rgba(8, 28, 22, .82),
+                    rgba(8, 28, 22, .25)
+                ),
+                url("https://commons.wikimedia.org/wiki/Special:FilePath/Doodhpathri_southwest_Jammu_Kashmir_India.jpg")
+                center 50% / cover no-repeat;
+        }
+
+        .hidden-gems-page .gems-hero .eyebrow {
+            color: #e7c58a;
+        }
+
+        .hidden-gems-page .gems-hero h1 {
+            max-width: 850px;
+            margin: 15px 0;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: clamp(3.5rem, 8vw, 6.5rem);
+            font-weight: 400;
+            line-height: 1.08;
+            color: white;
+        }
+
+        .hidden-gems-page .gems-hero > p:not(.eyebrow) {
+            max-width: 580px;
+            margin-bottom: 25px;
+            color: #f0f0e9;
+            font-size: 1.05rem;
+            line-height: 1.9;
+        }
+
+        .hidden-gems-page .eyebrow {
+            color: #c79d55;
+            letter-spacing: 2px;
+            font-size: .75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        /* INTRODUCTION */
+
+        .hidden-gems-page .gems-intro {
+            padding: 85px 10%;
+            text-align: center;
+            color: white;
+            background:
+                linear-gradient(
+                    rgba(15, 43, 33, .88),
+                    rgba(15, 43, 33, .92)
+                ),
+                url("https://commons.wikimedia.org/wiki/Special:FilePath/Lolab_Valley-Kupwara.JPG")
+                center / cover;
+        }
+
+        .hidden-gems-page .gems-intro h2,
+        .hidden-gems-page .gems-heading h2,
+        .hidden-gems-page .gems-cta h2 {
+            margin: 14px 0 20px;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: clamp(2rem, 4vw, 3.2rem);
+            font-weight: 400;
+            line-height: 1.25;
+        }
+
+        .hidden-gems-page .gems-intro h2,
+        .hidden-gems-page .gems-cta h2 {
+            color: white;
+        }
+
+        .hidden-gems-page .gems-intro > p:last-child {
+            max-width: 850px;
+            margin: 0 auto;
+            color: #e0e9e1;
+            font-size: 1rem;
+            line-height: 1.95;
+        }
+
+        /* ATTRACTIONS SECTION */
+
+        .hidden-gems-page .gems-list {
+            padding: 75px 8%;
+            background:
+                linear-gradient(
+                    rgba(18, 45, 35, .94),
+                    rgba(18, 45, 35, .97)
+                ),
+                url("https://commons.wikimedia.org/wiki/Special:FilePath/Doodhpathri_southwest_Jammu_Kashmir_India.jpg")
+                center / cover fixed;
+        }
+
+        .hidden-gems-page .gems-heading {
+            margin-bottom: 45px;
+            text-align: center;
+        }
+
+        .hidden-gems-page .gems-heading h2 {
+            color: white;
+        }
+
+        .hidden-gems-page .gems-heading .eyebrow {
+            color: #dfbb7c;
+        }
+
+        /* CREAM CARDS */
+
+        .hidden-gems-page .gem-card {
+            display: grid;
+            grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr);
+            align-items: center;
+            gap: 40px;
+            max-width: 1450px;
+            margin: 0 auto 24px;
+            padding: 32px;
+            border: 1px solid rgba(232, 210, 168, .18);
+            border-radius: 4px;
+            background: rgba(245, 242, 232, .98);
+            overflow: hidden;
+        }
+
+        .hidden-gems-page .gem-card:nth-of-type(even) {
+            background: rgba(232, 230, 216, .98);
+        }
+
+        .hidden-gems-page .gem-card img {
+            width: 100%;
+            height: 300px;
+            display: block;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 3px;
+            background: #d9ded4;
+            transition: transform .4s ease;
+        }
+
+        .hidden-gems-page .gem-card:hover img {
+            transform: scale(1.02);
+        }
+
+        .hidden-gems-page .gem-card .eyebrow {
+            color: #a17c42;
+        }
+
+        .hidden-gems-page .gem-card h3 {
+            margin: 14px 0;
+            color: #18372e;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: clamp(1.8rem, 3vw, 2.5rem);
+            font-weight: 400;
+            line-height: 1.25;
+        }
+
+        .hidden-gems-page .gem-card p {
+            color: #52635a;
+            font-size: .98rem;
+            line-height: 1.9;
+        }
+
+        .hidden-gems-page .gem-note {
+            display: block;
+            margin-top: 14px;
+            padding-top: 12px;
+            border-top: 1px solid #d8d7cb;
+            color: #7b6b4d;
+            font-size: .8rem;
+            line-height: 1.7;
+        }
+
+        .hidden-gems-page .photo-credit {
+            display: block;
+            margin-top: 8px;
+            color: #77766f;
+            font-size: .72rem;
+            line-height: 1.5;
+        }
+
+        .hidden-gems-page .photo-credit a {
+            color: inherit;
+            text-decoration: underline;
+        }
+
+        /* CLOSING SECTION */
+
+        .hidden-gems-page .gems-cta {
+            padding: 80px 8%;
+            text-align: center;
+            color: white;
+            background:
+                linear-gradient(
+                    rgba(11, 34, 26, .87),
+                    rgba(11, 34, 26, .93)
+                ),
+                url("https://commons.wikimedia.org/wiki/Special:FilePath/Gurez_Valley_01.jpg")
+                center / cover;
+        }
+
+        .hidden-gems-page .gems-cta > p:not(.eyebrow) {
+            margin-bottom: 25px;
+            color: #e0e9e1;
+        }
+
+        .hidden-gems-page .gems-cta > p:last-child a {
+            color: #f0dfbd;
+            text-decoration: none;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 700px) {
+            .hidden-gems-page .gems-hero {
+                min-height: 500px;
+                padding: 80px 7%;
+            }
+
+            .hidden-gems-page .gems-intro {
+                padding: 60px 7%;
+            }
+
+            .hidden-gems-page .gems-list {
+                padding: 50px 5%;
+                background-attachment: scroll;
+            }
+
+            .hidden-gems-page .gem-card {
+                grid-template-columns: 1fr;
+                gap: 18px;
+                padding: 18px;
+            }
+
+            .hidden-gems-page .gem-card img {
+                height: 240px;
+            }
+
+            .hidden-gems-page .gems-cta {
+                padding: 60px 7%;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .hidden-gems-page *,
+            .hidden-gems-page *::before,
+            .hidden-gems-page *::after {
+                transition-duration: .01ms !important;
+            }
+        }
+    </style>
+</head>
+
+<body class="hidden-gems-page">
+
+<header class="navbar">
+    <a href="index.html" class="logo">Somewhere <span>in Kashmir.</span></a>
+
+    <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
+
+    <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="story.html">My Story</a>
+        <a href="destinations.html">Destinations</a>
+        <a href="hidden-gems.html" class="active">Hidden Gems</a>
+        <a href="itinerary.html" class="nav-cta">Plan Your Trip ↗</a>
+    </nav>
+</header>
+
+<main>
+
+    <!-- HERO -->
+    <section class="gems-hero">
+        <p class="eyebrow">BEYOND THE FAMILIAR</p>
+
+        <h1>For the places<br>that stay with you.</h1>
+
+        <p>
+            Beyond Kashmir's famous destinations lie quiet meadows,
+            forest villages, winding rivers and valleys that invite
+            you to slow down and explore a little further.
+        </p>
+
+        <a href="#hidden-places" class="btn-primary">
+            Find the hidden gems ↓
+        </a>
+    </section>
+
+    <!-- INTRODUCTION -->
+    <section class="gems-intro">
+        <p class="eyebrow">A DIFFERENT SIDE OF KASHMIR</p>
+
+        <h2>Some places ask you to slow down.</h2>
+
+        <p>
+            These escapes are about more than ticking off attractions.
+            They are about quiet roads, mountain air, riverside pauses
+            and landscapes that feel wonderfully removed from the rush.
+            Some locations require longer journeys, permits or seasonal
+            access, so plan ahead and respect local guidance.
+        </p>
+    </section>
+
+    <!-- HIDDEN PLACES -->
+    <section class="gems-list" id="hidden-places">
+
+        <div class="gems-heading">
+            <p class="eyebrow">THE QUIETER SIDE OF THE VALLEY</p>
+            <h2>Discover somewhere different.</h2>
+        </div>
+
+        <!-- 01: DOODHPATHRI -->
+        <article class="gem-card">
+            <div>
+                <img
+                    src="https://commons.wikimedia.org/wiki/Special:FilePath/Doodhpathri_southwest_Jammu_Kashmir_India.jpg"
+                    alt="Doodhpathri meadow and mountain scenery in Kashmir"
+                    loading="lazy">
+
+                <small class="photo-credit">
+                    Photo:
+                    <a href="https://commons.wikimedia.org/wiki/File:Doodhpathri_southwest_Jammu_Kashmir_India.jpg"
+                       target="_blank" rel="noopener">
+                        Wikimedia Commons
+                    </a>
+                </small>
+            </div>
+
+            <div>
+                <span class="eyebrow">01 / MEADOWS &amp; STREAMS</span>
+
+                <h3>Doodhpathri</h3>
+
+                <p>
+                    Known as the Valley of Milk, Doodhpathri is a green
+                    meadow destination surrounded by rolling hills,
+                    forests and flowing streams. It is a lovely place
+                    for a scenic walk, a picnic and a slower day in nature.
+                </p>
+
+                <small class="gem-note">
+                    Travel note: Check road conditions and local access,
+                    particularly during winter or heavy rainfall.
+                </small>
+            </div>
+        </article>
+
+        <!-- 02: CHATPAL -->
+        <article class="gem-card">
+            <div>
+                <img
+                    src="https://commons.wikimedia.org/wiki/Special:FilePath/Kashmir_valley.jpg"
+                    alt="Kashmir valley landscape illustrating the region's quieter mountain scenery"
+                    loading="lazy">
+
+                <small class="photo-credit">
+                    Representative Kashmir landscape:
+                    <a href="https://commons.wikimedia.org/wiki/File:Kashmir_valley.jpg"
+                       target="_blank" rel="noopener">
+                        Wikimedia Commons
+                    </a>
+                </small>
+            </div>
+
+            <div>
+                <span class="eyebrow">02 / THE QUIET ESCAPE</span>
+
+                <h3>Chatpal</h3>
+
+                <p>
+                    Chatpal is a peaceful destination in south Kashmir
+                    known for its forested surroundings, mountain scenery
+                    and rural atmosphere. It suits travellers who prefer
+                    quiet landscapes and unhurried time away from busy
+                    tourist centres.
+                </p>
+
+                <small class="gem-note">
+                    Photo note: This is a general Kashmir valley image,
+                    not a verified photograph of Chatpal itself.
+                    Arrange transport in advance and confirm local access.
+                </small>
+            </div>
+        </article>
+
+        <!-- 03: LOLAB VALLEY -->
+        <article class="gem-card">
+            <div>
+                <img
+                    src="https://commons.wikimedia.org/wiki/Special:FilePath/Lolab_Valley-Kupwara.JPG"
+                    alt="Lolab Valley countryside near Kupwara in Kashmir"
+                    loading="lazy">
+
+                <small class="photo-credit">
+                    Photo:
+                    <a href="https://commons.wikimedia.org/wiki/File:Lolab_Valley-Kupwara.JPG"
+                       target="_blank" rel="noopener">
+                        Wikimedia Commons
+                    </a>
+                </small>
+            </div>
+
+            <div>
+                <span class="eyebrow">03 / COUNTRYSIDE &amp; ORCHARDS</span>
+
+                <h3>Lolab Valley</h3>
+
+                <p>
+                    Lolab Valley offers a gentler side of Kashmir, with
+                    open countryside, orchards, villages and wooded
+                    mountain slopes. Take time to appreciate the rural
+                    scenery and learn about the region through respectful
+                    interactions with local communities.
+                </p>
+
+                <small class="gem-note">
+                    Travel note: Confirm local travel advice and
+                    accommodation before setting out.
+                </small>
+            </div>
+        </article>
+
+        <!-- 04: GUREZ VALLEY -->
+        <article class="gem-card">
+            <div>
+                <img
+                    src="https://commons.wikimedia.org/wiki/Special:FilePath/Gurez_Valley_01.jpg"
+                    alt="Gurez Valley in North Kashmir with rugged mountains and valley scenery"
+                    loading="lazy">
+
+                <small class="photo-credit">
+                    Photo:
+                    <a href="https://commons.wikimedia.org/wiki/File:Gurez_Valley_01.jpg"
+                       target="_blank" rel="noopener">
+                        Wikimedia Commons
+                    </a>
+                </small>
+            </div>
+
+            <div>
+                <span class="eyebrow">04 / REMOTE MOUNTAIN COUNTRY</span>
+
+                <h3>Gurez Valley</h3>
+
+                <p>
+                    Gurez is a remote mountain valley associated with
+                    traditional villages, rugged peaks and the
+                    Kishanganga River. Its distinctive landscape and
+                    quieter pace make it a memorable longer journey
+                    for travellers seeking a different side of Kashmir.
+                </p>
+
+                <small class="gem-note">
+                    Travel note: Check current security and road guidance.
+                    Permit or registration requirements may apply; verify
+                    the latest rules before travelling.
+                </small>
+            </div>
+        </article>
+
+        <!-- 05: DAKSUM & BRENG VALLEY -->
+        <article class="gem-card">
+            <div>
+                <img
+                    src="https://commons.wikimedia.org/wiki/Special:FilePath/Stream_at_Daksum_%2814387677438%29.jpg"
+                    alt="A stream flowing through the forested Daksum area of Kashmir"
+                    loading="lazy">
+
+                <small class="photo-credit">
+                    Photo:
+                    <a href="https://commons.wikimedia.org/wiki/File:Stream_at_Daksum_(14387677438).jpg"
+                       target="_blank" rel="noopener">
+                        Wikimedia Commons
+                    </a>
+                </small>
+            </div>
+
+            <div>
+                <span class="eyebrow">05 / FORESTS &amp; MOUNTAIN ROADS</span>
+
+                <h3>Daksum &amp; Breng Valley</h3>
+
+                <p>
+                    The Daksum area and the wider Breng Valley are known
+                    for forested hills, streams and scenic drives through
+                    south Kashmir. This is a good choice for travellers
+                    who enjoy the journey itself as much as the
+                    destination.
+                </p>
+
+                <small class="gem-note">
+                    Travel note: Weather can affect mountain roads.
+                    Check conditions before driving and avoid unfamiliar
+                    routes after dark.
+                </small>
+            </div>
+        </article>
+
+        <!-- 06: NIGEEN LAKE -->
+        <article class="gem-card">
+            <div>
+                <img
+                    src="https://commons.wikimedia.org/wiki/Special:FilePath/Boathouse_view_of_Nagin_lake_%2CSrinagar%2CKashmir.jpg"
+                    alt="Houseboats beside Nigeen Lake in Srinagar, Kashmir"
+                    loading="lazy">
+
+                <small class="photo-credit">
+                    Photo:
+                    <a href="https://commons.wikimedia.org/wiki/File:Boathouse_view_of_Nagin_lake_,Srinagar,Kashmir.jpg"
+                       target="_blank" rel="noopener">
+                        Wikimedia Commons
+                    </a>
+                </small>
+            </div>
+
+            <div>
+                <span class="eyebrow">06 / A QUIETER LAKESIDE</span>
+
+                <h3>Nigeen Lake</h3>
+
+                <p>
+                    Just beyond Srinagar's better-known lake experiences,
+                    Nigeen offers a quieter atmosphere with houseboats,
+                    shikaras and beautiful water reflections. Spend
+                    a morning by the shore or enjoy a peaceful boat ride.
+                </p>
+
+                <small class="gem-note">
+                    Travel note: This lakeside escape is near Srinagar,
+                    so it can fit easily into a city itinerary.
+                </small>
+            </div>
+        </article>
+
+    </section>
+
+    <!-- CLOSING -->
+    <section class="gems-cta">
+        <p class="eyebrow">YOUR NEXT DISCOVERY</p>
+
+        <h2>The best journeys leave room for wonder.</h2>
+
+        <p>
+            Build a Kashmir itinerary that balances famous places
+            with the quieter corners that make the journey personal.
+        </p>
+
+        <a href="itinerary.html" class="btn-primary">
+            Plan your journey ↗
+        </a>
+
+        <p style="margin-top: 22px;">
+            <a href="destinations.html">← Explore all destinations</a>
+        </p>
+    </section>
+
+</main>
+
+<footer class="footer">
+    <a href="index.html" class="logo">Somewhere <span>in Kashmir.</span></a>
+    <p>Made with love for the mountains and the memories they create.</p>
+</footer>
+
+</body>
+</html>
